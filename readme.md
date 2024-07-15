@@ -1,2 +1,0 @@
-# Thanks for:
- . [pixabay.com](https://pixabay.com/zh/%E6%98%9F%E7%B3%BB-%E7%A9%BA%E9%97%B4-%E5%AE%87%E5%AE%99-%E8%88%AA%E5%A4%A9-%E5%A4%AA%E7%A9%BA%E6%97%85%E8%A1%8C-%E6%89%80%E6%9C%89-%E7%B9%81%E6%98%9F%E7%82%B9%E7%82%B9%E7%9A%84%E5%A4%A9%E7%A9%BA-252885/)
