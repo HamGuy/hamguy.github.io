@@ -1,0 +1,6 @@
+baseURL: https://hamguy.xyz/
+languageCode: en-us
+title: HamGuy
+theme: PaperMod
+params:
+  subtitle: "A New Start From Here"
