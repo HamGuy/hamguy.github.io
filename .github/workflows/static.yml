@@ -4,10 +4,6 @@ name: Deploy Hugo site to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    workflow_dispatch:
-    schedule:
-        # Runs everyday at 8:00 AM
-        - cron: "0 0 * * *"
     branches:
       - master
 
