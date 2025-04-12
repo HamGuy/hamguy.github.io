@@ -8,7 +8,7 @@ enableEmoji: true
 pygmentsUseClasses: true
 
 defaultContentLanguage: en
-defaultContentLanguageInSubdir: true
+defaultContentLanguageInSubdir: false
 languages:
   en:
     contentDir: content/en
@@ -17,7 +17,7 @@ languages:
     languageDirection: ltr
     languageName: English
     mainSections:
-      - post # 将 Posts 设置为主要部分
+      - posts # 将 Posts 设置为主要部分
     weight: 1
     menu:
       main:
@@ -25,10 +25,10 @@ languages:
           name: Posts
           url: /posts/ # 确保 Posts 的 URL 正确
           weight: 10
-        - identifier: works
-          name: Works
-          url: /works/
-          weight: 20
+        # - identifier: works
+        #   name: Works
+        #   url: /works/
+        #   weight: 20
         - identifier: tags
           name: Tags
           url: /tags/
