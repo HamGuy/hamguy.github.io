@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>英美公司注册对比 - 海外业务与App发行</title>
+  <style>
+    :root {
+      --primary: #3672f8;
+      --secondary: #5a52c8;
+      --accent: #7928ca;
+      --background: #0f1117;
+      --card-bg: #1a1e2c;
+      --text: #ffffff;
+      --text-secondary: #8f9cb3;
+      --border: #2a2f42;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding-top: 2rem;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin: 2rem 0 1rem;
+      color: var(--primary);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin: 1.5rem 0 1rem;
+      color: var(--secondary);
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    .intro {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      color: var(--text-secondary);
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .uk,
+    .us {
+      border-radius: 12px;
+      padding: 2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .uk {
+      background: linear-gradient(135deg, rgba(54, 114, 248, 0.1), rgba(90, 82, 200, 0.1));
+      border: 1px solid rgba(54, 114, 248, 0.3);
+    }
+
+    .us {
+      background: linear-gradient(135deg, rgba(121, 40, 202, 0.1), rgba(90, 82, 200, 0.1));
+      border: 1px solid rgba(121, 40, 202, 0.3);
+    }
+
+    .country-title {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .uk .country-title {
+      color: var(--primary);
+    }
+
+    .us .country-title {
+      color: var(--accent);
+    }
+
+    .feature {
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-title {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .summary {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background-color: rgba(90, 82, 200, 0.1);
+      border-radius: 8px;
+      border-left: 4px solid var(--primary);
+    }
+
+    .recommendation {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .rec-card {
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .uk-rec {
+      background: linear-gradient(135deg, rgba(54, 114, 248, 0.2), rgba(54, 114, 248, 0.05));
+      border: 1px solid rgba(54, 114, 248, 0.3);
+    }
+
+    .us-rec {
+      background: linear-gradient(135deg, rgba(121, 40, 202, 0.2), rgba(121, 40, 202, 0.05));
+      border: 1px solid rgba(121, 40, 202, 0.3);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 2rem 0;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .language-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .lang-btn {
+      background: var(--card-bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .lang-btn.active {
+      background: var(--primary);
+      color: white;
+    }
+
+    .lang-btn:hover:not(.active) {
+      background: var(--border);
+    }
+
+    @media (max-width: 768px) {
+
+      .comparison,
+      .recommendation {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="language-toggle">
+    <button class="lang-btn active" data-lang="zh">中文</button>
+    <button class="lang-btn" data-lang="en">English</button>
+  </div>
+
+  <div class="container">
+    <header>
+      <h1 id="page-title">英美公司注册对比</h1>
+      <p class="intro" id="page-subtitle">针对海外互联网业务的详细分析</p>
+    </header>
+
+    <div class="card">
+      <p id="intro-text"></p>
+    </div>
+
+    <h2 id="section-1-title"></h2>
+
+    <div class="comparison">
+      <div class="uk">
+        <h3 class="country-title" id="uk-title"></h3>
+
+        <div class="feature">
+          <p class="feature-title" id="uk-reg-fee-title"></p>
+          <p id="uk-reg-fee-content"></p>
+        </div>
+
+        <div class="feature">
+          <p class="feature-title" id="uk-address-title"></p>
+          <p id="uk-address-content"></p>
+        </div>
+
+        <div class="feature">
+          <p class="feature-title" id="uk-other-fees-title"></p>
+          <p id="uk-other-fees-content"></p>
+        </div>
+
+        <div class="summary">
+          <strong id="summary-label"></strong> <span id="uk-summary"></span>
+        </div>
+      </div>
+
+      <div class="us">
+        <h3 class="country-title" id="us-title"></h3>
+
+        <div class="feature">
+          <p class="feature-title" id="us-reg-fee-title"></p>
+          <p id="us-reg-fee-content"></p>
+        </div>
+
+        <div class="feature">
+          <p class="feature-title" id="us-address-title"></p>
+          <p id="us-address-content"></p>
+        </div>
+
+        <div class="feature">
+          <p class="feature-title" id="us-other-fees-title"></p>
+          <p id="us-other-fees-content"></p>
+        </div>
+
+        <div class="summary">
+          <strong id="summary-label-us"></strong> <span id="us-summary"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <p><strong id="conclusion-label"></strong></p>
+      <ul id="section-1-conclusion"></ul>
+    </div>
+
+    <h2 id="section-2-title"></h2>
+
+    <div class="comparison">
+      <div class="uk">
+        <h3 class="country-title" id="uk-tax-title"></h3>
+
+        <div class="feature">
+          <p class="feature-title" id="uk-income-tax-title"></p>
+          <p id="uk-income-tax-content"></p>
+        </div>
+
+        <div class="feature">
+          <p class="feature-title" id="uk-vat-title"></p>
+          <p id="uk-vat-content"></p>
+        </div>
+
+        <div class="feature">
+          <p class="feature-title" id="uk-double-tax-title"></p>
+          <p id="uk-double-tax-content"></p>
+        </div>
+
+        <div class="summary">
+          <strong id="summary-label-uk-tax"></strong> <span id="uk-tax-summary"></span>
+        </div>
+      </div>
+
+      <div class="us">
+        <h3 class="country-title" id="us-tax-title"></h3>
+
+        <div class="feature">
+          <p class="feature-title" id="us-income-tax-title"></p>
+          <p id="us-income-tax-content"></p>
+        </div>
+
+        <div class="feature">
+          <p class="feature-title" id="us-state-tax-title"></p>
+          <p id="us-state-tax-content"></p>
+        </div>
+
+        <div class="feature">
+          <p class="feature-title" id="us-sales-tax-title"></p>
+          <p id="us-sales-tax-content"></p>
+        </div>
+
+        <div class="feature">
+          <p class="feature-title" id="us-double-tax-title"></p>
+          <p id="us-double-tax-content"></p>
+        </div>
+
+        <div class="summary">
+          <strong id="summary-label-us-tax"></strong> <span id="us-tax-summary"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <p><strong id="conclusion-label-tax"></strong></p>
+      <ul id="section-2-conclusion"></ul>
+    </div>
+
+    <h2 id="section-3-title"></h2>
+
+    <div class="comparison">
+      <div class="uk">
+        <h3 class="country-title" id="uk-maintenance-title"></h3>
+
+        <div class="feature">
+          <p class="feature-title" id="uk-annual-report-title"></p>
+          <p id="uk-annual-report-content"></p>
+        </div>
+
+        <div class="feature">
+          <p class="feature-title" id="uk-accounting-title"></p>
+          <p id="uk-accounting-content"></p>
+        </div>
+
+        <div class="feature">
+          <p class="feature-title" id="uk-vat-filing-title"></p>
+          <p id="uk-vat-filing-content"></p>
+        </div>
+
+        <div class="summary">
+          <strong id="summary-label-uk-maintenance"></strong> <span id="uk-maintenance-summary"></span>
+        </div>
+      </div>
+
+      <div class="us">
+        <h3 class="country-title" id="us-maintenance-title"></h3>
+
+        <div class="feature">
+          <p class="feature-title" id="us-annual-report-title"></p>
+          <p id="us-annual-report-content"></p>
+        </div>
+
+        <div class="feature">
+          <p class="feature-title" id="us-accounting-title"></p>
+          <p id="us-accounting-content"></p>
+        </div>
+
+        <div class="summary">
+          <strong id="summary-label-us-maintenance"></strong> <span id="us-maintenance-summary"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <p><strong id="conclusion-label-maintenance"></strong></p>
+      <ul id="section-3-conclusion"></ul>
+    </div>
+
+    <h2 id="section-4-title"></h2>
+
+    <div class="card">
+      <div class="feature">
+        <p class="feature-title" id="appstore-title"></p>
+        <p id="appstore-content"></p>
+      </div>
+
+      <div class="feature">
+        <p class="feature-title" id="banking-title"></p>
+        <p id="banking-content"></p>
+      </div>
+
+      <div class="feature">
+        <p class="feature-title" id="ip-title"></p>
+        <p id="ip-content"></p>
+      </div>
+    </div>
+
+    <h2 id="section-5-title"></h2>
+
+    <div class="recommendation">
+      <div class="rec-card uk-rec">
+        <h3 id="uk-recommendation-title"></h3>
+        <p id="uk-recommendation-content"></p>
+      </div>
+
+      <div class="rec-card us-rec">
+        <h3 id="us-recommendation-title"></h3>
+        <p id="us-recommendation-content"></p>
+      </div>
+    </div>
+
+    <footer>
+      <p id="footer-disclaimer"></p>
+      <p id="footer-copyright"></p>
+    </footer>
+  </div>
+
+  <script>
+    const contentData = {
+      "zh": {
+        "pageTitle": "英美公司注册对比",
+        "pageSubtitle": "针对海外互联网业务的详细分析",
+        "introText": "想要注册一家海外公司，用于海外互联网相关业务的拓展。英国和美国是两个热门选择，以下将从注册成本、税务政策以及后续维护成本三个方面为您分析二者的优劣，帮助您做出选择。",
+        "section1": {
+          "title": "一、注册成本",
+          "uk": {
+            "title": "英国公司",
+            "regFee": {
+              "title": "注册费用",
+              "content": "英国公司注册成本较低，通常在 £12 至 £100 之间。在线注册费用最低（约 £12），若通过代理服务或邮寄方式注册，费用会稍高。"
+            },
+            "address": {
+              "title": "地址要求",
+              "content": "需要一个英国境内的注册地址。如果您没有当地地址，可以租用虚拟办公室服务，费用大约为每年 £50 至 £200。"
+            },
+            "otherFees": {
+              "title": "其他费用",
+              "content": "公司成立文件（如 Memorandum and Articles of Association）的费用通常在 £20 至 £50 之间。"
+            },
+            "summary": "英国公司注册的总成本较低，初次投入可能在 £100 至 £350 左右。"
+          },
+          "us": {
+            "title": "美国公司",
+            "regFee": {
+              "title": "注册费用",
+              "content": "美国公司注册费用因州而异。以特拉华州为例，注册 LLC（有限责任公司）的费用约为 $90，注册 C Corp（股份有限公司）的费用为 $89 加上 $50 的注册代理费。"
+            },
+            "address": {
+              "title": "地址要求",
+              "content": "需要一个美国境内的注册地址，可通过虚拟办公室服务解决，费用每年约 $100 至 $300。"
+            },
+            "otherFees": {
+              "title": "其他费用",
+              "content": "部分州可能有额外费用，如特拉华州的年度报告费（LLC 为 $300，C Corp 为 $225），但这属于后续维护成本。"
+            },
+            "summary": "美国公司注册成本因州而异，特拉华州初次注册总费用可能在 $200 至 $500 之间。"
+          },
+          "conclusion": [
+            "英国公司的注册成本更低，适合预算有限的创业者。",
+            "美国公司（以特拉华州为例）的注册费用稍高，但仍在合理范围内，且特拉华州因其商业友好性常被选择。"
+          ]
+        },
+        "section2": {
+          "title": "二、税务政策",
+          "uk": {
+            "title": "英国公司",
+            "incomeTax": {
+              "title": "企业所得税",
+              "content": "英国的企业所得税税率为 19%，适用于公司利润，税率相对较低且稳定。"
+            },
+            "vat": {
+              "title": "增值税（VAT）",
+              "content": "如果公司年销售额超过 £85,000（约合人民币 75 万元），需注册 VAT 并按 20% 的税率缴纳。对于 App Store 发行，收入主要来自海外，可能无需缴纳 VAT，具体需根据业务模式确认。"
+            },
+            "doubleTax": {
+              "title": "双重征税协定",
+              "content": "英国与中国签订了双重征税协定。若您将利润汇回中国，可避免双重征税，只需按两国协定补差额税款。"
+            },
+            "summary": "税务政策简单清晰，企业所得税较低，且有双重征税保护。"
+          },
+          "us": {
+            "title": "美国公司",
+            "incomeTax": {
+              "title": "联邦企业所得税",
+              "content": "联邦税率为 21%，略高于英国。LLC 可选择\"pass\-through\"税收，即利润直接归于股东个人税务，避免公司层面征税；C Corp 则需缴纳公司税，股东分红时可能面临双重征税。"
+            },
+            "stateTax": {
+              "title": "州税",
+              "content": "各州税率不同。例如加利福尼亚州对 LLC 征收每年 $800 的最低税（Franchise Tax），特拉华州无额外州所得税，较友好。"
+            },
+            "salesTax": {
+              "title": "销售税",
+              "content": "App Store 收入通常由苹果代扣税款，企业无需自行处理销售税。但若涉及其他业务，需根据州法收取并上交销售税。"
+            },
+            "doubleTax": {
+              "title": "双重征税",
+              "content": "与中国也有双重征税协定，但 C Corp 的双重征税风险需注意。"
+            },
+            "summary": "税务较复杂，LLC 可优化税收，C Corp 可能增加税负。"
+          },
+          "conclusion": [
+            "英国税务政策更简单，企业所得税较低，适合小型互联网业务。",
+            "美国税务因公司类型和州而异，LLC 在税收灵活性上占优，但 C Corp 可能面临双重征税。"
+          ]
+        },
+        "section3": {
+          "title": "三、后续维护成本",
+          "uk": {
+            "title": "英国公司",
+            "annualReport": {
+              "title": "年度报告",
+              "content": "需每年提交 Confirmation Statement，在线提交费用为 £13，邮寄提交为 £40。"
+            },
+            "accounting": {
+              "title": "会计和税务申报",
+              "content": "小型公司（年营业额低于 £10.2 百万）无需审计，但需提交年度账目和企业所得税申报表。聘请会计师费用约 £500 至 £1500/年，视业务规模而定。"
+            },
+            "vatFiling": {
+              "title": "VAT 申报",
+              "content": "若需缴纳 VAT，则需定期申报，增加少量成本。"
+            },
+            "summary": "年度维护成本较低，通常在 £500 至 £2000 之间。"
+          },
+          "us": {
+            "title": "美国公司",
+            "annualReport": {
+              "title": "年度报告",
+              "content": "以特拉华州为例，LLC 需支付 $300 的年度税，C Corp 为 $225。其他州（如加州）可能更高。"
+            },
+            "accounting": {
+              "title": "会计和税务申报",
+              "content": "需提交联邦税务申报表（LLC 用 Form 1065，C Corp 用 Form 1120），可能还需州级申报。会计费用约 $1000 至 $3000/年。"
+            },
+            "summary": "维护成本因州而异，特拉华州约为 $1000 至 $3500/年，高于英国。"
+          },
+          "conclusion": [
+            "英国公司维护成本较低，适合预算敏感的业务。",
+            "美国公司维护成本较高，尤其是特拉华州 LLC 的年度税和会计费用。"
+          ]
+        },
+        "section4": {
+          "title": "四、其他相关考虑",
+          "appstore": {
+            "title": "App Store 发行",
+            "content": "英国和美国公司均可轻松上架 App Store。美国公司因市场声誉可能更具优势，但英国公司在注册和维护成本上更经济。"
+          },
+          "banking": {
+            "title": "银行开户",
+            "content": "英国公司可通过 Wise 等在线银行开户，美国公司通常需美国本地账户，开户难度略高。"
+          },
+          "ip": {
+            "title": "知识产权保护",
+            "content": "美国法律体系对知识产权保护更强，适合互联网业务长期发展。"
+          }
+        },
+        "section5": {
+          "title": "五、综合建议",
+          "ukRecommendation": {
+            "title": "选择英国公司",
+            "content": "如果您希望降低初始和维护成本，且业务以欧洲市场为主，英国公司是更经济的选择。19% 的企业所得税和与中国间的双重征税协定也使其税务负担较轻。"
+          },
+          "usRecommendation": {
+            "title": "选择美国公司",
+            "content": "如果您重视市场声誉和知识产权保护，并计划深耕美国市场，可以选择美国公司（建议特拉华州 LLC，以避免双重征税）。但需接受较高的注册和维护成本。"
+          }
+        },
+        "footer": {
+          "disclaimer": "此信息仅供参考，具体决策请咨询专业法律和税务顾问。",
+          "copyright": "© 2025 HamGuy 版权所有"
+        },
+        "labels": {
+          "summary": "总结：",
+          "conclusion": "小结"
+        }
+      }, "en": {
+        "pageTitle": "UK vs US Company Registration Comparison",
+        "pageSubtitle": "Detailed Analysis for Overseas Internet Business",
+        "introText": "If you're looking to register an overseas company for internet-related business expansion, the UK and US are two popular choices. The following analysis compares their registration costs, tax policies, and maintenance costs to help you make an informed decision.",
+        "section1": {
+          "title": "I. Registration Costs",
+          "uk": {
+            "title": "UK Company",
+            "regFee": {
+              "title": "Registration Fee",
+              "content": "UK company registration costs are relatively low, typically between £12 and £100. Online registration is the cheapest (about £12), while registration through an agent or by mail costs slightly more."
+            },
+            "address": {
+              "title": "Address Requirements",
+              "content": "A registered address in the UK is required. If you don't have a local address, you can rent a virtual office service for approximately £50 to £200 per year."
+            },
+            "otherFees": {
+              "title": "Other Fees",
+              "content": "Company formation documents (such as Memorandum and Articles of Association) typically cost between £20 and £50."
+            },
+            "summary": "The total cost of UK company registration is relatively low, with an initial investment of around £100 to £350."
+          },
+          "us": {
+            "title": "US Company",
+            "regFee": {
+              "title": "Registration Fee",
+              "content": "US company registration fees vary by state. In Delaware, for example, registering an LLC (Limited Liability Company) costs about $90, while registering a C Corp (Corporation) costs $89 plus a $50 registered agent fee."
+            },
+            "address": {
+              "title": "Address Requirements",
+              "content": "A registered address in the US is required, which can be resolved through virtual office services at a cost of approximately $100 to $300 per year."
+            },
+            "otherFees": {
+              "title": "Other Fees",
+              "content": "Some states may have additional fees, such as annual report fees in Delaware (LLC: $300, C Corp: $225), but these are part of ongoing maintenance costs."
+            },
+            "summary": "US company registration costs vary by state, with Delaware initial registration fees totaling approximately $200 to $500."
+          },
+          "conclusion": [
+            "UK companies have lower registration costs, suitable for entrepreneurs with limited budgets.",
+            "US companies (particularly in Delaware) have slightly higher registration fees, but they remain reasonable, and Delaware is often chosen for its business-friendly environment."
+          ]
+        },
+        "section2": {
+          "title": "II. Tax Policies",
+          "uk": {
+            "title": "UK Company",
+            "incomeTax": {
+              "title": "Corporate Income Tax",
+              "content": "The UK corporate tax rate is 19%, which applies to company profits. This rate is relatively low and stable."
+            },
+            "vat": {
+              "title": "Value Added Tax (VAT)",
+              "content": "If annual sales exceed £85,000 (approximately ¥750,000), VAT registration is required with a tax rate of 20%. For App Store distributions, where income mainly comes from overseas, VAT may not be applicable depending on your business model."
+            },
+            "doubleTax": {
+              "title": "Double Taxation Agreement",
+              "content": "The UK has a double taxation agreement with China. If you repatriate profits to China, you can avoid double taxation and only pay the difference according to the agreement between the two countries."
+            },
+            "summary": "The tax policy is simple and clear, with low corporate income tax and double taxation protection."
+          },
+          "us": {
+            "title": "US Company",
+            "incomeTax": {
+              "title": "Federal Corporate Income Tax",
+              "content": "The federal tax rate is 21%, slightly higher than the UK. LLCs can choose 'pass-through' taxation, where profits are attributed directly to shareholders' personal taxes, avoiding corporate-level taxation. C Corps, however, must pay corporate tax and shareholders may face double taxation on dividends."
+            },
+            "stateTax": {
+              "title": "State Tax",
+              "content": "Tax rates vary by state. For example, California imposes a minimum annual tax of $800 (Franchise Tax) on LLCs, while Delaware has no additional state income tax, making it more favorable."
+            },
+            "salesTax": {
+              "title": "Sales Tax",
+              "content": "For App Store revenue, Apple typically withholds taxes, so businesses don't need to handle sales tax themselves. However, for other business activities, you may need to collect and remit sales tax according to state laws."
+            },
+            "doubleTax": {
+              "title": "Double Taxation",
+              "content": "There is also a double taxation agreement with China, but C Corps may face double taxation risks to be aware of."
+            },
+            "summary": "Taxation is more complex, with LLCs offering tax optimization, while C Corps may increase tax burdens."
+          },
+          "conclusion": [
+            "UK tax policies are simpler with lower corporate income tax, suitable for small internet businesses.",
+            "US taxation varies by company type and state; LLCs offer tax flexibility, but C Corps may face double taxation."
+          ]
+        },
+        "section3": {
+          "title": "III. Ongoing Maintenance Costs",
+          "uk": {
+            "title": "UK Company",
+            "annualReport": {
+              "title": "Annual Report",
+              "content": "You need to submit a Confirmation Statement annually, with an online submission fee of £13, or £40 for postal submission."
+            },
+            "accounting": {
+              "title": "Accounting and Tax Filing",
+              "content": "Small companies (with annual turnover below £10.2 million) do not require auditing but need to submit annual accounts and corporate tax returns. Accountant fees range from approximately £500 to £1500 per year, depending on business scale."
+            },
+            "vatFiling": {
+              "title": "VAT Filing",
+              "content": "If VAT registration is required, you'll need to file periodic returns, adding a small additional cost."
+            },
+            "summary": "Annual maintenance costs are relatively low, typically between £500 and £2000."
+          },
+          "us": {
+            "title": "US Company",
+            "annualReport": {
+              "title": "Annual Report",
+              "content": "In Delaware, for example, LLCs must pay an annual tax of $300, while C Corps pay $225. Other states (such as California) may have higher fees."
+            },
+            "accounting": {
+              "title": "Accounting and Tax Filing",
+              "content": "You'll need to submit federal tax returns (Form 1065 for LLCs, Form 1120 for C Corps), and possibly state-level filings. Accounting fees typically range from $1000 to $3000 per year."
+            },
+            "summary": "Maintenance costs vary by state, with Delaware costs ranging from approximately $1000 to $3500 per year, higher than the UK."
+          },
+          "conclusion": [
+            "UK companies have lower maintenance costs, suitable for budget-sensitive businesses.",
+            "US companies have higher maintenance costs, especially with Delaware LLC annual taxes and accounting fees."
+          ]
+        },
+        "section4": {
+          "title": "IV. Other Considerations",
+          "appstore": {
+            "title": "App Store Distribution",
+            "content": "Both UK and US companies can easily publish apps on the App Store. US companies may have an advantage in terms of market reputation, but UK companies are more economical in terms of registration and maintenance costs."
+          },
+          "banking": {
+            "title": "Banking",
+            "content": "UK companies can open accounts through online banks such as Wise, while US companies typically require a US local account, which is slightly more difficult to set up."
+          },
+          "ip": {
+            "title": "Intellectual Property Protection",
+            "content": "The US legal system offers stronger intellectual property protection, which is beneficial for long-term internet business development."
+          }
+        },
+        "section5": {
+          "title": "V. Recommendations",
+          "ukRecommendation": {
+            "title": "Choose a UK Company if:",
+            "content": "You want to minimize initial and maintenance costs, and your business primarily targets European markets. The 19% corporate tax rate and double taxation agreement with China also make the tax burden lighter."
+          },
+          "usRecommendation": {
+            "title": "Choose a US Company if:",
+            "content": "You value market reputation and intellectual property protection, and plan to focus on the US market. A Delaware LLC is recommended to avoid double taxation, but be prepared for higher registration and maintenance costs."
+          }
+        },
+        "footer": {
+          "disclaimer": "This information is for reference only. Please consult professional legal and tax advisors for specific decisions.",
+          "copyright": "© 2023 Overseas Company Registration Guide"
+        },
+        "labels": {
+          "summary": "Summary:",
+          "conclusion": "Conclusion"
+        }
+      }
+    }
+
+    // Function to set content based on language
+    function setContent(lang) {
+      const data = contentData[lang];
+
+      // Update page title and subtitle
+      document.getElementById('page-title').textContent = data.pageTitle;
+      document.getElementById('page-subtitle').textContent = data.pageSubtitle;
+      document.getElementById('intro-text').textContent = data.introText;
+
+      // Section 1: Registration Costs
+      document.getElementById('section-1-title').textContent = data.section1.title;
+
+      // UK Registration
+      document.getElementById('uk-title').textContent = data.section1.uk.title;
+      document.getElementById('uk-reg-fee-title').textContent = data.section1.uk.regFee.title;
+      document.getElementById('uk-reg-fee-content').textContent = data.section1.uk.regFee.content;
+      document.getElementById('uk-address-title').textContent = data.section1.uk.address.title;
+      document.getElementById('uk-address-content').textContent = data.section1.uk.address.content;
+      document.getElementById('uk-other-fees-title').textContent = data.section1.uk.otherFees.title;
+      document.getElementById('uk-other-fees-content').textContent = data.section1.uk.otherFees.content;
+      document.getElementById('summary-label').textContent = data.labels.summary;
+      document.getElementById('uk-summary').textContent = data.section1.uk.summary;
+
+      // US Registration
+      document.getElementById('us-title').textContent = data.section1.us.title;
+      document.getElementById('us-reg-fee-title').textContent = data.section1.us.regFee.title;
+      document.getElementById('us-reg-fee-content').textContent = data.section1.us.regFee.content;
+      document.getElementById('us-address-title').textContent = data.section1.us.address.title;
+      document.getElementById('us-address-content').textContent = data.section1.us.address.content;
+      document.getElementById('us-other-fees-title').textContent = data.section1.us.otherFees.title;
+      document.getElementById('us-other-fees-content').textContent = data.section1.us.otherFees.content;
+      document.getElementById('summary-label-us').textContent = data.labels.summary;
+      document.getElementById('us-summary').textContent = data.section1.us.summary;
+
+      // Section 1 Conclusion
+      document.getElementById('conclusion-label').textContent = data.labels.conclusion;
+      const section1Conclusion = document.getElementById('section-1-conclusion');
+      section1Conclusion.innerHTML = '';
+      data.section1.conclusion.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        section1Conclusion.appendChild(li);
+      });
+
+      // Section 2: Tax Policies
+      document.getElementById('section-2-title').textContent = data.section2.title;
+
+      // UK Tax
+      document.getElementById('uk-tax-title').textContent = data.section2.uk.title;
+      document.getElementById('uk-income-tax-title').textContent = data.section2.uk.incomeTax.title;
+      document.getElementById('uk-income-tax-content').textContent = data.section2.uk.incomeTax.content;
+      document.getElementById('uk-vat-title').textContent = data.section2.uk.vat.title;
+      document.getElementById('uk-vat-content').textContent = data.section2.uk.vat.content;
+      document.getElementById('uk-double-tax-title').textContent = data.section2.uk.doubleTax.title;
+      document.getElementById('uk-double-tax-content').textContent = data.section2.uk.doubleTax.content;
+      document.getElementById('summary-label-uk-tax').textContent = data.labels.summary;
+      document.getElementById('uk-tax-summary').textContent = data.section2.uk.summary;
+
+      // US Tax
+      document.getElementById('us-tax-title').textContent = data.section2.us.title;
+      document.getElementById('us-income-tax-title').textContent = data.section2.us.incomeTax.title;
+      document.getElementById('us-income-tax-content').textContent = data.section2.us.incomeTax.content;
+      document.getElementById('us-state-tax-title').textContent = data.section2.us.stateTax.title;
+      document.getElementById('us-state-tax-content').textContent = data.section2.us.stateTax.content;
+      document.getElementById('us-sales-tax-title').textContent = data.section2.us.salesTax.title;
+      document.getElementById('us-sales-tax-content').textContent = data.section2.us.salesTax.content;
+      document.getElementById('us-double-tax-title').textContent = data.section2.us.doubleTax.title;
+      document.getElementById('us-double-tax-content').textContent = data.section2.us.doubleTax.content;
+      document.getElementById('summary-label-us-tax').textContent = data.labels.summary;
+      document.getElementById('us-tax-summary').textContent = data.section2.us.summary;
+
+      // Section 2 Conclusion
+      document.getElementById('conclusion-label-tax').textContent = data.labels.conclusion;
+      const section2Conclusion = document.getElementById('section-2-conclusion');
+      section2Conclusion.innerHTML = '';
+      data.section2.conclusion.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        section2Conclusion.appendChild(li);
+      });
+
+      // Section 3: Maintenance Costs
+      document.getElementById('section-3-title').textContent = data.section3.title;
+
+      // UK Maintenance
+      document.getElementById('uk-maintenance-title').textContent = data.section3.uk.title;
+      document.getElementById('uk-annual-report-title').textContent = data.section3.uk.annualReport.title;
+      document.getElementById('uk-annual-report-content').textContent = data.section3.uk.annualReport.content;
+      document.getElementById('uk-accounting-title').textContent = data.section3.uk.accounting.title;
+      document.getElementById('uk-accounting-content').textContent = data.section3.uk.accounting.content;
+      document.getElementById('uk-vat-filing-title').textContent = data.section3.uk.vatFiling.title;
+      document.getElementById('uk-vat-filing-content').textContent = data.section3.uk.vatFiling.content;
+      document.getElementById('summary-label-uk-maintenance').textContent = data.labels.summary;
+      document.getElementById('uk-maintenance-summary').textContent = data.section3.uk.summary;
+
+      // US Maintenance
+      document.getElementById('us-maintenance-title').textContent = data.section3.us.title;
+      document.getElementById('us-annual-report-title').textContent = data.section3.us.annualReport.title;
+      document.getElementById('us-annual-report-content').textContent = data.section3.us.annualReport.content;
+      document.getElementById('us-accounting-title').textContent = data.section3.us.accounting.title;
+      document.getElementById('us-accounting-content').textContent = data.section3.us.accounting.content;
+      document.getElementById('summary-label-us-maintenance').textContent = data.labels.summary;
+      document.getElementById('us-maintenance-summary').textContent = data.section3.us.summary;
+
+      // Section 3 Conclusion
+      document.getElementById('conclusion-label-maintenance').textContent = data.labels.conclusion;
+      const section3Conclusion = document.getElementById('section-3-conclusion');
+      section3Conclusion.innerHTML = '';
+      data.section3.conclusion.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        section3Conclusion.appendChild(li);
+      });
+
+      // Section 4: Other Considerations
+      document.getElementById('section-4-title').textContent = data.section4.title;
+      document.getElementById('appstore-title').textContent = data.section4.appstore.title;
+      document.getElementById('appstore-content').textContent = data.section4.appstore.content;
+      document.getElementById('banking-title').textContent = data.section4.banking.title;
+      document.getElementById('banking-content').textContent = data.section4.banking.content;
+      document.getElementById('ip-title').textContent = data.section4.ip.title;
+      document.getElementById('ip-content').textContent = data.section4.ip.content;
+
+      // Section 5: Recommendations
+      document.getElementById('section-5-title').textContent = data.section5.title;
+      document.getElementById('uk-recommendation-title').textContent = data.section5.ukRecommendation.title;
+      document.getElementById('uk-recommendation-content').textContent = data.section5.ukRecommendation.content;
+      document.getElementById('us-recommendation-title').textContent = data.section5.usRecommendation.title;
+      document.getElementById('us-recommendation-content').textContent = data.section5.usRecommendation.content;
+
+      // Footer
+      document.getElementById('footer-disclaimer').textContent = data.footer.disclaimer;
+      document.getElementById('footer-copyright').textContent = data.footer.copyright;
+    }
+
+    // Initialize with Chinese language
+    setContent('zh');
+
+    // Add language toggle functionality
+    const langButtons = document.querySelectorAll('.lang-btn');
+    langButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        const lang = this.getAttribute('data-lang');
+        langButtons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+        setContent(lang);
+      });
+    });
+  </script>
+</body>
+
+</html>

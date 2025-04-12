@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPT-4o 图像生成风格指南</title>
+  <style>
+    :root {
+      --primary: #7928ca;
+      --secondary: #3672f8;
+      --accent: #ff4081;
+      --background: #0f1117;
+      --card-bg: #1a1e2c;
+      --text: #ffffff;
+      --text-secondary: #8f9cb3;
+      --border: #2a2f42;
+      --sidebar-width: 250px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+      position: relative;
+    }
+
+    .main-content {
+      transition: margin-left 0.3s ease;
+      margin-left: var(--sidebar-width);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding-top: 2rem;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin: 2rem 0 1rem;
+      color: var(--primary);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin: 1.5rem 0 1rem;
+      color: var(--secondary);
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    .intro {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      color: var(--text-secondary);
+      max-width: 800px;
+      margin: 0 auto 2rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .style-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .style-card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .style-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .style-image {
+      height: 200px;
+      background-color: #2a2f42;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .style-image::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, rgba(26, 30, 44, 0) 70%, rgba(26, 30, 44, 1) 100%);
+    }
+
+    .style-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .style-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .style-subtitle {
+      font-size: 1rem;
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+      color: var(--text-secondary);
+    }
+
+    .style-prompt {
+      padding: 1rem;
+      background-color: rgba(90, 82, 200, 0.1);
+      border-radius: 8px;
+      font-family: "PingFang SC", "Microsoft YaHei", monospace, sans-serif;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+      position: relative;
+      cursor: pointer;
+      height: calc(1.6em * 3 + 2rem);
+      display: block;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .style-prompt::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1.5em;
+      background: linear-gradient(to bottom, rgba(90, 82, 200, 0.01), rgba(26, 30, 44, 1));
+      pointer-events: none;
+    }
+
+    .prompt-tooltip {
+      display: none;
+    }
+
+    .style-prompt:hover .prompt-tooltip {
+      display: none;
+    }
+
+    .copy-btn {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      align-self: flex-end;
+      margin-top: auto;
+    }
+
+    .copy-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .tabs {
+      display: flex;
+      margin-bottom: 2rem;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+      scrollbar-width: thin;
+    }
+
+    .tab {
+      padding: 0.8rem 1.5rem;
+      background-color: var(--card-bg);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-right: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .tab.active {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border-color: transparent;
+    }
+
+    .tab:hover:not(.active) {
+      background-color: rgba(42, 47, 66, 0.8);
+      color: var(--text);
+    }
+
+    .search-container {
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      background-color: var(--card-bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .search-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(121, 40, 202, 0.3);
+    }
+
+    .tooltip {
+      position: absolute;
+      background-color: #333;
+      color: white;
+      padding: 0.5rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .tooltip.show {
+      opacity: 1;
+    }
+
+    section {
+      margin-bottom: 4rem;
+      scroll-margin-top: 2rem;
+    }
+
+    .scene-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .scene-card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .scene-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .scene-content {
+      padding: 1.5rem;
+    }
+
+    .scene-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+    }
+
+    .scene-title i {
+      margin-right: 0.8rem;
+      color: var(--primary);
+    }
+
+    .scene-description {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .scene-examples {
+      background-color: rgba(90, 82, 200, 0.1);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+
+    .scene-examples h4 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .examples-list {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      color: var(--text-secondary);
+    }
+
+    .examples-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    .tips-list {
+      list-style-position: inside;
+      margin-bottom: 1rem;
+      padding-left: 1rem;
+    }
+
+    .tips-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding: 2rem 0;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* 侧边栏样式 */
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: var(--sidebar-width);
+      height: 100%;
+      background-color: var(--card-bg);
+      border-right: 1px solid var(--border);
+      overflow-y: auto;
+      z-index: 100;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem 0;
+      transition: transform 0.3s ease;
+    }
+
+    .sidebar-header {
+      padding: 0 1.5rem 1.5rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+    }
+
+    .sidebar-logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+
+    .sidebar-menu {
+      list-style-type: none;
+    }
+
+    .sidebar-menu li {
+      margin-bottom: 0.5rem;
+    }
+
+    .sidebar-menu-item {
+      display: flex;
+      align-items: center;
+      padding: 0.8rem 1.5rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .sidebar-menu-item:hover {
+      background-color: rgba(90, 82, 200, 0.1);
+      color: var(--text);
+    }
+
+    .sidebar-menu-item.active {
+      background-color: rgba(121, 40, 202, 0.2);
+      color: var(--text);
+      border-left: 3px solid var(--primary);
+    }
+
+    .sidebar-menu-item i {
+      margin-right: 0.8rem;
+      width: 20px;
+      text-align: center;
+    }
+
+    .sidebar-submenu {
+      list-style-type: none;
+      padding-left: 1rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .sidebar-submenu.open {
+      max-height: 500px;
+      /* 足够大的高度以显示所有子菜单 */
+    }
+
+    .sidebar-submenu-item {
+      display: block;
+      padding: 0.6rem 1.5rem 0.6rem 2.5rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .sidebar-submenu-item:hover {
+      background-color: rgba(90, 82, 200, 0.05);
+      color: var(--text);
+    }
+
+    .sidebar-submenu-item.active {
+      color: var(--primary);
+    }
+
+    .toggle-sidebar {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 101;
+      display: none;
+    }
+
+    @media (max-width: 992px) {
+      .sidebar {
+        transform: translateX(-100%);
+      }
+
+      .main-content {
+        margin-left: 0;
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
+      }
+
+      .toggle-sidebar {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .style-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .scene-container {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+    }
+
+    /* 更新气泡样式 */
+    .global-popover {
+      position: fixed;
+      background-color: var(--card-bg);
+      color: var(--text);
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+      font-family: monospace, "PingFang SC", "Microsoft YaHei";
+      font-size: 0.9rem;
+      max-width: 400px;
+      border: 1px solid var(--primary);
+      /* 使用主题色作为边框 */
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      line-height: 1.6;
+      pointer-events: none;
+      display: none;
+      animation: fadeIn 0.2s ease;
+    }
+
+    /* 添加三角形指示器 */
+    .global-popover::after,
+    .global-popover::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+    }
+
+    /* 底部三角形（当气泡在上方时） */
+    .global-popover.position-top::after {
+      bottom: -10px;
+      left: 20px;
+      border-width: 10px 10px 0 10px;
+      border-color: var(--card-bg) transparent transparent transparent;
+    }
+
+    .global-popover.position-top::before {
+      bottom: -12px;
+      left: 19px;
+      border-width: 11px 11px 0 11px;
+      border-color: var(--primary) transparent transparent transparent;
+    }
+
+    /* 顶部三角形（当气泡在下方时） */
+    .global-popover.position-bottom::after {
+      top: -10px;
+      left: 20px;
+      border-width: 0 10px 10px 10px;
+      border-color: transparent transparent var(--card-bg) transparent;
+    }
+
+    .global-popover.position-bottom::before {
+      top: -12px;
+      left: 19px;
+      border-width: 0 11px 11px 11px;
+      border-color: transparent transparent var(--primary) transparent;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <!-- 侧边栏切换按钮 -->
+  <div class="toggle-sidebar" id="toggleSidebar">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- 侧边栏 -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">GPT-4o 图像指南</div>
+      <div class="sidebar-desc">探索AI生成图像的无限可能</div>
+    </div>
+
+    <ul class="sidebar-menu">
+      <li>
+        <a href="#top" class="sidebar-menu-item active">
+          <i class="fas fa-home"></i>
+          <span>首页</span>
+        </a>
+      </li>
+      <li>
+        <a href="#styles" class="sidebar-menu-item">
+          <i class="fas fa-palette"></i>
+          <span>风格分类</span>
+        </a>
+      </li>
+      <li>
+        <div class="sidebar-menu-item" id="stylesCategoryMenu">
+          <i class="fas fa-layer-group"></i>
+          <span>风格类别</span>
+          <i class="fas fa-chevron-down ml-auto"></i>
+        </div>
+        <ul class="sidebar-submenu" id="stylesCategorySubmenu">
+          <li><a href="#" class="sidebar-submenu-item" data-category="all">全部风格</a></li>
+          <li><a href="#" class="sidebar-submenu-item" data-category="classic">经典艺术</a></li>
+          <li><a href="#" class="sidebar-submenu-item" data-category="modern">现代创意</a></li>
+          <li><a href="#" class="sidebar-submenu-item" data-category="character">角色设计</a></li>
+          <li><a href="#" class="sidebar-submenu-item" data-category="scene">场景设计</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#scenes" class="sidebar-menu-item">
+          <i class="fas fa-pen-fancy"></i>
+          <span>应用场景</span>
+        </a>
+      </li>
+      <li>
+        <a href="#tips" class="sidebar-menu-item">
+          <i class="fas fa-lightbulb"></i>
+          <span>发现新玩法</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://justin3go.com/posts/2025/04/11-gpt-4o-image-generation-guide" class="sidebar-menu-item" target="_blank">
+          <i class="fas fa-external-link-alt"></i>
+          <span>原文链接</span>
+        </a>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- 主要内容 -->
+  <div class="main-content">
+    <div class="container">
+      <header id="top">
+        <h1>GPT-4o 图像生成风格指南</h1>
+        <p class="intro">本指南收集了GPT-4o图像生成的多种独特风格和提示词，帮助您创造出精美的AI生成图像。从经典艺术风格到现代创意设计，探索无限可能。</p>
+      </header>
+
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="搜索风格或关键词..." id="searchInput">
+      </div>
+
+      <section id="styles">
+        <div class="tabs" id="styleCategories">
+          <div class="tab active" data-category="all">全部风格</div>
+          <div class="tab" data-category="classic">经典艺术</div>
+          <div class="tab" data-category="modern">现代创意</div>
+          <div class="tab" data-category="character">角色设计</div>
+          <div class="tab" data-category="scene">场景设计</div>
+        </div>
+
+        <div class="style-grid" id="styleGrid">
+          <!-- 动态生成的风格卡片将在这里显示 -->
+        </div>
+      </section>
+
+      <section id="scenes">
+        <h2>应用场景</h2>
+        <p>GPT-4o的图像生成能力可以应用于多种实际场景，以下是一些常见应用及其详细说明：</p>
+
+        <div class="scene-container" id="sceneContainer">
+          <!-- 动态生成的应用场景将在这里显示 -->
+        </div>
+      </section>
+
+      <section id="tips">
+        <h2>如何发现新玩法</h2>
+        <div class="card">
+          <p>想要不断发现GPT-4o的新玩法？以下是四个实用秘籍：</p>
+
+          <ul class="tips-list">
+            <li><strong>利用搜索引擎</strong>：通过特定关键词搜索，发现其他用户分享的成功案例和提示词。例如搜索"GPT-4o 水彩画风格"、"GPT-4o 生成表情包"等。</li>
+            <li><strong>关注社交媒体</strong>：在Twitter、Reddit等平台关注AI生成内容的讨论组和博主。一些热门的标签如#GPT4o、#AIart、#PromptEngineering等可以找到最新的创意。</li>
+            <li><strong>专业平台探索</strong>：访问专门收集和分享AI生成内容的网站，如PromptBase、Lexica等，学习最新技巧。这些平台通常有专门的GPT-4o图像生成专区。</li>
+            <li><strong>反向分析法</strong>：看到优秀作品时，尝试分析其可能使用的提示词，然后进行实验和改进。可以关注图像的风格特点、构图元素、色彩方案等，逆向推导出可能使用的关键提示词。</li>
+          </ul>
+
+          <p>通过这些方法，您可以不断提升提示词使用技巧，创造出更加独特的视觉效果。同时，也欢迎分享您的成功案例，形成正向交流循环。</p>
+        </div>
+      </section>
+
+      <footer>
+        <p>数据来源：<a href="https://justin3go.com/posts/2025/04/11-gpt-4o-image-generation-guide" target="_blank" style="color: var(--secondary);">Justin3go的GPT-4o图像生成指南</a></p>
+        <p>© 2025 HamGuy 版权所有</p>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    // 风格数据
+    const styles = [
+      {
+        id: 1,
+        name: "吉卜力动画风格",
+        englishName: "Studio Ghibli Style",
+        prompt: "Redraw in the style of Ghibli anime",
+        description: "将照片重绘成吉卜力动画风格",
+        image: "https://pic1.zhimg.com/v2-28c2a96231ebdcaa62dca5cea9007b29_r.jpg",
+        category: "classic"
+      },
+      {
+        id: 2,
+        name: "赛博朋克风格",
+        englishName: "Cyberpunk Style",
+        prompt: "A rainy street in a future city, full of neon signs, cyberpunk style.",
+        description: "一个充满霓虹灯的未来都市雨夜街景，赛博朋克风格",
+        image: "https://img.zcool.cn/community/01fb0d5e571d27a80120a895c6a356.jpg",
+        category: "modern"
+      },
+      {
+        id: 3,
+        name: "中式婚礼",
+        englishName: "Chinese Wedding",
+        prompt: "将照片里的两个人转换成Q版 3D人物，中式古装婚礼，大红颜色，背景\"囍\"字剪纸风格图案...",
+        description: "经典中式婚礼场景，红色主调，传统服饰",
+        image: "https://img95.699pic.com/photo/50055/5642.jpg_wh860.jpg",
+        category: "scene"
+      },
+      {
+        id: 4,
+        name: "手绘简笔画风格",
+        englishName: "Hand-drawn Sketch Style",
+        prompt: "先把图片人物变成手绘简笔画风格 然后把简笔画按照吐舌头、微笑、皱眉、惊讶、思考、眨眼生成一系列表情包",
+        description: "简约手绘风格，适合制作表情包",
+        image: "https://img.zcool.cn/community/01ada95d17e160a8012051cdb52226.jpg@1280w_1l_2o_100sh.jpg",
+        category: "modern"
+      },
+      {
+        id: 5,
+        name: "手绘插画风格",
+        englishName: "Hand-drawn Illustration Style",
+        prompt: "Create concise, visually structured notes on the topic... (简略提示词)",
+        description: "手绘笔记风格，包含结构化内容和插图",
+        image: "https://img.zcool.cn/community/031j16158yom4bxlzqkwd63230.jpg",
+        category: "modern"
+      },
+      {
+        id: 6,
+        name: "3D Q版风格",
+        englishName: "3D Chibi Style",
+        prompt: "将场景中的角色转化为3D Q版风格，同时保持原本的场景布置和服装造型不变。比例 2:3",
+        description: "可爱的3D Q版人物风格",
+        image: "https://pic2.zhimg.com/v2-dfbad8152fc920efbe11f0f1e095e2bb_r.jpg",
+        category: "character"
+      },
+      {
+        id: 7,
+        name: "我的世界像素风格",
+        englishName: "Minecraft Voxel Style",
+        prompt: "Make this in minecraft voxel style",
+        description: "方块像素风，我的世界游戏风格",
+        image: "https://img.zcool.cn/community/031exizejm5u4000002iw1f6870.jpg",
+        category: "modern"
+      },
+      {
+        id: 8,
+        name: "麦金塔电脑",
+        englishName: "Macintosh Computer",
+        prompt: "Create an image in pixel art style of an original Macintosh computer with keyboard...",
+        description: "复古麦金塔电脑像素风格",
+        image: "https://img95.699pic.com/photo/40094/7864.jpg_wh860.jpg",
+        category: "scene"
+      },
+      {
+        id: 9,
+        name: "3D Q版弥勒佛形象",
+        englishName: "3D Chibi Maitreya Buddha",
+        prompt: "3D Q版弥勒佛形象",
+        description: "可爱的3D弥勒佛形象",
+        image: "https://pic2.zhimg.com/v2-3a7fd743e53e9ce4dd38a11ec80f60c4_r.jpg",
+        category: "character"
+      },
+      {
+        id: 10,
+        name: "3D手办风格",
+        englishName: "3D Figure Style",
+        prompt: "转换为3D手办风格",
+        description: "精致的3D模型手办风格",
+        image: "https://img.zcool.cn/community/031wdyplfngz76000002iw1f9547.jpg",
+        category: "character"
+      },
+      {
+        id: 11,
+        name: "工作室风格",
+        englishName: "Studio Photography Style",
+        prompt: "将右边的人物风格化为左边的图像。人物应该稍微转身，像左侧照片中的人一样。穿着黑色衬衫。被柔和的工作室灯光照亮，背景为深色，创造出焦外效果，突出显示如面部纹理或细纹等细节。他们的目光反射出平静，凝视着远方。肖像摄影。使用 Sony Alpha A7 III 和 f/2 镜头拍摄。照片真实感，8k 分辨率。方形画幅比例（1:1）。",
+        description: "专业摄影棚人像摄影风格",
+        image: "https://img.zcool.cn/community/0310d3157nnxqk000002iw1f4467.jpg",
+        category: "scene"
+      },
+      {
+        id: 12,
+        name: "APP图标",
+        englishName: "App Icon",
+        prompt: "Create a 3D-style chibi app icon character with a cute, toy-like appearance...(简略提示词)",
+        description: "3D风格应用图标设计",
+        image: "https://img.zcool.cn/community/031jdjtmjjvjk000002iw1fc047.jpg",
+        category: "modern"
+      },
+      {
+        id: 13,
+        name: "手绘高亮信息卡片",
+        englishName: "Hand-drawn Highlighted Info Card",
+        prompt: "创作一张手绘风格的信息图卡片，比例为9:16竖版...(简略提示词)",
+        description: "手绘风格的信息卡片，带高亮元素",
+        image: "https://img.zcool.cn/community/031g19wzbkcoa000002iw1f2930.jpg",
+        category: "modern"
+      },
+      {
+        id: 14,
+        name: "蒸汽波风格",
+        englishName: "Vaporwave Style",
+        prompt: "Redo this image in the Vaporwave style, neon pinks and purples, chrome textures...",
+        description: "霓虹粉紫色，80年代未来复古美学",
+        image: "https://pic3.zhimg.com/v2-aef3fad0856618c89586a68cdeb7d08b_r.jpg",
+        category: "modern"
+      },
+      {
+        id: 15,
+        name: "像素艺术风格",
+        englishName: "Pixel Art Style",
+        prompt: "请生成一张8-bit像素风格的游戏场景",
+        description: "复古像素游戏风格",
+        image: "https://img.zcool.cn/community/01296b5cfed20ea801208f8b3178c7.jpg",
+        category: "classic"
+      },
+      {
+        id: 16,
+        name: "水彩画风格",
+        englishName: "Watercolor Style",
+        prompt: "Turn it into Hand-Painted Watercolor.",
+        description: "手绘水彩画效果",
+        image: "https://img.zcool.cn/community/031jvnmddjz1a000002iw1f5231.jpg",
+        category: "classic"
+      },
+      {
+        id: 17,
+        name: "印斯茅斯阴影笔记",
+        englishName: "Innsmouth Shadow Notes",
+        prompt: "Generate an image with an aspect ratio of 2:3 and use English for the text...(简略提示词)",
+        description: "类似于个人笔记本拼贴风格",
+        image: "https://img.zcool.cn/community/031fqppj8jwok000002iw1f7773.jpg",
+        category: "modern"
+      },
+      {
+        id: 18,
+        name: "油画风格",
+        englishName: "Oil Painting Style",
+        prompt: "A peaceful European village at sunset, in oil painting style.",
+        description: "经典油画效果",
+        image: "https://img.zcool.cn/community/031xrsfejf2ag000002iw1f8932.jpg",
+        category: "classic"
+      },
+      {
+        id: 19,
+        name: "美式漫画风格",
+        englishName: "Comic Book Style",
+        prompt: "A masked hero jumping from a rooftop, comic book style with bold outlines and dialogue bubbles.",
+        description: "美漫风格，粗线条轮廓和对白气泡",
+        image: "https://img.zcool.cn/community/0103b25e4dba97a80120a8958f3d7e.jpg",
+        category: "classic"
+      },
+      {
+        id: 20,
+        name: "日系动漫风格",
+        englishName: "Anime Style",
+        prompt: "Turn it into Anime style.",
+        description: "日本动画风格",
+        image: "https://img.zcool.cn/community/031yk9sxfuxuw000002iw1f3270.jpg",
+        category: "classic"
+      },
+      {
+        id: 21,
+        name: "浮世绘风格",
+        englishName: "Ukiyo-e Style",
+        prompt: "将此侦探电影场景转为传统日本浮世绘版画风格，保留戏剧性阴影和人物表情，适应传统颜料调色板。",
+        description: "传统日本浮世绘版画风格",
+        image: "https://pic3.zhimg.com/v2-4a12d8aaa0a1a45b8fc0c48f1e171c1e_r.jpg",
+        category: "classic"
+      },
+      {
+        id: 22,
+        name: "超现实主义/抽象构图",
+        englishName: "Surreal/Abstract Composition",
+        prompt: "创建一个圆形图像，包含12个对象的螺旋排列，背景为深空，包括水晶沙漏、机械蝴蝶等。",
+        description: "超现实或抽象艺术构图",
+        image: "https://img.zcool.cn/community/031dzwspgcvbk000002iw1f6574.jpg",
+        category: "modern"
+      }
+    ];
+
+    // 应用场景详细数据
+    const sceneDetails = [
+      {
+        id: 1,
+        name: "品牌设计与营销视觉",
+        icon: "fas fa-ad",
+        description: "为品牌创建独特的视觉形象，提升市场影响力和品牌识别度。",
+        examples: [
+          "公司Logo设计：使用抽象构图风格创建现代感品牌标识",
+          "产品包装设计：将产品外观以3D手办风格呈现，增强产品吸引力",
+          "社交媒体营销图：使用蒸汽波风格设计抢眼的促销海报",
+          "品牌故事插图：用吉卜力风格讲述品牌创立故事，增强情感连接"
+        ]
+      },
+      {
+        id: 2,
+        name: "头像生成与个人形象",
+        icon: "fas fa-user-circle",
+        description: "创建个性化的个人头像和数字形象，用于社交媒体、游戏或职业网络。",
+        examples: [
+          "社交媒体头像：使用3D Q版风格创建可爱个性的自画像",
+          "专业平台形象：用工作室风格打造专业商务形象",
+          "游戏角色头像：采用像素艺术风格创建复古游戏风格头像",
+          "个人品牌标识：结合多种风格元素，创建独特的个人标志"
+        ]
+      },
+      {
+        id: 3,
+        name: "儿童绘本插图",
+        icon: "fas fa-book-open",
+        description: "为儿童读物创作生动有趣的插图，激发孩子们的想象力和阅读兴趣。",
+        examples: [
+          "童话故事插图：用吉卜力动画风格创作梦幻场景",
+          "教育读物配图：采用手绘简笔画风格制作简单易懂的说明图",
+          "互动绘本元素：使用3D Q版风格设计可爱的角色形象",
+          "季节性主题插画：以水彩画风格呈现四季变化的自然场景"
+        ]
+      },
+      {
+        id: 4,
+        name: "产品原型与概念设计",
+        icon: "fas fa-drafting-compass",
+        description: "快速生成产品概念图和设计原型，帮助可视化创意并获取反馈。",
+        examples: [
+          "手机应用界面：使用现代创意风格设计APP界面原型",
+          "产品外观概念图：以3D手办风格展示产品立体效果",
+          "包装设计测试：尝试不同风格的包装设计并比较效果",
+          "智能设备概念图：用未来科技风格呈现智能家居产品愿景"
+        ]
+      },
+      {
+        id: 5,
+        name: "插画创作与艺术设计",
+        icon: "fas fa-paint-brush",
+        description: "创作独特的艺术作品和插画，用于个人创作或商业项目。",
+        examples: [
+          "主题插画集：围绕特定主题创作一系列风格统一的插画",
+          "艺术展览作品：使用油画或超现实主义风格创作艺术品",
+          "商业插画：为商业项目定制符合品牌调性的插图",
+          "角色设计：设计独特的人物形象，可用于漫画、游戏等"
+        ]
+      },
+      {
+        id: 6,
+        name: "室内设计与装修布局",
+        icon: "fas fa-couch",
+        description: "生成室内空间的概念图和装修方案，帮助可视化设计构想。",
+        examples: [
+          "家居空间规划：创建不同风格的室内设计方案",
+          "色彩搭配测试：快速生成不同配色方案的室内效果图",
+          "家具摆放预览：可视化不同家具布局的整体效果",
+          "装修风格参考：生成多种装修风格的参考图像"
+        ]
+      },
+      {
+        id: 7,
+        name: "电影分镜与情节板",
+        icon: "fas fa-film",
+        description: "为影视作品创建分镜头脚本和情节板，帮助规划拍摄和视觉叙事。",
+        examples: [
+          "场景概念图：使用不同风格展示关键场景的视觉效果",
+          "角色动作序列：生成角色动作和表情的连续画面",
+          "特效场景预览：创建特效场景的概念图以指导后期制作",
+          "镜头转场设计：设计创意转场效果的视觉示意"
+        ]
+      },
+      {
+        id: 8,
+        name: "社交媒体封面图",
+        icon: "fas fa-share-alt",
+        description: "创建吸引人的社交媒体封面和帖子图像，提高内容曝光度。",
+        examples: [
+          "YouTube缩略图：设计醒目的视频缩略图提高点击率",
+          "博客文章配图：创建与文章主题相符的插图",
+          "社交媒体主题背景：为个人或品牌账号设计统一风格的背景",
+          "活动宣传图：为线上线下活动设计宣传海报"
+        ]
+      },
+      {
+        id: 9,
+        name: "游戏角色设定与草图",
+        icon: "fas fa-gamepad",
+        description: "设计游戏角色、场景和道具的概念图，为游戏开发提供视觉参考。",
+        examples: [
+          "角色设计：创建不同风格的游戏角色形象",
+          "道具和武器：设计游戏中的道具、武器和装备",
+          "游戏场景：构思游戏中的场景和环境",
+          "UI元素：设计游戏界面元素和图标"
+        ]
+      },
+      {
+        id: 10,
+        name: "视觉风格转换与图像混合",
+        icon: "fas fa-sync-alt",
+        description: "将现有图像转换为不同的艺术风格，或混合多种风格创造新效果。",
+        examples: [
+          "照片艺术化：将普通照片转换为油画、水彩等艺术风格",
+          "风格融合：将两种不同风格混合创造新的视觉效果",
+          "时代风格转换：将现代图像转换为复古或未来风格",
+          "文化艺术重解读：用不同文化艺术风格重新诠释经典图像"
+        ]
+      },
+      {
+        id: 11,
+        name: "教学演示与图示说明",
+        icon: "fas fa-chalkboard-teacher",
+        description: "创建教学材料和说明图，使复杂概念更易于理解。",
+        examples: [
+          "概念解释图：使用手绘插画风格简化复杂概念",
+          "流程图与信息图：设计清晰的步骤说明和数据可视化",
+          "科学原理插图：将抽象科学原理可视化",
+          "操作指南：创建直观的产品使用指南和说明书"
+        ]
+      }
+    ];
+
+    // 初始化风格卡片
+    function initializeStyleCards() {
+      const styleGrid = document.getElementById('styleGrid');
+
+      styles.forEach(style => {
+        const styleCard = document.createElement('div');
+        styleCard.className = 'style-card';
+        styleCard.setAttribute('data-category', style.category);
+
+        styleCard.innerHTML = `
+<div class="style-image" style="background-image: url('${style.image}')"></div>
+<div class="style-content">
+  <div class="style-title">${style.name}</div>
+  <div class="style-subtitle">${style.englishName}</div>
+  <p>${style.description}</p>
+  <div class="style-prompt">
+    ${style.prompt}
+    <div class="prompt-tooltip">${style.prompt}</div>
+  </div>
+  <button class="copy-btn" data-prompt="${style.prompt}">复制提示词</button>
+</div>
+`;
+
+        styleGrid.appendChild(styleCard);
+      });
+
+      // 添加复制按钮功能
+      document.querySelectorAll('.copy-btn').forEach(button => {
+        button.addEventListener('click', function () {
+          const prompt = this.getAttribute('data-prompt');
+          navigator.clipboard.writeText(prompt)
+            .then(() => {
+              const tooltip = document.createElement('div');
+              tooltip.className = 'tooltip';
+              tooltip.textContent = '已复制!';
+              this.appendChild(tooltip);
+
+              setTimeout(() => {
+                tooltip.classList.add('show');
+              }, 10);
+
+              setTimeout(() => {
+                tooltip.classList.remove('show');
+                setTimeout(() => {
+                  tooltip.remove();
+                }, 300);
+              }, 2000);
+            })
+            .catch(err => {
+              console.error('复制失败: ', err);
+            });
+        });
+      });
+    }
+
+    // 初始化应用场景
+    function initializeScenes() {
+      const sceneContainer = document.getElementById('sceneContainer');
+
+      sceneDetails.forEach(scene => {
+        const sceneCard = document.createElement('div');
+        sceneCard.className = 'scene-card';
+
+        let examplesHTML = '';
+        scene.examples.forEach(example => {
+          examplesHTML += `<li>${example}</li>`;
+        });
+
+        sceneCard.innerHTML = `
+          <div class="scene-content">
+            <div class="scene-title">
+              <i class="${scene.icon}"></i>
+              ${scene.name}
+            </div>
+            <div class="scene-description">${scene.description}</div>
+            <div class="scene-examples">
+              <h4>应用示例：</h4>
+              <ul class="examples-list">
+                ${examplesHTML}
+              </ul>
+            </div>
+          </div>
+        `;
+
+        sceneContainer.appendChild(sceneCard);
+      });
+    }
+
+    // 搜索功能
+    function setupSearch() {
+      const searchInput = document.getElementById('searchInput');
+
+      searchInput.addEventListener('input', function () {
+        const searchTerm = this.value.toLowerCase();
+        const styleCards = document.querySelectorAll('.style-card');
+
+        styleCards.forEach(card => {
+          const title = card.querySelector('.style-title').textContent.toLowerCase();
+          const subtitle = card.querySelector('.style-subtitle').textContent.toLowerCase();
+          const description = card.querySelector('p').textContent.toLowerCase();
+          const prompt = card.querySelector('.style-prompt').textContent.toLowerCase();
+
+          if (title.includes(searchTerm) || subtitle.includes(searchTerm) ||
+            description.includes(searchTerm) || prompt.includes(searchTerm)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    }
+
+    // 标签页切换功能
+    function setupTabs() {
+      const tabs = document.querySelectorAll('.tab');
+      const submenuItems = document.querySelectorAll('.sidebar-submenu-item');
+
+      // 主标签页切换
+      tabs.forEach(tab => {
+        tab.addEventListener('click', function () {
+          const category = this.getAttribute('data-category');
+          activateCategory(category, tabs, submenuItems);
+        });
+      });
+
+      // 侧边栏子菜单切换
+      submenuItems.forEach(item => {
+        item.addEventListener('click', function (e) {
+          e.preventDefault();
+          const category = this.getAttribute('data-category');
+          activateCategory(category, tabs, submenuItems);
+        });
+      });
+    }
+
+    // 激活指定分类
+    function activateCategory(category, tabs, submenuItems) {
+      // 更新主标签页
+      tabs.forEach(t => t.classList.remove('active'));
+      tabs.forEach(t => {
+        if (t.getAttribute('data-category') === category) {
+          t.classList.add('active');
+        }
+      });
+
+      // 更新侧边栏
+      submenuItems.forEach(item => item.classList.remove('active'));
+      submenuItems.forEach(item => {
+        if (item.getAttribute('data-category') === category) {
+          item.classList.add('active');
+        }
+      });
+
+      // 过滤卡片
+      const styleCards = document.querySelectorAll('.style-card');
+      styleCards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // 设置侧边栏交互
+    function setupSidebar() {
+      const toggleSidebar = document.getElementById('toggleSidebar');
+      const sidebar = document.getElementById('sidebar');
+      const stylesCategoryMenu = document.getElementById('stylesCategoryMenu');
+      const stylesCategorySubmenu = document.getElementById('stylesCategorySubmenu');
+
+      // 侧边栏切换按钮
+      toggleSidebar.addEventListener('click', function () {
+        sidebar.classList.toggle('open');
+      });
+
+      // 子菜单展开/收起
+      stylesCategoryMenu.addEventListener('click', function () {
+        stylesCategorySubmenu.classList.toggle('open');
+        const icon = this.querySelector('.fa-chevron-down');
+        if (icon) {
+          icon.classList.toggle('fa-chevron-up');
+          icon.classList.toggle('fa-chevron-down');
+        }
+      });
+
+      // 侧边栏菜单项点击
+      const menuItems = document.querySelectorAll('.sidebar-menu-item');
+      menuItems.forEach(item => {
+        if (!item.id) { // 跳过有ID的元素，因为那些有特殊处理
+          item.addEventListener('click', function () {
+            menuItems.forEach(mi => mi.classList.remove('active'));
+            this.classList.add('active');
+          });
+        }
+      });
+    }
+
+    // 平滑滚动功能
+    function setupSmoothScroll() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+
+            // 更新侧边栏活动状态
+            document.querySelectorAll('.sidebar-menu-item').forEach(item => {
+              item.classList.remove('active');
+            });
+            this.classList.add('active');
+          }
+        });
+      });
+    }
+
+    function setupScrollSpy() {
+      // 获取所有主要部分和对应的菜单项
+      const sections = document.querySelectorAll('section, header');
+      const menuItems = document.querySelectorAll('.sidebar-menu-item');
+
+      // 创建映射表以存储部分ID和对应的菜单项
+      const sectionMenuMap = {};
+      menuItems.forEach(item => {
+        const href = item.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const targetId = href.substring(1);
+          sectionMenuMap[targetId] = item;
+        }
+      });
+
+      // 为"全部风格"菜单项创建特殊映射
+      const allStylesMenuItem = document.querySelector('.sidebar-submenu-item[data-category="all"]');
+
+      // 添加滚动事件监听器
+      window.addEventListener('scroll', function () {
+        // 获取当前滚动位置
+        const scrollPosition = window.scrollY + 100; // 添加一个偏移量使检测更准确
+
+        // 查找当前可见的部分
+        let currentSection = null;
+
+        sections.forEach(section => {
+          // 获取部分位置
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+
+          // 检查部分是否在视口中
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            currentSection = section.id || section.getAttribute('id');
+          }
+        });
+
+        // 更新菜单项的活动状态
+        if (currentSection) {
+          // 首先移除所有活动状态
+          menuItems.forEach(item => item.classList.remove('active'));
+          document.querySelectorAll('.sidebar-submenu-item').forEach(item => item.classList.remove('active'));
+
+          // 根据当前部分激活相应的菜单项
+          if (currentSection === 'styles') {
+            // 如果在风格部分，激活风格菜单项和全部风格子菜单项
+            const stylesMenuItem = sectionMenuMap['styles'];
+            if (stylesMenuItem) {
+              stylesMenuItem.classList.add('active');
+            }
+
+            // 查找当前激活的标签页
+            const activeTab = document.querySelector('.tab.active');
+            if (activeTab) {
+              const category = activeTab.getAttribute('data-category');
+              // 激活相应的子菜单项
+              document.querySelectorAll('.sidebar-submenu-item').forEach(item => {
+                if (item.getAttribute('data-category') === category) {
+                  item.classList.add('active');
+                }
+              });
+            } else if (allStylesMenuItem) {
+              // 如果没有激活的标签页，默认激活"全部风格"
+              allStylesMenuItem.classList.add('active');
+            }
+          } else {
+            // 对于其他部分，直接激活相应的菜单项
+            const menuItem = sectionMenuMap[currentSection];
+            if (menuItem) {
+              menuItem.classList.add('active');
+            }
+          }
+        }
+      });
+    }
+
+    // 更新全局气泡管理函数
+    function initializeGlobalPopover() {
+      // 创建全局气泡元素
+      const popover = document.createElement('div');
+      popover.className = 'global-popover';
+      document.body.appendChild(popover);
+
+      // 隐藏气泡的函数
+      function hidePopover() {
+        popover.style.display = 'none';
+      }
+
+      // 添加滚动事件监听
+      window.addEventListener('scroll', hidePopover);
+
+      // 为每个提示词区域添加鼠标事件
+      document.querySelectorAll('.style-prompt').forEach(prompt => {
+        // 获取提示词内容
+        const tooltipContent = prompt.querySelector('.prompt-tooltip')?.textContent || prompt.textContent.trim();
+
+        prompt.addEventListener('mouseenter', function (e) {
+          // 获取触发元素的位置
+          const rect = this.getBoundingClientRect();
+
+          // 设置气泡内容
+          popover.textContent = tooltipContent;
+
+          // 移除之前的位置类
+          popover.classList.remove('position-top', 'position-bottom');
+
+          // 计算气泡位置 - 默认在元素上方
+          let top = rect.top - 10;
+          let left = rect.left + 20; // 稍微偏右，对齐三角形
+
+          // 显示气泡获取其尺寸
+          popover.style.display = 'block';
+          const popoverHeight = popover.offsetHeight;
+
+          // 三角形的水平位置（相对于气泡左边缘）
+          const triangleOffset = 20;
+
+          // 如果上方空间不足，则放在下方
+          if (top - popoverHeight < 10) {
+            // 放在下方
+            top = rect.bottom + 12; // 为三角形留出空间
+            popover.classList.add('position-bottom');
+
+            // 调整三角形的水平位置
+            const triangleLeft = rect.left - left + rect.width / 2;
+            document.documentElement.style.setProperty('--triangle-left', `${triangleLeft}px`);
+          } else {
+            // 放在上方
+            top = top - popoverHeight;
+            popover.classList.add('position-top');
+
+            // 调整三角形的水平位置
+            const triangleLeft = rect.left - left + rect.width / 2;
+            document.documentElement.style.setProperty('--triangle-left', `${triangleLeft}px`);
+          }
+
+          // 限制宽度并防止超出屏幕边缘
+          if (left + 400 > window.innerWidth) {
+            left = window.innerWidth - 420;
+          }
+
+          // 调整最终位置
+          popover.style.top = `${top}px`;
+          popover.style.left = `${left}px`;
+
+          // 确保三角形位置正确
+          if (popover.classList.contains('position-top')) {
+            popover.style.setProperty('--triangle-bottom', '-10px');
+            popover.style.setProperty('--triangle-top', 'auto');
+          } else {
+            popover.style.setProperty('--triangle-top', '-10px');
+            popover.style.setProperty('--triangle-bottom', 'auto');
+          }
+        });
+
+        prompt.addEventListener('mouseleave', hidePopover);
+      });
+    }
+
+    // 页面加载完成后初始化
+    document.addEventListener('DOMContentLoaded', function () {
+      initializeStyleCards();
+      initializeScenes();
+      setupSearch();
+      setupTabs();
+      setupSidebar();
+      setupSmoothScroll();
+      setupScrollSpy();
+
+      // 初始化全局气泡
+      initializeGlobalPopover();
+
+      // 默认展开风格分类子菜单
+      document.getElementById('stylesCategorySubmenu').classList.add('open');
+    });
+  </script>
+</body>
+
+</html>

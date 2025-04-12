@@ -6,15 +6,22 @@
     <description>Recent content on HamGuy</description>
     <generator>Hugo -- 0.128.2</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 15 Jul 2024 11:51:20 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 11 Apr 2025 23:29:02 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My First Post</title>
       <link>http://localhost:1313/en/posts/my-first-post/</link>
-      <pubDate>Mon, 15 Jul 2024 11:51:20 +0800</pubDate>
+      <pubDate>Fri, 11 Apr 2025 23:29:02 +0800</pubDate>
       <guid>http://localhost:1313/en/posts/my-first-post/</guid>
-      <description>Introduction This is bold text, and this is emphasized text.
-Visit the Hugo website!</description>
+      <description>所动啥 </description>
+    </item>
+    <item>
+      <title>Works</title>
+      <link>http://localhost:1313/en/works/</link>
+      <pubDate>Thu, 21 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/en/works/</guid>
+      <description>Project 1 A brief description of project 1
+Project 2 A brief description of project 2</description>
     </item>
     <item>
       <title>About</title>
