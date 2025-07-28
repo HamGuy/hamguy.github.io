@@ -20,23 +20,23 @@ languages:
       - posts # 将 Posts 设置为主要部分
     weight: 1
     menu:
-      main:
-        - identifier: post
-          name: Posts
-          url: /posts/ # 确保 Posts 的 URL 正确
-          weight: 10
-        # - identifier: works
-        #   name: Works
-        #   url: /works/
-        #   weight: 20
-        - identifier: tags
-          name: Tags
-          url: /tags/
-          weight: 30
-        - identifier: about
-          name: About
-          url: /about/
-          weight: 40
+      # main:
+      #   - identifier: post
+      #     name: Posts
+      #     url: /posts/ # 确保 Posts 的 URL 正确
+      #     weight: 10
+      #   # - identifier: works
+      #   #   name: Works
+      #   #   url: /works/
+      #   #   weight: 20
+      #   - identifier: tags
+      #     name: Tags
+      #     url: /tags/
+      #     weight: 30
+      #   - identifier: about
+      #     name: About
+      #     url: /about/
+      #     weight: 40
 
 minify:
   disableXML: true
@@ -46,6 +46,23 @@ params:
   author: HamGuy
   subtitle: "A New Start From Here"
   defaultTheme: auto
+  
+  # Profile Mode Configuration
+  profileMode:
+    enabled: true
+    title: "HamGuy"
+    subtitle: "A New Start From Here"
+    imageUrl: "https://gravatar.com/avatar/50133ab9ca3c09cef67baad82e56e371?s=200&d=mp"
+    imageTitle: "HamGuy"
+    imageWidth: 200
+    imageHeight: 200
+    # buttons:
+    #   - name: "Posts"
+    #     url: "/posts/"
+    #   - name: "About"
+    #     url: "/about/"
+    #   - name: "Works"
+    #     url: "/works/"
 
   env: production
 
@@ -76,6 +93,17 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 contact:
     email: wangrui15@gmail.com
+
+# Social Icons Configuration
+# socialIcons:
+#   - name: github
+#     url: "https://github.com/hamguy"
+#   - name: twitter
+#     url: "https://twitter.com/hamguy"
+#   - name: linkedin
+#     url: "https://www.linkedin.com/in/hamguy/"
+#   - name: email
+#     url: "mailto:wangrui15@gmail.com"
 
 markup:
   highlight:
