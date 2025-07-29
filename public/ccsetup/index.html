@@ -1,0 +1,2084 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCSetup - Simplify Your Development Environment</title>
+    <meta name="description" content="The elegant way to configure your Claude development environment. Quick setup, powerful features.">
+    <link rel="icon" href="logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+            --orange: #FF6B00;
+            --orange-dark: #E85D00;
+            --blue: #4A90E2;
+            --blue-dark: #3A7BD5;
+
+            /* Light theme */
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F2F2F7;
+            --bg-tertiary: #E5E5EA;
+            --text-primary: #1D1D1F;
+            --text-secondary: #6D6D70;
+            --text-tertiary: #8E8E93;
+            --border-color: #D1D1D6;
+            --nav-bg: rgba(255, 255, 255, 0.8);
+            --card-bg: #FFFFFF;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #1C1C1E;
+            --bg-secondary: #2C2C2E;
+            --bg-tertiary: #3A3A3C;
+            --text-primary: #FFFFFF;
+            --text-secondary: #AEAEB2;
+            --text-tertiary: #8E8E93;
+            --border-color: #48484A;
+            --nav-bg: rgba(28, 28, 30, 0.8);
+            --card-bg: #2C2C2E;
+            --shadow: rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.5;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--nav-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 56px;
+            padding: 0 24px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--orange);
+        }
+
+        .theme-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            color: var(--text-secondary);
+        }
+
+        .theme-toggle:hover {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 24px 80px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+            color: white;
+            border-radius: 20px;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 6vw, 72px);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            line-height: 1.4;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Install Command */
+        .install-command {
+            background: var(--bg-tertiary);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 40px auto;
+            max-width: 600px;
+            font-family: 'SF Mono', monospace;
+            font-size: 16px;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        .copy-btn {
+            background: var(--orange);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .copy-btn:hover {
+            background: var(--orange-dark);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 120px 24px;
+            background: var(--bg-primary);
+        }
+
+        .features-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 20px;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 48px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 32px 20px;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature:nth-child(1) .feature-icon {
+            background: linear-gradient(135deg, var(--orange), #FFB84D);
+        }
+
+        .feature:nth-child(2) .feature-icon {
+            background: linear-gradient(135deg, var(--blue), #64B5F6);
+        }
+
+        .feature:nth-child(3) .feature-icon {
+            background: linear-gradient(135deg, #7B68EE, #9C88FF);
+        }
+
+        .feature-icon svg {
+            width: 40px;
+            height: 40px;
+            fill: white;
+        }
+
+        .feature h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .feature p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 120px 24px;
+            background: var(--bg-secondary);
+        }
+
+        .faq-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-list {
+            margin-top: 60px;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px var(--shadow);
+            transition: box-shadow 0.2s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            padding: 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .faq-question h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0;
+            flex: 1;
+            line-height: 1.4;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .faq-toggle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--bg-tertiary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+            margin-left: 16px;
+        }
+
+        .faq-item.active .faq-toggle {
+            background: var(--orange);
+            color: white;
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 24px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 24px 24px;
+        }
+
+        .faq-answer p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 60px 24px;
+            background: var(--bg-tertiary);
+            text-align: center;
+        }
+
+        .footer-copy {
+            color: var(--text-tertiary);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 100px 20px 60px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+        }
+
+        /* Command toggle tabs */
+        .command-tabs {
+            display: flex;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 4px;
+            margin-bottom: 16px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .command-tab {
+            flex: 1;
+            padding: 8px 16px;
+            background: transparent;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+        }
+
+        .command-tab.active {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .command-tab:hover:not(.active) {
+            color: var(--text-primary);
+        }
+
+        /* Adjust install command box */
+        .install-command {
+            max-width: 800px;
+            gap: 12px;
+            position: relative;
+        }
+
+        .install-command code {
+            flex: 1;
+            min-width: 0;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding-right: 120px;
+        }
+
+        .install-command .copy-btn {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            margin-left: 0;
+        }
+
+        /* Language switch in nav */
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .language-switch {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .language-switch:hover {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+
+        /* New sections styling */
+        .claude-setup,
+        .setup-commands,
+        .available-commands,
+        .mcp-servers {
+            padding: 80px 24px;
+            background: var(--bg-secondary);
+        }
+
+        .claude-setup:nth-child(odd),
+        .setup-commands:nth-child(odd),
+        .available-commands:nth-child(odd),
+        .mcp-servers:nth-child(odd) {
+            background: var(--bg-primary);
+        }
+
+        .claude-setup-content,
+        .setup-commands-content,
+        .available-commands-content,
+        .mcp-servers-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .setup-overview {
+            margin-top: 48px;
+        }
+
+        .setup-description p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .setup-features {
+            margin-top: 48px;
+        }
+
+        /* Command examples styling */
+        .command-examples {
+            margin-top: 20px;
+        }
+
+        .command-item {
+            margin-bottom: 16px;
+        }
+
+        .command-item h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .command-item code {
+            display: block;
+            background: var(--bg-tertiary);
+            padding: 12px;
+            border-radius: 6px;
+            font-family: 'SF Mono', monospace;
+            font-size: 14px;
+            color: var(--orange);
+        }
+
+        .global-features {
+            margin-top: 20px;
+        }
+
+        .global-features h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .global-features ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .global-features li {
+            padding: 4px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .global-features li:before {
+            content: "•";
+            color: var(--orange);
+            font-size: 16px;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Available commands grid */
+        .available-commands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .available-command {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px var(--shadow);
+            transition: box-shadow 0.2s ease;
+        }
+
+        .available-command:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .available-command h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--orange);
+            margin-bottom: 12px;
+            font-family: 'SF Mono', monospace;
+        }
+
+        .available-command p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* MCP servers grid */
+        .mcp-servers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .mcp-server {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px var(--shadow);
+            transition: box-shadow 0.2s ease;
+        }
+
+        .mcp-server:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .mcp-server h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--blue);
+            margin-bottom: 12px;
+        }
+
+        .mcp-server p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Code blocks */
+        .code-block {
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            padding: 20px;
+            font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 16px 0;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        .code-block.small {
+            padding: 16px;
+            font-size: 13px;
+        }
+
+        .code-block pre {
+            margin: 0;
+            color: var(--text-primary);
+        }
+
+        .code-block .comment {
+            color: var(--text-tertiary);
+            font-style: italic;
+        }
+
+        /* Directory structure */
+        .directory-overview {
+            margin-top: 48px;
+        }
+
+        .directory-structure h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .directory-features {
+            margin-top: 48px;
+        }
+
+        .feature-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card,
+        .mcp-feature {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px var(--shadow);
+            transition: box-shadow 0.2s ease;
+        }
+
+        .feature-card:hover,
+        .mcp-feature:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .feature-icon-small {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            color: white;
+            font-size: 20px;
+        }
+
+        .feature-card h4,
+        .mcp-feature h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .feature-card p,
+        .mcp-feature p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Agents section */
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .agent-example h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .agent-usage {
+            margin-top: 64px;
+        }
+
+        .agent-usage h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+        }
+
+        .usage-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .usage-item {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        .usage-item h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .usage-item code {
+            display: block;
+            background: var(--bg-tertiary);
+            padding: 12px;
+            border-radius: 6px;
+            font-family: 'SF Mono', monospace;
+            font-size: 14px;
+            color: var(--orange);
+        }
+
+        /* Commands section */
+        .commands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .command-example h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .command-usage {
+            margin-top: 64px;
+        }
+
+        .command-usage h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+        }
+
+        /* Hooks section */
+        .hooks-grid {
+            margin-top: 48px;
+        }
+
+        .hook-category {
+            margin-bottom: 48px;
+        }
+
+        .hook-category h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+        }
+
+        .hook-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 24px;
+        }
+
+        .hook-example h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .hooks-config {
+            margin-top: 64px;
+        }
+
+        .hooks-config h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+        }
+
+        .config-example {
+            max-width: 600px;
+        }
+
+        /* MCP section */
+        .mcp-overview {
+            margin-top: 48px;
+        }
+
+        .mcp-intro h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .mcp-intro p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .mcp-features {
+            margin: 48px 0;
+        }
+
+        .mcp-config {
+            margin: 48px 0;
+        }
+
+        .mcp-config h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+        }
+
+        .config-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 32px;
+        }
+
+        .config-example h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .mcp-examples {
+            margin-top: 48px;
+        }
+
+        .mcp-examples h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+        }
+
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .example-item {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        .example-item h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .example-item code {
+            display: block;
+            background: var(--bg-tertiary);
+            padding: 12px;
+            border-radius: 6px;
+            font-family: 'SF Mono', monospace;
+            font-size: 13px;
+            color: var(--orange);
+            overflow-x: auto;
+        }
+
+        /* Agent commands section */
+        .agent-commands {
+            padding: 80px 24px;
+            background: var(--bg-secondary);
+        }
+
+        .agent-commands-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .command-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .command-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px var(--shadow);
+            transition: box-shadow 0.2s ease;
+        }
+
+        .command-card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .command-card h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .command-card code {
+            display: block;
+            background: var(--bg-tertiary);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-family: 'SF Mono', monospace;
+            font-size: 14px;
+            color: var(--orange);
+            margin: 12px 0;
+        }
+
+        .command-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* New text-based styles */
+        .directory-desc {
+            margin-top: 16px;
+        }
+
+        .directory-list {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0;
+        }
+
+        .directory-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .directory-list li:last-child {
+            border-bottom: none;
+        }
+
+        .directory-list strong {
+            color: var(--orange);
+            font-family: 'SF Mono', monospace;
+        }
+
+        .agent-desc,
+        .command-desc,
+        .hook-desc,
+        .config-desc,
+        .example-desc {
+            margin-top: 16px;
+        }
+
+        .agent-features,
+        .command-features,
+        .config-features {
+            margin-top: 20px;
+        }
+
+        .agent-features h4,
+        .command-features h4,
+        .config-features h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .agent-features ul,
+        .command-features ul,
+        .config-features ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .agent-features li,
+        .command-features li,
+        .config-features li {
+            padding: 4px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .agent-features li:before,
+        .command-features li:before,
+        .config-features li:before {
+            content: "•";
+            color: var(--orange);
+            font-size: 16px;
+            position: absolute;
+            left: 0;
+        }
+
+        .hook-types,
+        .server-types,
+        .example-categories {
+            margin-top: 24px;
+        }
+
+        .hook-type,
+        .server-type,
+        .example-category {
+            margin-bottom: 20px;
+            padding: 16px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 1px 4px var(--shadow);
+        }
+
+        .hook-type h4,
+        .server-type h4,
+        .example-category h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .hook-type p,
+        .server-type p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .example-category ul {
+            list-style: none;
+            padding: 0;
+            margin: 8px 0 0 0;
+        }
+
+        .example-category li {
+            padding: 4px 0;
+            padding-left: 16px;
+            position: relative;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .example-category li:before {
+            content: "→";
+            color: var(--orange);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Floating donation button */
+        .floating-donation {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .donation-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff6b6b, #ff8e3c);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(255, 107, 107, 0.4);
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 24px;
+        }
+
+        .donation-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+        }
+
+        .donation-button.active {
+            background: linear-gradient(135deg, #ff8e3c, #ff6b6b);
+        }
+
+        .donation-panel {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 320px;
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            padding: 24px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px) scale(0.95);
+            transition: all 0.3s ease;
+        }
+
+        .donation-panel.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        .donation-panel::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 30px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid var(--card-bg);
+        }
+
+        .donation-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .donation-header h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .donation-header p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .donation-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .donation-method {
+            padding: 16px;
+            border-radius: 12px;
+            background: var(--bg-secondary);
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .donation-method:hover {
+            border-color: var(--orange);
+            background: var(--bg-tertiary);
+        }
+
+        .donation-method.active {
+            border-color: var(--orange);
+            background: var(--bg-tertiary);
+        }
+
+        .donation-method h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .donation-method p {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .qr-code {
+            display: none;
+            text-align: center;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .qr-code.active {
+            display: block;
+        }
+
+        .qr-code img {
+            width: 200px;
+            height: 200px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+
+        .qr-code-placeholder {
+            width: 200px;
+            height: 200px;
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin: 0 auto 8px;
+        }
+
+        .qr-instruction {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .donation-close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--bg-tertiary);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+        }
+
+        .donation-close:hover {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .floating-donation {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .donation-button {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+
+            .donation-panel {
+                width: 280px;
+                bottom: 70px;
+                right: -10px;
+                padding: 20px;
+            }
+
+            .qr-code img,
+            .qr-code-placeholder {
+                width: 160px;
+                height: 160px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="#" class="logo">
+                <img src="logo.svg" alt="Claude Logo" class="logo-icon">
+                <span data-en="CCSetup" data-zh="CCSetup">CCSetup</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#setup" data-en="Setup" data-zh="设置">Setup</a></li>
+                <li><a href="#commands" data-en="Commands" data-zh="命令">Commands</a></li>
+                <li><a href="#available-commands" data-en="Available" data-zh="可用命令">Available</a></li>
+                <li><a href="#mcp" data-en="MCP" data-zh="MCP">MCP</a></li>
+                <li><a href="#features" data-en="Features" data-zh="功能">Features</a></li>
+                <li><a href="#faq" data-en="FAQ" data-zh="常见问题">FAQ</a></li>
+                <li><a href="https://github.com/hamguy/claude-setup" target="_blank" data-en="GitHub" data-zh="GitHub">GitHub</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <button class="language-switch" onclick="toggleLanguage()" id="lang-switch">
+                    <i class="fas fa-globe"></i>
+                    <span class="lang-text">中文</span>
+                </button>
+                <button class="theme-toggle" onclick="toggleTheme()" id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span data-en="Quick & Easy Setup" data-zh="快速简单的安装">Quick & Easy Setup</span>
+            </div>
+
+            <h1>
+                <span data-en="The elegant way to setup" data-zh="优雅的方式来设置">The elegant way to setup</span><br>
+                <span data-en="your Claude environment" data-zh="您的 Claude 环境">your Claude environment</span>
+            </h1>
+
+            <p class="hero-subtitle" data-en="A simple tool that makes configuring your Claude API environment effortless. One command to get started, powerful features to keep you productive." data-zh="一个简单的工具，让您的 Claude API 环境配置变得轻松无忧。一条命令即可开始，强大的功能让您保持高效。">
+                A simple tool that makes configuring your Claude API environment effortless.
+                One command to get started, powerful features to keep you productive.
+            </p>
+
+            <div class="command-tabs">
+                <button class="command-tab active" onclick="setCommandType('curl')" data-cmd="curl">curl</button>
+                <button class="command-tab" onclick="setCommandType('wget')" data-cmd="wget">wget</button>
+            </div>
+
+            <div class="install-command">
+                <code id="install-code">curl -fsSL https://raw.githubusercontent.com/HamGuy/claude-setup/main/install.sh | bash</code>
+                <button class="copy-btn" onclick="copyCommand()">
+                    <i class="fas fa-copy"></i> <span class="copy-text" data-en="Copy" data-zh="复制">Copy</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CCSetup Overview -->
+    <section class="claude-setup" id="setup">
+        <div class="claude-setup-content">
+            <div class="section-header">
+                <h2 class="section-title" data-en="CCSetup Tool" data-zh="CCSetup 工具">CCSetup Tool</h2>
+                <p class="section-subtitle" data-en="Automated Claude Code configuration setup tool" data-zh="自动化的 Claude Code 配置设置工具">
+                    Automated Claude Code configuration setup tool
+                </p>
+            </div>
+
+            <div class="setup-overview">
+                <div class="setup-description">
+                    <p data-en="CCSetup is a command-line tool that automatically sets up Claude Code configuration in your projects. It handles the installation of custom commands, MCP servers, and workflow automation." data-zh="CCSetup 是一个命令行工具，可以在您的项目中自动设置 Claude Code 配置。它处理自定义命令、MCP 服务器和工作流自动化的安装。">
+                        CCSetup is a command-line tool that automatically sets up Claude Code configuration in your projects. It handles the installation of custom commands, MCP servers, and workflow automation.
+                    </p>
+                </div>
+
+                <div class="setup-features">
+                    <div class="feature-grid-2">
+                        <div class="feature-card">
+                            <div class="feature-icon-small">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <h4 data-en="Easy Installation" data-zh="简单安装">Easy Installation</h4>
+                            <p data-en="One-command installation that downloads and sets up all required configurations automatically" data-zh="一键安装，自动下载并设置所有必需的配置">
+                                One-command installation that downloads and sets up all required configurations automatically
+                            </p>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon-small">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h4 data-en="Global & Local Setup" data-zh="全局和本地设置">Global & Local Setup</h4>
+                            <p data-en="Support both global installation for all projects and project-specific configurations" data-zh="支持为所有项目进行全局安装和特定项目的配置">
+                                Support both global installation for all projects and project-specific configurations
+                            </p>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon-small">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h4 data-en="MCP Integration" data-zh="MCP 集成">MCP Integration</h4>
+                            <p data-en="Pre-configured MCP servers including Context7, Puppeteer, Sequential Thinking, and DeepWiki" data-zh="预配置的 MCP 服务器，包括 Context7、Puppeteer、Sequential Thinking 和 DeepWiki">
+                                Pre-configured MCP servers including Context7, Puppeteer, Sequential Thinking, and DeepWiki
+                            </p>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon-small">
+                                <i class="fas fa-terminal"></i>
+                            </div>
+                            <h4 data-en="Custom Commands" data-zh="自定义命令">Custom Commands</h4>
+                            <p data-en="Intelligent workflows with commands like /task_medium, /code-review, and /commit for enhanced productivity" data-zh="智能工作流，包含 /task_medium、/code-review 和 /commit 等命令，提高生产力">
+                                Intelligent workflows with commands like /task_medium, /code-review, and /commit for enhanced productivity
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Setup Commands Section -->
+    <section class="setup-commands" id="commands">
+        <div class="setup-commands-content">
+            <div class="section-header">
+                <h2 class="section-title" data-en="Setup Commands" data-zh="设置命令">Setup Commands</h2>
+                <p class="section-subtitle" data-en="Initialize and configure your Claude Code environment" data-zh="初始化和配置您的 Claude Code 环境">
+                    Initialize and configure your Claude Code environment
+                </p>
+            </div>
+
+            <div class="commands-grid">
+                <div class="command-example">
+                    <h3 data-en="Project Initialization" data-zh="项目初始化">Project Initialization</h3>
+                    <div class="command-desc">
+                        <p data-en="Initialize Claude Code configuration in your current project directory. This sets up all necessary files and configurations locally." data-zh="在当前项目目录中初始化 Claude Code 配置。这会在本地设置所有必要的文件和配置。">
+                            Initialize Claude Code configuration in your current project directory. This sets up all necessary files and configurations locally.
+                        </p>
+                        <div class="command-examples">
+                            <div class="command-item">
+                                <h4 data-en="Current Directory" data-zh="当前目录">Current Directory</h4>
+                                <code>ccsetup init</code>
+                            </div>
+                            <div class="command-item">
+                                <h4 data-en="Specific Directory" data-zh="指定目录">Specific Directory</h4>
+                                <code>ccsetup init /path/to/project</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-example">
+                    <h3 data-en="Global Installation" data-zh="全局安装">Global Installation</h3>
+                    <div class="command-desc">
+                        <p data-en="Install commands, agents, and MCP configuration globally in your home directory. This makes them available across all your projects." data-zh="在主目录中全局安装命令、代理和 MCP 配置。这使它们在您的所有项目中都可用。">
+                            Install commands, agents, and MCP configuration globally in your home directory. This makes them available across all your projects.
+                        </p>
+                        <div class="command-examples">
+                            <div class="command-item">
+                                <h4 data-en="Global Setup" data-zh="全局设置">Global Setup</h4>
+                                <code>ccsetup init --global</code>
+                            </div>
+                        </div>
+                        <div class="global-features">
+                            <h4 data-en="What Gets Installed:" data-zh="安装内容：">What Gets Installed:</h4>
+                            <ul>
+                                <li data-en="Global commands in ~/.claude/commands/" data-zh="~/.claude/commands/ 中的全局命令">Global commands in ~/.claude/commands/</li>
+                                <li data-en="Global agents in ~/.claude/agents/" data-zh="~/.claude/agents/ 中的全局代理">Global agents in ~/.claude/agents/</li>
+                                <li data-en="MCP servers configuration in ~/.claude.json" data-zh="~/.claude.json 中的 MCP 服务器配置">MCP servers configuration in ~/.claude.json</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Available Commands Section -->
+    <section class="available-commands" id="available-commands">
+        <div class="available-commands-content">
+            <div class="section-header">
+                <h2 class="section-title" data-en="Available Commands" data-zh="可用命令">Available Commands</h2>
+                <p class="section-subtitle" data-en="Intelligent workflow commands included in the setup" data-zh="设置中包含的智能工作流命令">
+                    Intelligent workflow commands included in the setup
+                </p>
+            </div>
+
+            <div class="available-commands-grid">
+                <div class="available-command">
+                    <h3>/task_medium</h3>
+                    <p data-en="Complex task processing with intelligent workflow management for implementing features and solving problems" data-zh="复杂任务处理，具有智能工作流管理，用于实现功能和解决问题">
+                        Complex task processing with intelligent workflow management for implementing features and solving problems
+                    </p>
+                </div>
+
+                <div class="available-command">
+                    <h3>/code-review</h3>
+                    <p data-en="Automated code review with quality checks, security analysis, and improvement suggestions" data-zh="自动化代码审查，包括质量检查、安全分析和改进建议">
+                        Automated code review with quality checks, security analysis, and improvement suggestions
+                    </p>
+                </div>
+
+                <div class="available-command">
+                    <h3>/commit</h3>
+                    <p data-en="Intelligent commit message generation based on code changes and project context" data-zh="基于代码更改和项目上下文的智能提交消息生成">
+                        Intelligent commit message generation based on code changes and project context
+                    </p>
+                </div>
+
+                <div class="available-command">
+                    <h3>/task_easy</h3>
+                    <p data-en="Simple task processing for quick fixes, small improvements, and routine development tasks" data-zh="简单任务处理，用于快速修复、小改进和例行开发任务">
+                        Simple task processing for quick fixes, small improvements, and routine development tasks
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MCP Servers Section -->
+    <section class="mcp-servers" id="mcp">
+        <div class="mcp-servers-content">
+            <div class="section-header">
+                <h2 class="section-title" data-en="Included MCP Servers" data-zh="包含的 MCP 服务器">Included MCP Servers</h2>
+                <p class="section-subtitle" data-en="Pre-configured Model Context Protocol servers for enhanced capabilities" data-zh="预配置的模型上下文协议服务器，提供增强功能">
+                    Pre-configured Model Context Protocol servers for enhanced capabilities
+                </p>
+            </div>
+
+            <div class="mcp-servers-grid">
+                <div class="mcp-server">
+                    <h3>Context7</h3>
+                    <p data-en="Access to comprehensive library documentation and code examples for modern development frameworks" data-zh="访问现代开发框架的全面库文档和代码示例">
+                        Access to comprehensive library documentation and code examples for modern development frameworks
+                    </p>
+                </div>
+
+                <div class="mcp-server">
+                    <h3>Puppeteer</h3>
+                    <p data-en="Browser automation capabilities for web scraping, testing, and interaction with web applications" data-zh="浏览器自动化功能，用于网页抓取、测试和与网络应用程序的交互">
+                        Browser automation capabilities for web scraping, testing, and interaction with web applications
+                    </p>
+                </div>
+
+                <div class="mcp-server">
+                    <h3>Sequential Thinking</h3>
+                    <p data-en="Enhanced reasoning and problem-solving through structured thought processes and logical analysis" data-zh="通过结构化思维过程和逻辑分析增强推理和问题解决能力">
+                        Enhanced reasoning and problem-solving through structured thought processes and logical analysis
+                    </p>
+                </div>
+
+                <div class="mcp-server">
+                    <h3>DeepWiki</h3>
+                    <p data-en="Deep repository analysis and documentation extraction for understanding large codebases" data-zh="深度存储库分析和文档提取，用于理解大型代码库">
+                        Deep repository analysis and documentation extraction for understanding large codebases
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="features-content">
+            <div class="section-header">
+                <h2 class="section-title" data-en="Built for simplicity" data-zh="为简单而生">Built for simplicity</h2>
+                <p class="section-subtitle" data-en="Everything you need to manage your Claude environment, nothing more." data-zh="管理 Claude 环境所需的一切，仅此而已。">
+                    Everything you need to manage your Claude environment, nothing more.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m12 8.5l-5 3V8.5l5 3M7 8v8h2V8H7z" />
+                        </svg>
+                    </div>
+                    <h3 data-en="Quick Install" data-zh="快速安装">Quick Install</h3>
+                    <p data-en="Get up and running in seconds with our one-line installer. Automatically detects your shell and configures everything." data-zh="使用我们的一行安装程序，几秒钟内即可启动并运行。自动检测您的 shell 并配置所有内容。">
+                        Get up and running in seconds with our one-line installer.
+                        Automatically detects your shell and configures everything.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg>
+                    </div>
+                    <h3 data-en="Environment Management" data-zh="环境管理">Environment Management</h3>
+                    <p data-en="Easily manage API keys, endpoints, and configurations. Switch between different environments with simple commands." data-zh="轻松管理 API 密钥、端点和配置。使用简单命令在不同环境之间切换。">
+                        Easily manage API keys, endpoints, and configurations.
+                        Switch between different environments with simple commands.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z" />
+                        </svg>
+                    </div>
+                    <h3 data-en="Secure & Local" data-zh="安全且本地">Secure & Local</h3>
+                    <p data-en="All configurations are stored locally on your machine. Your API keys and settings never leave your device." data-zh="所有配置都存储在您的本地机器上。您的 API 密钥和设置永远不会离开您的设备。">
+                        All configurations are stored locally on your machine.
+                        Your API keys and settings never leave your device.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="faq-content">
+            <div class="section-header">
+                <h2 class="section-title" data-en="Frequently Asked Questions" data-zh="常见问题">Frequently Asked Questions</h2>
+                <p class="section-subtitle" data-en="Common questions about CCSetup" data-zh="关于 CCSetup 的常见问题">
+                    Common questions about CCSetup
+                </p>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-en="What is CCSetup?" data-zh="什么是 CCSetup？">What is CCSetup?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="CCSetup is a command-line tool that automatically sets up Claude Code configuration in your projects. It downloads and installs custom commands, MCP servers, and workflow automation tools to enhance your Claude development experience." data-zh="CCSetup 是一个命令行工具，可以在您的项目中自动设置 Claude Code 配置。它下载并安装自定义命令、MCP 服务器和工作流自动化工具，以增强您的 Claude 开发体验。">
+                            CCSetup is a command-line tool that automatically sets up Claude Code configuration in your projects. It downloads and installs custom commands, MCP servers, and workflow automation tools to enhance your Claude development experience.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-en="How do I install it?" data-zh="如何安装？">How do I install it?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="Simply run the installation command shown above in your terminal. The installer will automatically download the ccsetup tool and make it available globally. After installation, you can use 'ccsetup init' to set up any project." data-zh="只需在终端中运行上面显示的安装命令。安装程序将自动下载 ccsetup 工具并使其全局可用。安装后，您可以使用 'ccsetup init' 来设置任何项目。">
+                            Simply run the installation command shown above in your terminal. The installer will automatically download the ccsetup tool and make it available globally. After installation, you can use 'ccsetup init' to set up any project.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-en="Is it safe to use?" data-zh="使用安全吗？">Is it safe to use?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="Yes! CCSetup is open source and all operations are performed locally on your machine. Configuration files are downloaded from GitHub and stored in your project or home directory. You can review the source code on GitHub before installation." data-zh="是的！CCSetup 是开源的，所有操作都在您的本地机器上执行。配置文件从 GitHub 下载并存储在您的项目或主目录中。您可以在安装前在 GitHub 上查看源代码。">
+                            Yes! CCSetup is open source and all operations are performed locally on your machine. Configuration files are downloaded from GitHub and stored in your project or home directory. You can review the source code on GitHub before installation.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-en="What's the difference between global and local setup?" data-zh="全局设置和本地设置有什么区别？">What's the difference between global and local setup?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="Global setup (--global) installs commands and MCP configuration in your home directory (~/.claude/), making them available across all projects. Local setup installs configuration in the current project directory, allowing project-specific customizations." data-zh="全局设置（--global）在您的主目录（~/.claude/）中安装命令和 MCP 配置，使它们在所有项目中都可用。本地设置在当前项目目录中安装配置，允许项目特定的自定义。">
+                            Global setup (--global) installs commands and MCP configuration in your home directory (~/.claude/), making them available across all projects. Local setup installs configuration in the current project directory, allowing project-specific customizations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-copy" data-en="© 2025 CCSetup. Built with ❤️ for the developer community." data-zh="© 2025 CCSetup. 为开发者社区用 ❤️ 构建。">
+            © 2025 CCSetup. Built with ❤️ for the developer community.
+        </p>
+    </footer>
+
+    <!-- Floating Donation Button -->
+    <div class="floating-donation">
+        <button class="donation-button" onclick="toggleDonationPanel()" id="donation-btn">
+            <i class="fas fa-heart"></i>
+        </button>
+        <div class="donation-panel" id="donation-panel">
+            <button class="donation-close" onclick="closeDonationPanel()">×</button>
+            <div class="donation-header">
+                <h3 data-en="Support the Project" data-zh="支持项目">Support the Project</h3>
+                <p data-en="Help us continue improving CCSetup" data-zh="帮助我们持续改进 CCSetup">Help us continue improving CCSetup</p>
+            </div>
+            <div class="donation-methods">
+                <!-- Buy Me a Coffee -->
+                <div class="donation-method" onclick="openDonationMethod('coffee')">
+                    <h4>
+                        <i class="fas fa-coffee"></i>
+                        <span data-en="Buy Me a Coffee" data-zh="请我喝咖啡">Buy Me a Coffee</span>
+                    </h4>
+                    <p data-en="Support through Buy Me a Coffee platform" data-zh="通过 Buy Me a Coffee 平台支持">Support through Buy Me a Coffee platform</p>
+                </div>
+
+                <!-- Alipay -->
+                <div class="donation-method" onclick="toggleQRCode('alipay')">
+                    <h4>
+                        <i class="fas fa-mobile-alt"></i>
+                        <span data-en="Alipay" data-zh="支付宝">Alipay</span>
+                    </h4>
+                    <p data-en="Scan QR code with Alipay app" data-zh="使用支付宝扫码支付">Scan QR code with Alipay app</p>
+                    <div class="qr-code" id="alipay-qr">
+                        <img src="https://cdn.hamguy.xyz/IMG_8236.PNG" alt="Alipay QR Code">
+                        <p class="qr-instruction" data-en="Open Alipay and scan this code" data-zh="打开支付宝扫描此二维码">Open Alipay and scan this code</p>
+                    </div>
+                </div>
+
+                <!-- WeChat Pay -->
+                <div class="donation-method" onclick="toggleQRCode('wechat')">
+                    <h4>
+                        <i class="fab fa-weixin"></i>
+                        <span data-en="WeChat Pay" data-zh="微信支付">WeChat Pay</span>
+                    </h4>
+                    <p data-en="Scan QR code with WeChat app" data-zh="使用微信扫码支付">Scan QR code with WeChat app</p>
+                    <div class="qr-code" id="wechat-qr">
+                        <img src="https://cdn.hamguy.xyz/IMG_8238.JPG" alt="WeChat Pay QR Code">
+                        <p class="qr-instruction" data-en="Open WeChat and scan this code" data-zh="打开微信扫描此二维码">Open WeChat and scan this code</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Language support
+        const translations = {
+            zh: {
+                'Quick & Easy Setup': '快速简单的安装',
+                'The elegant way to setup': '优雅的方式来设置',
+                'your Claude environment': '您的 Claude 环境',
+                'A simple tool that makes configuring your Claude API environment effortless.': '一个简单的工具，让您的 Claude API 环境配置变得轻松无忧。',
+                'One command to get started, powerful features to keep you productive.': '一条命令即可开始，强大的功能让您保持高效。',
+                'Copy': '复制',
+                'Copied!': '已复制!',
+                'Built for simplicity': '为简单而生',
+                'Everything you need to manage your Claude environment, nothing more.': '管理 Claude 环境所需的一切，仅此而已。',
+                'Quick Install': '快速安装',
+                'Get up and running in seconds with our one-line installer.': '使用我们的一行安装程序，几秒钟内即可启动并运行。',
+                'Automatically detects your shell and configures everything.': '自动检测您的 shell 并配置所有内容。',
+                'Environment Management': '环境管理',
+                'Easily manage API keys, endpoints, and configurations.': '轻松管理 API 密钥、端点和配置。',
+                'Switch between different environments with simple commands.': '使用简单命令在不同环境之间切换。',
+                'Secure & Local': '安全且本地',
+                'All configurations are stored locally on your machine.': '所有配置都存储在您的本地机器上。',
+                'Your API keys and settings never leave your device.': '您的 API 密钥和设置永远不会离开您的设备。',
+                'Frequently Asked Questions': '常见问题',
+                'Common questions about CCSetup': '关于 CCSetup 的常见问题',
+                'What is CCSetup?': '什么是 CCSetup？',
+                'How do I install it?': '如何安装？',
+                'Is it safe to use?': '使用安全吗？',
+                'What\'s the difference between global and local setup?': '全局设置和本地设置有什么区别？',
+                'Support the Project': '支持项目',
+                'Help us continue improving CCSetup': '帮助我们持续改进 CCSetup',
+                'Buy Me a Coffee': '请我喝咖啡',
+                'Support through Buy Me a Coffee platform': '通过 Buy Me a Coffee 平台支持',
+                'Alipay': '支付宝',
+                'Scan QR code with Alipay app': '使用支付宝扫码支付',
+                'WeChat Pay': '微信支付',
+                'Scan QR code with WeChat app': '使用微信扫码支付',
+                'QR Code Placeholder': '二维码占位符',
+                'Open Alipay and scan this code': '打开支付宝扫描此二维码',
+                'Open WeChat and scan this code': '打开微信扫描此二维码'
+            }
+        };
+
+        function toggleLanguage() {
+            const html = document.documentElement;
+            const currentLang = html.getAttribute('lang') || 'en';
+            const newLang = currentLang === 'en' ? 'zh' : 'en';
+            html.setAttribute('lang', newLang);
+
+            // Update language switch button
+            const langText = document.querySelector('.lang-text');
+            langText.textContent = newLang === 'en' ? '中文' : 'EN';
+
+            // Update content based on data attributes
+            const elementsWithLang = document.querySelectorAll('[data-en][data-zh]');
+            elementsWithLang.forEach(element => {
+                if (newLang === 'zh' && element.dataset.zh) {
+                    element.textContent = element.dataset.zh;
+                } else if (newLang === 'en' && element.dataset.en) {
+                    element.textContent = element.dataset.en;
+                }
+            });
+
+            // Store language preference
+            localStorage.setItem('preferred-language', newLang);
+        }
+
+        function setCommandType(type) {
+            const commandElement = document.getElementById('install-code');
+            const tabs = document.querySelectorAll('.command-tab');
+
+            // Update active tab
+            tabs.forEach(tab => {
+                if (tab.dataset.cmd === type) {
+                    tab.classList.add('active');
+                } else {
+                    tab.classList.remove('active');
+                }
+            });
+
+            // Update command
+            if (type === 'curl') {
+                commandElement.textContent = 'curl -fsSL https://raw.githubusercontent.com/HamGuy/claude-setup/main/install.sh | bash';
+            } else {
+                commandElement.textContent = 'wget -qO- https://raw.githubusercontent.com/HamGuy/claude-setup/main/install.sh | bash';
+            }
+        }
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const themeToggle = document.getElementById('theme-toggle');
+            const icon = themeToggle.querySelector('i');
+
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            html.setAttribute('data-theme', newTheme);
+
+            if (newTheme === 'dark') {
+                icon.className = 'fas fa-sun';
+            } else {
+                icon.className = 'fas fa-moon';
+            }
+
+            localStorage.setItem('preferred-theme', newTheme);
+        }
+
+        function copyCommand() {
+            const commandElement = document.getElementById('install-code');
+            const command = commandElement.textContent.trim();
+            navigator.clipboard.writeText(command).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                const copyText = btn.querySelector('.copy-text');
+                const originalText = copyText.textContent;
+                const currentLang = document.documentElement.getAttribute('lang') || 'en';
+                copyText.textContent = currentLang === 'zh' ? '已复制!' : 'Copied!';
+                setTimeout(() => {
+                    copyText.textContent = originalText;
+                }, 2000);
+            });
+        }
+
+        // Donation panel functions
+        function toggleDonationPanel() {
+            const panel = document.getElementById('donation-panel');
+            const button = document.getElementById('donation-btn');
+
+            if (panel.classList.contains('active')) {
+                closeDonationPanel();
+            } else {
+                panel.classList.add('active');
+                button.classList.add('active');
+            }
+        }
+
+        function closeDonationPanel() {
+            const panel = document.getElementById('donation-panel');
+            const button = document.getElementById('donation-btn');
+
+            panel.classList.remove('active');
+            button.classList.remove('active');
+
+            // Close any open QR codes
+            document.querySelectorAll('.qr-code').forEach(qr => {
+                qr.classList.remove('active');
+            });
+            document.querySelectorAll('.donation-method').forEach(method => {
+                method.classList.remove('active');
+            });
+        }
+
+        function toggleQRCode(type) {
+            const qrCode = document.getElementById(type + '-qr');
+            const method = qrCode.parentElement;
+
+            // Close other QR codes
+            document.querySelectorAll('.qr-code').forEach(qr => {
+                if (qr !== qrCode) {
+                    qr.classList.remove('active');
+                }
+            });
+            document.querySelectorAll('.donation-method').forEach(m => {
+                if (m !== method) {
+                    m.classList.remove('active');
+                }
+            });
+
+            // Toggle current QR code
+            if (qrCode.classList.contains('active')) {
+                qrCode.classList.remove('active');
+                method.classList.remove('active');
+            } else {
+                qrCode.classList.add('active');
+                method.classList.add('active');
+            }
+        }
+
+        function openDonationMethod(type) {
+            if (type === 'coffee') {
+                window.open('https://coff.ee/wangrui15f', '_blank');
+            }
+        }
+
+        // Close donation panel when clicking outside
+        document.addEventListener('click', function (event) {
+            const donationContainer = document.querySelector('.floating-donation');
+            if (!donationContainer.contains(event.target)) {
+                closeDonationPanel();
+            }
+        });
+
+        // Initialize theme and language
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize theme
+            const savedTheme = localStorage.getItem('preferred-theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const defaultTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+
+            const html = document.documentElement;
+            const themeToggle = document.getElementById('theme-toggle');
+            const icon = themeToggle.querySelector('i');
+
+            html.setAttribute('data-theme', defaultTheme);
+
+            if (defaultTheme === 'dark') {
+                icon.className = 'fas fa-sun';
+            } else {
+                icon.className = 'fas fa-moon';
+            }
+
+            // Initialize language
+            const savedLang = localStorage.getItem('preferred-language');
+            const browserLang = navigator.language.startsWith('zh') ? 'zh' : 'en';
+            const defaultLang = savedLang || browserLang;
+
+            html.setAttribute('lang', defaultLang);
+
+            // Update language switch button
+            const langText = document.querySelector('.lang-text');
+            langText.textContent = defaultLang === 'en' ? '中文' : 'EN';
+
+            // Apply initial language
+            if (defaultLang === 'zh') {
+                const elementsWithLang = document.querySelectorAll('[data-en][data-zh]');
+                elementsWithLang.forEach(element => {
+                    if (element.dataset.zh) {
+                        element.textContent = element.dataset.zh;
+                    }
+                });
+            }
+
+            // FAQ toggle functionality
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', function () {
+                    const faqItem = this.parentElement;
+                    const isActive = faqItem.classList.contains('active');
+
+                    // Close all other FAQ items
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+
+                    // Toggle current item
+                    if (!isActive) {
+                        faqItem.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

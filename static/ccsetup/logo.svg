@@ -1,0 +1,10 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="60" cy="60" r="55" fill="#FF6B00"/>
+  
+  <!-- Claude 'C' shape with modern design -->
+  <path d="M60 25C41.775 25 27 39.775 27 58C27 76.225 41.775 91 60 91C69.3 91 77.725 87.275 83.875 81.125L77.125 74.375C72.625 78.875 66.65 81.5 60 81.5C47.025 81.5 36.5 70.975 36.5 58C36.5 45.025 47.025 34.5 60 34.5C66.65 34.5 72.625 37.125 77.125 41.625L83.875 34.875C77.725 28.725 69.3 25 60 25Z" fill="white"/>
+  
+  <!-- Inner accent -->
+  <circle cx="75" cy="58" r="8" fill="white" opacity="0.8"/>
+</svg>
