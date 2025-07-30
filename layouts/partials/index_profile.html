@@ -1,0 +1,88 @@
+<div class="matrix-bg" id="matrix"></div>
+
+<div class="floating-elements">
+    <div class="float-item" style="top: 15%; left: 10%;">Swift</div>
+    <div class="float-item" style="top: 25%; right: 15%;">UIKit</div>
+    <div class="float-item" style="top: 45%; left: 5%;">SwiftUI</div>
+    <div class="float-item" style="bottom: 30%; right: 10%;">Xcode</div>
+    <div class="float-item" style="bottom: 15%; left: 20%;">iOS</div>
+</div>
+
+<div class="profile">
+    {{- with site.Params.profileMode }}
+    <div style="background-color: transparent; width: 100%; border: 0.5px solid #30363d; border-radius: 20px;">
+        <!-- Terminal header moved to top -->
+        <div class="terminal-header">
+            <div class="terminal-dots">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+            </div>
+            <div class="terminal-title">Life.swift</div>
+        </div>
+
+        <!-- Terminal code background -->
+        <div class="terminal-code-bg">
+            <div class="code-content">
+                <div class="code-block">
+                    <div class=" code-line comment">// Life is running...</div>
+                    <div class="code-line">
+                        <span class="keyword">class</span> <span class="function">Life</span> {
+                    </div>
+                    <div class="code-line">
+                        &nbsp;&nbsp;<span class="keyword">func</span> <span class="function">run</span>() <span class="keyword">throws</span> {
+                    </div>
+                    <div class="code-line">
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">do</span> {
+                    </div>
+                    <div class="code-line">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">try</span> <span class="function">liveYourBestLife</span>()
+                    </div>
+                    <div class="code-line">
+                        &nbsp;&nbsp;&nbsp;&nbsp;} <span class="keyword">catch</span> {
+                    </div>
+                    <div class="code-line">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Memory leak detected</span>
+                    </div>
+                    <div class="code-line">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="function">handleMemoryLeak</span>()
+                    </div>
+                    <div class="code-line">
+                        &nbsp;&nbsp;&nbsp;&nbsp;}
+                    </div>
+                    <div class="code-line">
+                        &nbsp;&nbsp;}
+                    </div>
+                    <div class="code-line">}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile content at bottom -->
+        <div class="profile-content">
+            <span class="subtitle-text">{{ .subtitle | markdownify }}</span>
+
+            {{- partial "social_icons.html" -}}
+
+            {{- with .buttons }}
+            <div class="buttons">
+                {{- range . }}
+                <a class="button enhanced-button" href="{{ trim .url " " }}" rel="noopener" title="{{ .name }}">
+                    <span class="button-inner">
+                        {{ .name }}
+                        {{- if (findRE "://" .url) }}&nbsp;
+                        <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="14" width="14">
+                            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                            <path d="M15 3h6v6"></path>
+                            <path d="M10 14L21 3"></path>
+                        </svg>
+                        {{- end }}
+                    </span>
+                </a>
+                {{- end }}
+            </div>
+            {{- end }}
+        </div>
+    </div>
+    {{- end}}
+</div>

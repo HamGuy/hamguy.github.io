@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Life Memory Leak</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+      font-family: 'JetBrains Mono', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      width: 600px;
+      height: 800px;
+      background: linear-gradient(145deg, #1e1e2e, #2a2a3a);
+      border-radius: 20px;
+      box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .matrix-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.1;
+      font-size: 12px;
+      color: #00ff41;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      padding: 60px 40px;
+      height: calc(100% - 120px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .terminal-window {
+      background: #0d1117;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+      border: 1px solid #30363d;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 480px;
+    }
+
+    .terminal-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #30363d;
+    }
+
+    .terminal-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .dot.red {
+      background: #ff5f56;
+    }
+
+    .dot.yellow {
+      background: #ffbd2e;
+    }
+
+    .dot.green {
+      background: #27ca3f;
+    }
+
+    .terminal-title {
+      margin-left: 15px;
+      color: #8b949e;
+      font-size: 12px;
+    }
+
+    .code-line {
+      color: #e6edf3;
+      margin: 8px 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .comment {
+      color: #7d8590;
+    }
+
+    .function {
+      color: #d2a8ff;
+    }
+
+    .string {
+      color: #a5d6ff;
+    }
+
+    .keyword {
+      color: #ff7b72;
+    }
+
+    .main-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #58a6ff;
+      margin: 30px 0 20px 0;
+      text-shadow: 0 0 20px rgba(88, 166, 255, 0.3);
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: #8b949e;
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+
+    .memory-bars {
+      display: flex;
+      gap: 4px;
+      margin: 30px 0;
+      justify-content: center;
+    }
+
+    .memory-bar {
+      width: 8px;
+      height: 40px;
+      background: linear-gradient(to top, #ff4444, #ff6b6b);
+      border-radius: 4px;
+      animation: memoryLeak 2s ease-in-out infinite;
+    }
+
+    .memory-bar:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .memory-bar:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    .memory-bar:nth-child(4) {
+      animation-delay: 0.6s;
+    }
+
+    .memory-bar:nth-child(5) {
+      animation-delay: 0.8s;
+    }
+
+    @keyframes memoryLeak {
+
+      0%,
+      100% {
+        height: 20px;
+        opacity: 0.6;
+      }
+
+      50% {
+        height: 60px;
+        opacity: 1;
+      }
+    }
+
+    .gc-button {
+      background: linear-gradient(45deg, #2ea043, #26d636);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(46, 160, 67, 0.3);
+      transition: all 0.3s ease;
+      margin-top: 20px;
+    }
+
+    .gc-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(46, 160, 67, 0.4);
+    }
+
+    .floating-elements {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .float-item {
+      position: absolute;
+      color: #58a6ff;
+      font-size: 12px;
+      opacity: 0.6;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-20px) rotate(180deg);
+      }
+    }
+
+    .qr-placeholder {
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(45deg, #30363d, #21262d);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 20px auto;
+      border: 2px dashed #58a6ff;
+    }
+
+    .qr-text {
+      color: #58a6ff;
+      font-size: 12px;
+      text-align: center;
+    }
+  </style>
+  ```
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="matrix-bg" id="matrix"></div>
+
+    ```
+    <div class="floating-elements">
+      <div class="float-item" style="top: 15%; left: 10%;">null</div>
+      <div class="float-item" style="top: 25%; right: 15%;">undefined</div>
+      <div class="float-item" style="top: 45%; left: 5%;">memory</div>
+      <div class="float-item" style="bottom: 30%; right: 10%;">heap</div>
+      <div class="float-item" style="bottom: 15%; left: 20%;">stack</div>
+    </div>
+
+    <div class="content">
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <div class="terminal-title">life.js</div>
+        </div>
+
+        <div class="code-line comment">// 人生代码运行中...</div>
+        <div class="code-line">
+          <span class="keyword">const</span> life = <span class="keyword">new</span> <span class="function">Life</span>();
+        </div>
+        <div class="code-line">
+          <span class="keyword">try</span> {
+        </div>
+        <div class="code-line">
+          &nbsp;&nbsp;life.<span class="function">run</span>();
+        </div>
+        <div class="code-line">
+          } <span class="keyword">catch</span> (error) {
+        </div>
+        <div class="code-line">
+          &nbsp;&nbsp;<span class="comment">// 内存泄漏检测</span>
+        </div>
+        <div class="code-line">
+          &nbsp;&nbsp;life.<span class="function">memoryLeak</span>();
+        </div>
+        <div class="code-line">}</div>
+      </div>
+
+      <div class="main-title">Life.memoryLeak()</div>
+      <div class="subtitle">grateful for your gc() support</div>
+
+      <div class="memory-bars">
+        <div class="memory-bar"></div>
+        <div class="memory-bar"></div>
+        <div class="memory-bar"></div>
+        <div class="memory-bar"></div>
+        <div class="memory-bar"></div>
+      </div>
+
+      <div class="qr-placeholder">
+        <div class="qr-text">微信赞赏码<br>位置</div>
+      </div>
+
+      <button class="gc-button" onclick="runGC()">Run Garbage Collection</button>
+    </div>
+  </div>
+
+  <script>
+    // Matrix rain effect
+    function createMatrix() {
+      const matrix = document.getElementById('matrix');
+      const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+
+      for (let i = 0; i < 50; i++) {
+        const span = document.createElement('span');
+        span.style.position = 'absolute';
+        span.style.left = Math.random() * 100 + '%';
+        span.style.animationDelay = Math.random() * 5 + 's';
+        span.style.fontSize = Math.random() * 8 + 8 + 'px';
+        span.textContent = chars[Math.floor(Math.random() * chars.length)];
+        span.style.animation = 'matrixFall 3s linear infinite';
+        matrix.appendChild(span);
+      }
+    }
+
+    // Add matrix animation CSS
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes matrixFall {
+            0% { transform: translateY(-100px); opacity: 1; }
+            100% { transform: translateY(800px); opacity: 0; }
+        }
+    `;
+    document.head.appendChild(style);
+
+    function runGC() {
+      const button = document.querySelector('.gc-button');
+      const bars = document.querySelectorAll('.memory-bar');
+
+      button.textContent = 'Running GC...';
+      button.style.background = 'linear-gradient(45deg, #ff6b6b, #ff4444)';
+
+      setTimeout(() => {
+        bars.forEach(bar => {
+          bar.style.animation = 'none';
+          bar.style.height = '10px';
+          bar.style.background = 'linear-gradient(to top, #2ea043, #26d636)';
+        });
+
+        button.textContent = 'GC Complete! Thank You ❤️';
+        button.style.background = 'linear-gradient(45deg, #2ea043, #26d636)';
+      }, 2000);
+
+      setTimeout(() => {
+        button.textContent = 'Run Garbage Collection';
+        button.style.background = 'linear-gradient(45deg, #2ea043, #26d636)';
+        bars.forEach(bar => {
+          bar.style.animation = 'memoryLeak 2s ease-in-out infinite';
+          bar.style.background = 'linear-gradient(to top, #ff4444, #ff6b6b)';
+        });
+      }, 4000);
+    }
+
+    createMatrix();
+  </script>
+  ```
+
+</body>
+
+</html>

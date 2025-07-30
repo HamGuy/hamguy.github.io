@@ -1,65 +1,8 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Tags | HamGuy</title>
-<meta name="keywords" content="">
-<meta name="description" content="Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod">
-<meta name="author" content="HamGuy">
-<link rel="canonical" href="http://localhost:1313/tags/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.fc220c15db4aef0318bbf30adc45d33d4d7c88deff3238b23eb255afdc472ca6.css" integrity="sha256-/CIMFdtK7wMYu/MK3EXTPU18iN7/MjiyPrJVr9xHLKY=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/index.xml">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/tags/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
-            }
-        }
-
-    </style>
-</noscript><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+{{- /* Custom CSS and JS for enhanced homepage animations */ -}}
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
-     
+    /* Matrix background effect */
     .matrix-bg {
         position: fixed;
         top: 0;
@@ -74,7 +17,7 @@
         pointer-events: none;
     }
 
-     
+    /* Floating elements */
     .floating-elements {
         position: fixed;
         top: 0;
@@ -94,7 +37,7 @@
         animation: float 8s ease-in-out infinite;
     }
 
-     
+    /* Enhanced profile card - Terminal style like leak page */
     .animated-card {
         background: linear-gradient(145deg, #1e1e2e, #2a2a3a) !important;
         border-radius: 20px !important;
@@ -115,7 +58,7 @@
             inset 0 1px 0 rgba(255, 255, 255, 0.15);
     }
 
-     
+    /* Terminal window style */
     .terminal-style {
         padding: 0 !important;
         max-width: 1200px;
@@ -127,7 +70,7 @@
         flex-direction: column;
     }
 
-     
+    /* Add terminal header bar */
     .terminal-style::before {
         content: '';
         position: absolute;
@@ -139,13 +82,13 @@
         border-bottom: 1px solid #30363d;
     }
 
-     
+    /* Terminal window content area */
     .terminal-style {
         background: linear-gradient(145deg, #0d1117, #161b22) !important;
         border: 1px solid #30363d;
     }
 
-     
+    /* Terminal code background */
     .terminal-code-bg {
         flex: 1;
         position: relative;
@@ -161,7 +104,7 @@
         padding: 0;
     }
 
-     
+    /* Terminal header at top of card */
     .terminal-header {
         display: flex;
         align-items: center;
@@ -218,19 +161,19 @@
         color: #ff7b72;
     }
 
-     
+    /* Ensure profile content is above background */
     .profile_inner>* {
         position: relative;
         z-index: 2;
     }
 
-     
+    /* Compact profile layout - positioned at bottom */
     .profile_inner {
         position: relative;
         justify-content: space-between;
     }
 
-     
+    /* Profile content at bottom */
     .profile-content {
         position: absolute;
         bottom: 20px;
@@ -243,7 +186,7 @@
         z-index: 2;
     }
 
-     
+    /* Profile image with glow effect */
     .profile-image {
         border-radius: 50% !important;
         box-shadow: 0 0 20px rgba(88, 166, 255, 0.3);
@@ -258,7 +201,7 @@
         box-shadow: 0 0 30px rgba(88, 166, 255, 0.5);
     }
 
-     
+    /* Terminal dots */
     .terminal-dots {
         display: flex;
         gap: 8px;
@@ -287,7 +230,7 @@
         animation-delay: 0.6s;
     }
 
-     
+    /* Glowing title */
     .glowing-title {
         animation: glow 3s ease-in-out infinite alternate !important;
         text-shadow: 0 0 20px rgba(88, 166, 255, 0.3) !important;
@@ -302,7 +245,7 @@
         margin: 5px 0 !important;
     }
 
-     
+    /* Pulse bars */
     .pulse-bars {
         display: flex;
         gap: 4px;
@@ -335,7 +278,7 @@
         animation-delay: 0.8s;
     }
 
-     
+    /* Enhanced buttons */
     .enhanced-button {
         background: linear-gradient(45deg, var(--primary, #2ea043), var(--primary, #26d636)) !important;
         border: none !important;
@@ -351,7 +294,7 @@
         box-shadow: 0 6px 20px rgba(46, 160, 67, 0.4) !important;
     }
 
-     
+    /* Animations */
     @keyframes float {
 
         0%,
@@ -414,7 +357,7 @@
         }
     }
 
-     
+    /* Dark mode adjustments */
     [data-theme="dark"] .matrix-bg {
         color: #00ff41;
     }
@@ -423,7 +366,7 @@
         color: #58a6ff;
     }
 
-     
+    /* Light mode adjustments */
     [data-theme="light"] .matrix-bg {
         color: #0066cc;
         opacity: 0.05;
@@ -441,7 +384,7 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        
+        // Matrix rain effect
         function createMatrix() {
             const matrix = document.getElementById('matrix');
             if (!matrix) return;
@@ -458,57 +401,57 @@
                 '{}', '[]', '()', '<>', '+=', '->', '=>', '||', '&&', '??'
             ];
 
-            
+            // Clear existing matrix
             matrix.innerHTML = '';
 
-            
+            // Create matrix columns to avoid overlap
             const columns = 20;
             const columnWidth = 100 / columns;
 
             for (let col = 0; col < columns; col++) {
-                
+                // Random number of characters per column
                 const charsInColumn = Math.floor(Math.random() * 3) + 1;
 
                 for (let i = 0; i < charsInColumn; i++) {
                     const span = document.createElement('span');
                     span.style.position = 'absolute';
 
-                    
+                    // Position in specific column with some randomness
                     const leftPos = (col * columnWidth) + (Math.random() * columnWidth * 0.8);
                     span.style.left = leftPos + '%';
 
-                    
+                    // Random delay for staggered effect
                     span.style.animationDelay = Math.random() * 8 + 's';
 
-                    
+                    // Random font size
                     span.style.fontSize = Math.random() * 4 + 12 + 'px';
 
-                    
+                    // Random character
                     span.textContent = chars[Math.floor(Math.random() * chars.length)];
 
-                    
-                    const duration = Math.random() * 3 + 4; 
+                    // Animation with random duration
+                    const duration = Math.random() * 3 + 4; // 4-7 seconds
                     span.style.animation = `matrixFall ${duration}s linear infinite`;
 
-                    
+                    // Random colors
                     const colorOptions = ['#00ff41', '#58a6ff', '#ff7b72', '#d2a8ff', '#79c0ff'];
                     span.style.color = colorOptions[Math.floor(Math.random() * colorOptions.length)];
 
-                    
-                    span.style.opacity = Math.random() * 0.6 + 0.4; 
+                    // Random opacity
+                    span.style.opacity = Math.random() * 0.6 + 0.4; // 0.4-1.0
 
                     matrix.appendChild(span);
                 }
             }
         }
 
-        
+        // Initialize matrix effect
         createMatrix();
 
-        
+        // Refresh matrix periodically
         setInterval(createMatrix, 12000);
 
-        
+        // Add smooth scroll behavior to buttons
         const buttons = document.querySelectorAll('.enhanced-button');
         buttons.forEach(button => {
             button.addEventListener('mouseenter', function () {
@@ -521,140 +464,3 @@
         });
     });
 </script>
-  
-
-<meta property="og:title" content="Tags" />
-<meta property="og:description" content="Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://localhost:1313/tags/" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Tags"/>
-<meta name="twitter:description" content="Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"/>
-
-</head>
-
-<body class="list" id="top">
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-    }
-
-</script>
-
-<header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="HamGuy (Alt + H)">HamGuy</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu">
-        </ul>
-    </nav>
-</header>
-<main class="main">
-<header class="page-header">
-    <h1>Tags</h1>
-</header>
-
-<ul class="terms-tags">
-</ul>
-    </main>
-    
-<footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">HamGuy</a></span> · 
-
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu')
-    if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-</body>
-
-</html>
