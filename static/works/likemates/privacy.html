@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - LikeMate</title>
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --text: #334155;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .language-selector {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .lang-btn {
+            background: var(--card-bg);
+            border: 1px solid #e2e8f0;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+            color: var(--text);
+        }
+
+        .lang-btn:hover,
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .content {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 28px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            margin-top: 32px;
+            font-size: 20px;
+            color: #1e293b;
+        }
+
+        p,
+        ul {
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        ul {
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        [data-lang-content] {
+            display: none;
+        }
+
+        [data-lang-content].active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                </svg>
+                LikeMate
+            </a>
+            <div class="language-selector" id="langSelector">
+                <!-- Buttons will be injected here -->
+            </div>
+        </header>
+
+        <div class="content" id="mainContent">
+            <!-- Content will be injected here -->
+        </div>
+
+        <div class="footer">
+            &copy; 2024 LikeMate. All rights reserved.
+        </div>
+    </div>
+
+    <script>
+        const translations = {
+            en: {
+                name: "English",
+                title: "Privacy Policy",
+                content: `
+                <p>Last Updated: December 2025</p>
+                <p>At LikeMate, we take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your information.</p>
+                
+                <h2>1. Data Collection</h2>
+                <p>LikeMate is designed with a "Local First" architecture. We collect the following data ONLY when you are browsing twitter.com or x.com:</p>
+                <ul>
+                    <li><strong>Tweet Data:</strong> Text, media URLs, author info, and timestamps of tweets you like.</li>
+                    <li><strong>Usage Data:</strong> Basic interaction data within the extension (e.g., tags created).</li>
+                </ul>
+                <p><strong>Important:</strong> All this data is stored locally on your device using Chrome's IndexedDB. We do not automatically upload your data to any cloud server.</p>
+
+                <h2>2. Data Usage</h2>
+                <p>The data we collect is used solely for:</p>
+                <ul>
+                    <li>Providing the search and organization features of the extension.</li>
+                    <li>Syncing your likes to your local history.</li>
+                </ul>
+
+                <h2>3. Third-Party Services</h2>
+                <p>We do not share your personal data with third parties. We do not use third-party analytics services that track your browsing history.</p>
+
+                <h2>4. Data Permissions</h2>
+                <p>We request access to <code>twitter.com</code> and <code>x.com</code> solely to detect your "Like" actions and capture the content for your personal backup. We do not write or post to Twitter on your behalf.</p>
+
+                <h2>5. Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy, please contact us at support@likemate.app.</p>
+            `
+            },
+            zh_CN: {
+                name: "简体中文",
+                title: "隐私政策",
+                content: `
+                <p>最后更新：2025年12月</p>
+                <p>在 LikeMate，我们非常重视您的隐私。本隐私政策说明了我们如何收集、使用和保护您的信息。</p>
+
+                <h2>1. 数据收集</h2>
+                <p>LikeMate 采用“本地优先”架构设计。仅当您浏览 twitter.com 或 x.com 时，我们才会收集以下数据：</p>
+                <ul>
+                    <li><strong>推文数据：</strong> 您点赞的推文的文本、媒体链接、作者信息和时间戳。</li>
+                    <li><strong>使用数据：</strong> 扩展程序内的基本交互数据（例如创建的标签）。</li>
+                </ul>
+                <p><strong>重要提示：</strong> 所有这些数据均使用 Chrome 的 IndexedDB 存储在您的本地设备上。我们不会自动将您的数据上传到任何云服务器。</p>
+
+                <h2>2. 数据使用</h2>
+                <p>我们收集的数据仅用于：</p>
+                <ul>
+                    <li>提供扩展程序的搜索和整理功能。</li>
+                    <li>将您的点赞同步到本地历史记录。</li>
+                </ul>
+
+                <h2>3. 第三方服务</h2>
+                <p>我们不会与第三方共享您的个人数据。我们不使用跟踪您浏览历史记录的第三方分析服务。</p>
+
+                <h2>4. 数据权限</h2>
+                <p>我们请求访问 <code>twitter.com</code> 和 <code>x.com</code> 仅用于检测您的“点赞”行为并捕获内容以供您个人备份。我们不会代表您在 Twitter 上发布内容或进行写入操作。</p>
+
+                <h2>5. 联系我们</h2>
+                <p>如果您对本隐私政策有任何疑问，请通过 support@likemate.app 联系我们。</p>
+            `
+            },
+            ja: {
+                name: "日本語",
+                title: "プライバシーポリシー",
+                content: `
+                <p>最終更新日: 2025年12月</p>
+                <p>LikeMateでは、お客様のプライバシーを真剣に受け止めています。このプライバシーポリシーでは、情報の収集、使用、保護の方法について説明します。</p>
+
+                <h2>1. データ収集</h2>
+                <p>LikeMateは「ローカルファースト」アーキテクチャで設計されています。twitter.com または x.com を閲覧している場合にのみ、以下のデータを収集します。</p>
+                <ul>
+                    <li><strong>ツイートデータ:</strong> 「いいね」したツイートのテキスト、メディアURL、作成者情報、タイムスタンプ。</li>
+                    <li><strong>利用データ:</strong> 拡張機能内での基本的なインタラクションデータ（作成されたタグなど）。</li>
+                </ul>
+                <p><strong>重要:</strong> これらすべてのデータは、ChromeのIndexedDBを使用してデバイスにローカルに保存されます。データをクラウドサーバーに自動的にアップロードすることはありません。</p>
+
+                <h2>2. データの使用</h2>
+                <p>収集したデータは、以下の目的でのみ使用されます。</p>
+                <ul>
+                    <li>拡張機能の検索および整理機能の提供。</li>
+                    <li>「いいね」をローカル履歴に同期する。</li>
+                </ul>
+
+                <h2>3. 第三者サービス</h2>
+                <p>個人データを第三者と共有することはありません。閲覧履歴を追跡する第三者の分析サービスは使用していません。</p>
+
+                <h2>4. データ権限</h2>
+                <p><code>twitter.com</code> および <code>x.com</code> へのアクセスをリクエストするのは、お客様の「いいね」アクションを検出し、個人的なバックアップのためにコンテンツをキャプチャするためだけです。お客様に代わってTwitterに書き込みや投稿を行うことはありません。</p>
+
+                <h2>5. お問い合わせ</h2>
+                <p>このプライバシーポリシーについてご質問がある場合は、support@likemate.app までお問い合わせください。</p>
+            `
+            },
+            ko: {
+                name: "한국어",
+                title: "개인정보 처리방침",
+                content: `
+                <p>최종 업데이트: 2025년 12월</p>
+                <p>LikeMate는 귀하의 개인정보를 매우 중요하게 생각합니다. 본 개인정보 처리방침은 당사가 귀하의 정보를 수집, 사용 및 보호하는 방법을 설명합니다.</p>
+
+                <h2>1. 데이터 수집</h2>
+                <p>LikeMate는 "로컬 우선" 아키텍처로 설계되었습니다. 귀하가 twitter.com 또는 x.com을 탐색할 때만 다음 데이터를 수집합니다:</p>
+                <ul>
+                    <li><strong>트윗 데이터:</strong> 귀하가 좋아요를 누른 트윗의 텍스트, 미디어 URL, 작성자 정보 및 타임스탬프.</li>
+                    <li><strong>사용 데이터:</strong> 확장 프로그램 내의 기본 상호 작용 데이터 (예: 생성된 태그).</li>
+                </ul>
+                <p><strong>중요:</strong> 이 모든 데이터는 Chrome의 IndexedDB를 사용하여 귀하의 기기에 로컬로 저장됩니다. 당사는 귀하의 데이터를 클라우드 서버에 자동으로 업로드하지 않습니다.</p>
+
+                <h2>2. 데이터 사용</h2>
+                <p>수집된 데이터는 다음 목적으로만 사용됩니다:</p>
+                <ul>
+                    <li>확장 프로그램의 검색 및 정리 기능 제공.</li>
+                    <li>좋아요를 로컬 기록에 동기화.</li>
+                </ul>
+
+                <h2>3. 제3자 서비스</h2>
+                <p>당사는 귀하의 개인 데이터를 제3자와 공유하지 않습니다. 당사는 귀하의 탐색 기록을 추적하는 제3자 분석 서비스를 사용하지 않습니다.</p>
+
+                <h2>4. 데이터 권한</h2>
+                <p>당사는 귀하의 "좋아요" 작업을 감지하고 개인 백업을 위해 콘텐츠를 캡처하기 위해서만 <code>twitter.com</code> 및 <code>x.com</code>에 대한 액세스를 요청합니다. 당사는 귀하를 대신하여 트위터에 글을 쓰거나 게시하지 않습니다.</p>
+
+                <h2>5. 문의하기</h2>
+                <p>본 개인정보 처리방침에 대해 궁금한 점이 있으시면 support@likemate.app으로 문의해 주십시오.</p>
+            `
+            }
+            // Easy to add more languages here
+        };
+
+        // Add other languages with English fallback for now to save space, user can expand later
+        const otherLangs = ['zh_TW', 'de', 'fr', 'es'];
+        const names = { zh_TW: "繁體中文", de: "Deutsch", fr: "Français", es: "Español" };
+
+        otherLangs.forEach(lang => {
+            translations[lang] = {
+                name: names[lang],
+                title: translations.en.title,
+                content: translations.en.content // Fallback to English content for demo, ideally translated
+            };
+        });
+
+        // Special handling for Traditional Chinese fallback to Simplified if needed, but here we just use English fallback for brevity 
+        // or we can copy Simplified and convert specific phrases if we had a converter. 
+        // Let's copy Simplified for Traditional but keep distinct for now.
+        translations.zh_TW.content = translations.zh_CN.content;
+
+        const langSelector = document.getElementById('langSelector');
+        const mainContent = document.getElementById('mainContent');
+
+        function render(lang) {
+            if (!translations[lang]) lang = 'en';
+
+            mainContent.innerHTML = `
+            <h1>${translations[lang].title}</h1>
+            ${translations[lang].content}
+        `;
+
+            // Update buttons
+            Array.from(langSelector.children).forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            // Update Title
+            document.title = `${translations[lang].title} - LikeMate`;
+
+            // Save preference
+            localStorage.setItem('likemate_privacy_lang', lang);
+        }
+
+        // Init Config
+        Object.keys(translations).forEach(lang => {
+            const btn = document.createElement('button');
+            btn.className = 'lang-btn';
+            btn.dataset.lang = lang;
+            btn.textContent = translations[lang].name;
+            btn.onclick = () => render(lang);
+            langSelector.appendChild(btn);
+        });
+
+        // Detect Language
+        const savedLang = localStorage.getItem('likemate_privacy_lang');
+        const browserLang = navigator.language.replace('-', '_');
+        const initialLang = savedLang || (translations[browserLang] ? browserLang : 'en');
+
+        // Fuzzy match for zh-CN/zh-TW
+        let finalLang = initialLang;
+        if (initialLang.startsWith('zh') && !translations[initialLang]) {
+            finalLang = initialLang.includes('TW') || initialLang.includes('HK') ? 'zh_TW' : 'zh_CN';
+        }
+
+        render(translations[finalLang] ? finalLang : 'en');
+
+    </script>
+
+</body>
+
+</html>
