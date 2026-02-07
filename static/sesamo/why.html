@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesamo - Why Sesamo?</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='%23107C10' d='M352 96l64 0 0 64-64 0 0-64zm-128 0l64 0 0 64-64 0 0-64zM352 224l64 0 0 64-64 0 0-64zm-128 0l64 0 0 64-64 0 0-64zM96 96l64 0 0 64-64 0 0-64zm0 128l64 0 0 64-64 0 0-64zM96 352l64 0 0 64-64 0 0-64zm128 0l64 0 0 64-64 0 0-64zm128 0l64 0 0 64-64 0 0-64z'/></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg: #FAFAFA;
+            --text: #333;
+            --card: #fff;
+            --primary: #009487;
+            --border: #e0e0e0;
+            --muted: #888;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #14171C;
+                --text: #f0f0f0;
+                --card: #1A1C21;
+                --primary: #4DD9BF;
+                --border: #333;
+                --muted: #999;
+            }
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .container { max-width: 600px; margin: 0 auto; padding: 40px 20px; }
+        .back { display: inline-flex; align-items: center; gap: 4px; color: var(--primary); text-decoration: none; font-size: 14px; margin-bottom: 24px; }
+        .back:hover { text-decoration: underline; }
+        h1 { color: var(--primary); font-size: 28px; margin-bottom: 8px; }
+        .subtitle { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+        .lang-selector { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 24px; }
+        .lang-btn {
+            padding: 4px 10px; border: 1px solid var(--border); border-radius: 12px;
+            background: var(--card); color: var(--text); font-size: 12px;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .lang-btn:hover, .lang-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .section { background: var(--card); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+        h2 { font-size: 16px; margin-bottom: 12px; color: var(--primary); }
+        p { font-size: 14px; margin-bottom: 12px; }
+        .content { display: none; }
+        .content.active { display: block; }
+        .footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); }
+        .section-icon { font-size: 28px; text-align: center; margin-bottom: 16px; color: var(--primary); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back"><i class="fa-solid fa-arrow-left"></i> Back</a>
+        <h1>Sesamo</h1>
+        <p class="subtitle" id="page-title">Why Sesamo?</p>
+
+        <div class="lang-selector">
+            <button class="lang-btn active" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" onclick="setLang('ko')">한국어</button>
+            <button class="lang-btn" onclick="setLang('ja')">日本語</button>
+            <button class="lang-btn" onclick="setLang('fr')">FR</button>
+            <button class="lang-btn" onclick="setLang('de')">DE</button>
+            <button class="lang-btn" onclick="setLang('es')">ES</button>
+            <button class="lang-btn" onclick="setLang('zh')">繁中</button>
+        </div>
+
+        <!-- English -->
+        <div class="content active" id="content-en">
+            <div class="section">
+                <p class="section-icon"><i class="fa-brands fa-microsoft"></i></p>
+                <h2>The Problem</h2>
+                <p>Microsoft account verification is everywhere - Xbox, Office 365, Azure, and more. But there's one annoying step: every time you log in on a new device, you need to manually type an 8-character verification code.</p>
+                <p>The code appears on your screen, and you have to carefully type it on your phone. One wrong character? Start over.</p>
+            </div>
+            <div class="section">
+                <h2>The Solution</h2>
+                <p>Sesamo eliminates this friction. Just point your camera at the code, or take a screenshot and select it. The app instantly recognizes the code using OCR technology and auto-fills it for you.</p>
+                <p>What used to take 30 seconds of careful typing now takes 2 seconds.</p>
+            </div>
+            <div class="section">
+                <h2>The Name</h2>
+                <p>"Sesamo" comes from "Open Sesame" (Abrete Sesamo) - the magical phrase that opens doors. Just like the magic words, Sesamo opens the door to your Microsoft account instantly.</p>
+            </div>
+            <div class="section">
+                <h2>Open Source</h2>
+                <p>Sesamo is built with transparency in mind. No ads, no tracking, no accounts. Just a simple tool that does one thing well.</p>
+            </div>
+        </div>
+
+        <!-- Korean -->
+        <div class="content" id="content-ko">
+            <div class="section">
+                <p class="section-icon"><i class="fa-brands fa-microsoft"></i></p>
+                <h2>문제점</h2>
+                <p>Microsoft 계정 인증은 어디에나 있습니다 - Xbox, Office 365, Azure 등. 하지만 한 가지 귀찮은 단계가 있습니다: 새 기기에서 로그인할 때마다 8자리 인증 코드를 수동으로 입력해야 합니다.</p>
+                <p>코드는 화면에 표시되고, 휴대폰에서 조심스럽게 입력해야 합니다. 한 글자라도 틀리면? 처음부터 다시.</p>
+            </div>
+            <div class="section">
+                <h2>해결책</h2>
+                <p>Sesamo가 이 불편함을 없애줍니다. 카메라를 코드에 대거나, 스크린샷을 찍어 선택하기만 하면 됩니다. 앱이 OCR 기술로 코드를 즉시 인식하고 자동으로 입력해줍니다.</p>
+                <p>30초 걸리던 조심스러운 타이핑이 이제 2초면 끝납니다.</p>
+            </div>
+            <div class="section">
+                <h2>이름의 유래</h2>
+                <p>"Sesamo"는 문을 여는 마법의 주문 "열려라 참깨(Open Sesame)"에서 왔습니다. 마법의 주문처럼, Sesamo는 Microsoft 계정의 문을 즉시 열어줍니다.</p>
+            </div>
+            <div class="section">
+                <h2>오픈 소스</h2>
+                <p>Sesamo는 투명성을 염두에 두고 만들어졌습니다. 광고 없음, 추적 없음, 계정 없음. 한 가지 일을 잘 하는 간단한 도구입니다.</p>
+            </div>
+        </div>
+
+        <!-- Japanese -->
+        <div class="content" id="content-ja">
+            <div class="section">
+                <p class="section-icon"><i class="fa-brands fa-microsoft"></i></p>
+                <h2>問題</h2>
+                <p>Microsoftアカウント認証はどこにでもあります - Xbox、Office 365、Azureなど。でも一つ面倒なステップがあります：新しいデバイスでログインするたびに、8文字の認証コードを手動で入力する必要があります。</p>
+                <p>コードは画面に表示され、スマホで慎重に入力しなければなりません。一文字でも間違えたら？最初からやり直し。</p>
+            </div>
+            <div class="section">
+                <h2>解決策</h2>
+                <p>Sesamoがこの煩わしさを解消します。カメラをコードに向けるか、スクリーンショットを撮って選択するだけ。アプリがOCR技術でコードを即座に認識し、自動入力します。</p>
+                <p>30秒かかっていた慎重な入力が、今では2秒で完了します。</p>
+            </div>
+            <div class="section">
+                <h2>名前の由来</h2>
+                <p>「Sesamo」は扉を開ける魔法の言葉「開けゴマ（Open Sesame）」から来ています。魔法の言葉のように、SesamoはMicrosoftアカウントへの扉を瞬時に開きます。</p>
+            </div>
+            <div class="section">
+                <h2>オープンソース</h2>
+                <p>Sesamoは透明性を念頭に作られています。広告なし、トラッキングなし、アカウント不要。一つのことをうまくやるシンプルなツールです。</p>
+            </div>
+        </div>
+
+        <!-- French -->
+        <div class="content" id="content-fr">
+            <div class="section">
+                <p class="section-icon"><i class="fa-brands fa-microsoft"></i></p>
+                <h2>Le probleme</h2>
+                <p>La verification de compte Microsoft est partout - Xbox, Office 365, Azure, et plus. Mais il y a une etape ennuyeuse : chaque fois que vous vous connectez sur un nouvel appareil, vous devez taper manuellement un code de verification a 8 caracteres.</p>
+                <p>Le code apparait sur votre ecran, et vous devez le taper soigneusement sur votre telephone. Un mauvais caractere ? Recommencez.</p>
+            </div>
+            <div class="section">
+                <h2>La solution</h2>
+                <p>Sesamo elimine cette friction. Pointez simplement votre camera vers le code, ou prenez une capture d'ecran et selectionnez-la. L'application reconnait instantanement le code grace a la technologie OCR et le remplit automatiquement.</p>
+                <p>Ce qui prenait 30 secondes de frappe minutieuse ne prend maintenant que 2 secondes.</p>
+            </div>
+            <div class="section">
+                <h2>Le nom</h2>
+                <p>« Sesamo » vient de « Sesame, ouvre-toi » - la phrase magique qui ouvre les portes. Comme les mots magiques, Sesamo ouvre instantanement la porte de votre compte Microsoft.</p>
+            </div>
+            <div class="section">
+                <h2>Open Source</h2>
+                <p>Sesamo est concu avec la transparence a l'esprit. Pas de publicites, pas de suivi, pas de comptes. Juste un outil simple qui fait bien une chose.</p>
+            </div>
+        </div>
+
+        <!-- German -->
+        <div class="content" id="content-de">
+            <div class="section">
+                <p class="section-icon"><i class="fa-brands fa-microsoft"></i></p>
+                <h2>Das Problem</h2>
+                <p>Microsoft-Kontoverifizierung ist uberall - Xbox, Office 365, Azure und mehr. Aber es gibt einen nervigen Schritt: Jedes Mal, wenn Sie sich auf einem neuen Gerat anmelden, mussen Sie einen 8-stelligen Verifizierungscode manuell eingeben.</p>
+                <p>Der Code erscheint auf Ihrem Bildschirm, und Sie mussen ihn sorgfaltig auf Ihrem Handy eintippen. Ein falsches Zeichen? Von vorne anfangen.</p>
+            </div>
+            <div class="section">
+                <h2>Die Losung</h2>
+                <p>Sesamo beseitigt diese Reibung. Richten Sie einfach Ihre Kamera auf den Code oder machen Sie einen Screenshot und wahlen Sie ihn aus. Die App erkennt den Code sofort mit OCR-Technologie und fullt ihn automatisch aus.</p>
+                <p>Was fruher 30 Sekunden sorgfaltiges Tippen dauerte, dauert jetzt 2 Sekunden.</p>
+            </div>
+            <div class="section">
+                <h2>Der Name</h2>
+                <p>„Sesamo" kommt von „Sesam, offne dich" - dem magischen Spruch, der Turen offnet. Wie die Zauberworte offnet Sesamo sofort die Tur zu Ihrem Microsoft-Konto.</p>
+            </div>
+            <div class="section">
+                <h2>Open Source</h2>
+                <p>Sesamo wurde mit Transparenz im Sinn entwickelt. Keine Werbung, kein Tracking, keine Konten. Nur ein einfaches Tool, das eine Sache gut macht.</p>
+            </div>
+        </div>
+
+        <!-- Spanish -->
+        <div class="content" id="content-es">
+            <div class="section">
+                <p class="section-icon"><i class="fa-brands fa-microsoft"></i></p>
+                <h2>El problema</h2>
+                <p>La verificacion de cuenta Microsoft esta en todas partes - Xbox, Office 365, Azure y mas. Pero hay un paso molesto: cada vez que inicias sesion en un nuevo dispositivo, necesitas escribir manualmente un codigo de verificacion de 8 caracteres.</p>
+                <p>El codigo aparece en tu pantalla, y tienes que escribirlo cuidadosamente en tu telefono. Un caracter incorrecto? Empieza de nuevo.</p>
+            </div>
+            <div class="section">
+                <h2>La solucion</h2>
+                <p>Sesamo elimina esta friccion. Solo apunta tu camara al codigo, o toma una captura de pantalla y seleccionala. La app reconoce instantaneamente el codigo usando tecnologia OCR y lo completa automaticamente.</p>
+                <p>Lo que antes tomaba 30 segundos de escritura cuidadosa ahora toma 2 segundos.</p>
+            </div>
+            <div class="section">
+                <h2>El nombre</h2>
+                <p>"Sesamo" viene de "Abrete Sesamo" - la frase magica que abre puertas. Como las palabras magicas, Sesamo abre instantaneamente la puerta a tu cuenta Microsoft.</p>
+            </div>
+            <div class="section">
+                <h2>Codigo abierto</h2>
+                <p>Sesamo esta construido con transparencia en mente. Sin anuncios, sin rastreo, sin cuentas. Solo una herramienta simple que hace bien una cosa.</p>
+            </div>
+        </div>
+
+        <!-- Traditional Chinese -->
+        <div class="content" id="content-zh">
+            <div class="section">
+                <p class="section-icon"><i class="fa-brands fa-microsoft"></i></p>
+                <h2>問題</h2>
+                <p>Microsoft 帳戶驗證無處不在 - Xbox、Office 365、Azure 等等。但有一個煩人的步驟：每次在新裝置上登入時，都需要手動輸入 8 位驗證碼。</p>
+                <p>驗證碼顯示在螢幕上，你必須在手機上小心翼翼地輸入。打錯一個字？重新來過。</p>
+            </div>
+            <div class="section">
+                <h2>解決方案</h2>
+                <p>Sesamo 消除了這個麻煩。只需將相機對準驗證碼，或截圖後選擇它。應用程式使用 OCR 技術即時識別驗證碼並自動填入。</p>
+                <p>原本需要 30 秒小心輸入的過程，現在只需 2 秒。</p>
+            </div>
+            <div class="section">
+                <h2>名稱由來</h2>
+                <p>「Sesamo」來自「芝麻開門（Open Sesame）」- 那句能打開大門的魔法咒語。就像魔法咒語一樣，Sesamo 能瞬間打開你的 Microsoft 帳戶大門。</p>
+            </div>
+            <div class="section">
+                <h2>開源</h2>
+                <p>Sesamo 以透明為理念打造。沒有廣告、沒有追蹤、不需要帳戶。只是一個把一件事做好的簡單工具。</p>
+            </div>
+        </div>
+
+        <p class="footer">Made for everyone</p>
+    </div>
+
+    <script>
+        const titles = {
+            en: 'Why Sesamo?', ko: '왜 Sesamo?', ja: 'なぜ Sesamo?',
+            fr: 'Pourquoi Sesamo ?', de: 'Warum Sesamo?',
+            es: '¿Por que Sesamo?', zh: '為什麼做這個?'
+        };
+        function setLang(lang) {
+            document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById('content-' + lang).classList.add('active');
+            document.querySelector(`[onclick="setLang('${lang}')"]`).classList.add('active');
+            document.getElementById('page-title').textContent = titles[lang];
+        }
+        const userLang = navigator.language.split('-')[0];
+        if (['en', 'ko', 'ja', 'fr', 'de', 'es', 'zh'].includes(userLang)) setLang(userLang);
+    </script>
+</body>
+</html>

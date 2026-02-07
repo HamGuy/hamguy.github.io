@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesamo - Microsoft Verification Made Easy</title>
+    <meta name="description" content="Scan Microsoft verification codes instantly. One glance, you're in.">
+    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg: #FAFAFA;
+            --text: #333;
+            --card: #fff;
+            --primary: #009487;
+            --border: #e0e0e0;
+            --muted: #888;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #14171C;
+                --text: #f0f0f0;
+                --card: #1A1C21;
+                --primary: #4DD9BF;
+                --border: #333;
+                --muted: #999;
+            }
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container { max-width: 480px; margin: 0 auto; padding: 40px 20px; }
+
+        /* Header */
+        .header { text-align: center; margin-bottom: 32px; }
+        .logo { width: 80px; height: 80px; margin-bottom: 16px; border-radius: 20px; }
+        h1 { font-size: 32px; color: var(--primary); margin-bottom: 8px; }
+        .slogan { color: var(--muted); font-style: italic; font-size: 14px; }
+
+        /* Language selector */
+        .lang-selector {
+            display: flex; flex-wrap: wrap; justify-content: center;
+            gap: 6px; margin-bottom: 32px;
+        }
+        .lang-btn {
+            padding: 4px 10px; border: 1px solid var(--border); border-radius: 12px;
+            background: var(--card); color: var(--text); font-size: 12px;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--primary); color: white; border-color: var(--primary);
+        }
+
+        /* Content sections */
+        .content { display: none; }
+        .content.active { display: block; }
+
+        /* Hero card */
+        .hero {
+            background: linear-gradient(135deg, #008C80 0%, #00A694 100%);
+            border-radius: 16px; padding: 24px; color: white;
+            text-align: center; margin-bottom: 20px;
+        }
+        @media (prefers-color-scheme: dark) {
+            .hero {
+                background: linear-gradient(135deg, #33B3A6 0%, #4DD9BF 100%);
+            }
+        }
+        .hero h2 { font-size: 18px; margin-bottom: 12px; }
+        .hero p { font-size: 14px; opacity: 0.9; }
+
+        /* Features */
+        .features { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+        .feature {
+            background: var(--card); border-radius: 12px; padding: 16px;
+            display: flex; align-items: flex-start; gap: 14px;
+        }
+        .feature-icon { font-size: 20px; flex-shrink: 0; color: var(--primary); width: 24px; text-align: center; }
+        .feature-text h3 { font-size: 14px; margin-bottom: 4px; }
+        .feature-text p { font-size: 12px; color: var(--muted); }
+
+        /* Download buttons */
+        .downloads { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+        .download-btn {
+            display: flex; align-items: center; justify-content: center; gap: 12px;
+            background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+            padding: 14px 20px; text-decoration: none; color: var(--text);
+            transition: all 0.2s;
+        }
+        .download-btn:hover { border-color: var(--primary); transform: translateY(-2px); }
+        .download-btn i { font-size: 24px; }
+        .download-btn span { font-size: 14px; font-weight: 600; }
+
+        /* Footer */
+        .footer {
+            text-align: center; padding-top: 24px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-links { display: flex; justify-content: center; gap: 16px; margin-bottom: 12px; }
+        .footer-links a { color: var(--muted); font-size: 12px; text-decoration: none; }
+        .footer-links a:hover { color: var(--primary); }
+        .copyright { color: var(--muted); font-size: 11px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="icon.png" alt="Sesamo" class="logo">
+            <h1>Sesamo</h1>
+            <p class="slogan" id="slogan">One glance, you're in.</p>
+        </div>
+
+        <div class="lang-selector">
+            <button class="lang-btn active" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" onclick="setLang('ko')">한국어</button>
+            <button class="lang-btn" onclick="setLang('ja')">日本語</button>
+            <button class="lang-btn" onclick="setLang('fr')">FR</button>
+            <button class="lang-btn" onclick="setLang('de')">DE</button>
+            <button class="lang-btn" onclick="setLang('es')">ES</button>
+            <button class="lang-btn" onclick="setLang('zh')">繁中</button>
+        </div>
+
+        <!-- English -->
+        <div class="content active" id="content-en">
+            <div class="hero">
+                <h2>Microsoft Verification Made Easy</h2>
+                <p>Scan verification codes instantly with OCR. No more manual typing.</p>
+            </div>
+            <div class="features">
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-camera"></i></span>
+                    <div class="feature-text">
+                        <h3>Camera Scanning</h3>
+                        <p>Point your camera at the code for instant recognition</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-clipboard"></i></span>
+                    <div class="feature-text">
+                        <h3>Clipboard Support</h3>
+                        <p>Paste screenshots directly from your clipboard</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-bolt"></i></span>
+                    <div class="feature-text">
+                        <h3>Auto-Fill</h3>
+                        <p>Code is copied and login page opens automatically</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-shield-halved"></i></span>
+                    <div class="feature-text">
+                        <h3>Privacy First</h3>
+                        <p>No data collected. Everything stays on your device.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Korean -->
+        <div class="content" id="content-ko">
+            <div class="hero">
+                <h2>Microsoft 인증을 간편하게</h2>
+                <p>OCR로 인증 코드를 즉시 스캔. 더 이상 수동 입력 필요 없음.</p>
+            </div>
+            <div class="features">
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-camera"></i></span>
+                    <div class="feature-text">
+                        <h3>카메라 스캔</h3>
+                        <p>카메라를 코드에 대면 즉시 인식</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-clipboard"></i></span>
+                    <div class="feature-text">
+                        <h3>클립보드 지원</h3>
+                        <p>클립보드에서 스크린샷을 직접 붙여넣기</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-bolt"></i></span>
+                    <div class="feature-text">
+                        <h3>자동 입력</h3>
+                        <p>코드가 복사되고 로그인 페이지가 자동으로 열림</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-shield-halved"></i></span>
+                    <div class="feature-text">
+                        <h3>개인정보 보호</h3>
+                        <p>데이터 수집 없음. 모든 것이 기기에만 저장됩니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Japanese -->
+        <div class="content" id="content-ja">
+            <div class="hero">
+                <h2>Microsoft認証を簡単に</h2>
+                <p>OCRで認証コードを即座にスキャン。手動入力は不要。</p>
+            </div>
+            <div class="features">
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-camera"></i></span>
+                    <div class="feature-text">
+                        <h3>カメラスキャン</h3>
+                        <p>カメラをコードに向けると即座に認識</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-clipboard"></i></span>
+                    <div class="feature-text">
+                        <h3>クリップボード対応</h3>
+                        <p>クリップボードからスクリーンショットを直接貼り付け</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-bolt"></i></span>
+                    <div class="feature-text">
+                        <h3>自動入力</h3>
+                        <p>コードがコピーされ、ログインページが自動で開く</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-shield-halved"></i></span>
+                    <div class="feature-text">
+                        <h3>プライバシー重視</h3>
+                        <p>データ収集なし。すべてデバイス上に保存。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- French -->
+        <div class="content" id="content-fr">
+            <div class="hero">
+                <h2>Verification Microsoft simplifiee</h2>
+                <p>Scannez les codes instantanement avec l'OCR. Plus de saisie manuelle.</p>
+            </div>
+            <div class="features">
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-camera"></i></span>
+                    <div class="feature-text">
+                        <h3>Scan par camera</h3>
+                        <p>Pointez votre camera vers le code pour une reconnaissance instantanee</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-clipboard"></i></span>
+                    <div class="feature-text">
+                        <h3>Support presse-papiers</h3>
+                        <p>Collez des captures d'ecran directement depuis votre presse-papiers</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-bolt"></i></span>
+                    <div class="feature-text">
+                        <h3>Remplissage auto</h3>
+                        <p>Le code est copie et la page de connexion s'ouvre automatiquement</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-shield-halved"></i></span>
+                    <div class="feature-text">
+                        <h3>Confidentialite d'abord</h3>
+                        <p>Aucune donnee collectee. Tout reste sur votre appareil.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- German -->
+        <div class="content" id="content-de">
+            <div class="hero">
+                <h2>Microsoft-Verifizierung leicht gemacht</h2>
+                <p>Codes sofort mit OCR scannen. Kein manuelles Tippen mehr.</p>
+            </div>
+            <div class="features">
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-camera"></i></span>
+                    <div class="feature-text">
+                        <h3>Kamera-Scan</h3>
+                        <p>Richten Sie Ihre Kamera auf den Code fur sofortige Erkennung</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-clipboard"></i></span>
+                    <div class="feature-text">
+                        <h3>Zwischenablage-Unterstutzung</h3>
+                        <p>Screenshots direkt aus der Zwischenablage einfugen</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-bolt"></i></span>
+                    <div class="feature-text">
+                        <h3>Auto-Ausfullen</h3>
+                        <p>Code wird kopiert und Anmeldeseite offnet sich automatisch</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-shield-halved"></i></span>
+                    <div class="feature-text">
+                        <h3>Datenschutz zuerst</h3>
+                        <p>Keine Datenerfassung. Alles bleibt auf Ihrem Gerat.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Spanish -->
+        <div class="content" id="content-es">
+            <div class="hero">
+                <h2>Verificacion Microsoft facil</h2>
+                <p>Escanea codigos al instante con OCR. Sin mas escritura manual.</p>
+            </div>
+            <div class="features">
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-camera"></i></span>
+                    <div class="feature-text">
+                        <h3>Escaneo con camara</h3>
+                        <p>Apunta tu camara al codigo para reconocimiento instantaneo</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-clipboard"></i></span>
+                    <div class="feature-text">
+                        <h3>Soporte de portapapeles</h3>
+                        <p>Pega capturas de pantalla directamente desde tu portapapeles</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-bolt"></i></span>
+                    <div class="feature-text">
+                        <h3>Auto-rellenado</h3>
+                        <p>El codigo se copia y la pagina de inicio de sesion se abre automaticamente</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-shield-halved"></i></span>
+                    <div class="feature-text">
+                        <h3>Privacidad primero</h3>
+                        <p>Sin recopilacion de datos. Todo permanece en tu dispositivo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Traditional Chinese -->
+        <div class="content" id="content-zh">
+            <div class="hero">
+                <h2>Microsoft 驗證變簡單</h2>
+                <p>使用 OCR 即時掃描驗證碼。不再需要手動輸入。</p>
+            </div>
+            <div class="features">
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-camera"></i></span>
+                    <div class="feature-text">
+                        <h3>相機掃描</h3>
+                        <p>將相機對準驗證碼即可即時識別</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-clipboard"></i></span>
+                    <div class="feature-text">
+                        <h3>剪貼簿支援</h3>
+                        <p>直接從剪貼簿貼上截圖</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-bolt"></i></span>
+                    <div class="feature-text">
+                        <h3>自動填入</h3>
+                        <p>驗證碼自動複製，登入頁面自動開啟</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon"><i class="fa-solid fa-shield-halved"></i></span>
+                    <div class="feature-text">
+                        <h3>隱私優先</h3>
+                        <p>不收集任何資料。一切都保留在您的裝置上。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Download buttons (shared) -->
+        <div class="downloads">
+            <a href="#" class="download-btn" id="appstore-btn">
+                <i class="fa-brands fa-apple"></i>
+                <span>App Store</span>
+            </a>
+            <a href="#" class="download-btn" id="playstore-btn">
+                <i class="fa-brands fa-google-play"></i>
+                <span>Google Play</span>
+            </a>
+        </div>
+
+        <div class="footer">
+            <div class="footer-links">
+                <a href="privacy.html" id="link-privacy">Privacy</a>
+                <a href="why.html" id="link-why">Why Sesamo?</a>
+            </div>
+            <p class="copyright">© 2026 Sesamo</p>
+        </div>
+    </div>
+
+    <script>
+        const slogans = {
+            en: 'One glance, you\'re in.',
+            ko: '한 눈에, 로그인.',
+            ja: '一目で、ログイン。',
+            fr: 'Un regard, vous etes connecte.',
+            de: 'Ein Blick, du bist drin.',
+            es: 'Una mirada, estas dentro.',
+            zh: '一眼即入。'
+        };
+        const privacyText = {
+            en: 'Privacy', ko: '개인정보', ja: 'プライバシー',
+            fr: 'Confidentialite', de: 'Datenschutz', es: 'Privacidad', zh: '隱私'
+        };
+        const whyText = {
+            en: 'Why Sesamo?', ko: '왜 Sesamo?', ja: 'なぜ Sesamo?',
+            fr: 'Pourquoi Sesamo ?', de: 'Warum Sesamo?', es: '¿Por que Sesamo?', zh: '為什麼?'
+        };
+
+        function setLang(lang) {
+            document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById('content-' + lang).classList.add('active');
+            document.querySelector(`[onclick="setLang('${lang}')"]`).classList.add('active');
+            document.getElementById('slogan').textContent = slogans[lang];
+            document.getElementById('link-privacy').textContent = privacyText[lang];
+            document.getElementById('link-why').textContent = whyText[lang];
+        }
+
+        // Auto-detect language
+        const userLang = navigator.language.split('-')[0];
+        if (['en', 'ko', 'ja', 'fr', 'de', 'es', 'zh'].includes(userLang)) {
+            setLang(userLang);
+        }
+    </script>
+</body>
+</html>

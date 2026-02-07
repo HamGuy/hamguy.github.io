@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesamo - Privacy Policy</title>
+    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg: #FAFAFA;
+            --text: #333;
+            --card: #fff;
+            --primary: #009487;
+            --border: #e0e0e0;
+            --muted: #888;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #14171C;
+                --text: #f0f0f0;
+                --card: #1A1C21;
+                --primary: #4DD9BF;
+                --border: #333;
+                --muted: #999;
+            }
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .container { max-width: 600px; margin: 0 auto; padding: 40px 20px; }
+        .back { display: inline-flex; align-items: center; gap: 4px; color: var(--primary); text-decoration: none; font-size: 14px; margin-bottom: 24px; }
+        .back:hover { text-decoration: underline; }
+        h1 { color: var(--primary); font-size: 28px; margin-bottom: 8px; }
+        .subtitle { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+        .lang-selector { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 24px; }
+        .lang-btn {
+            padding: 4px 10px; border: 1px solid var(--border); border-radius: 12px;
+            background: var(--card); color: var(--text); font-size: 12px;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .lang-btn:hover, .lang-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .section { background: var(--card); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+        h2 { font-size: 16px; margin-bottom: 12px; color: var(--primary); }
+        p, li { font-size: 14px; margin-bottom: 8px; }
+        ul { padding-left: 20px; }
+        .content { display: none; }
+        .content.active { display: block; }
+        .footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back"><i class="fa-solid fa-arrow-left"></i> Back</a>
+        <h1>Sesamo</h1>
+        <p class="subtitle" id="policy-title">Privacy Policy</p>
+
+        <div class="lang-selector">
+            <button class="lang-btn active" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" onclick="setLang('ko')">한국어</button>
+            <button class="lang-btn" onclick="setLang('ja')">日本語</button>
+            <button class="lang-btn" onclick="setLang('fr')">FR</button>
+            <button class="lang-btn" onclick="setLang('de')">DE</button>
+            <button class="lang-btn" onclick="setLang('es')">ES</button>
+            <button class="lang-btn" onclick="setLang('zh')">繁中</button>
+        </div>
+
+        <!-- English -->
+        <div class="content active" id="content-en">
+            <div class="section">
+                <h2>Overview</h2>
+                <p>Sesamo is designed with privacy as a core principle. We do not collect, store, or transmit any personal data.</p>
+            </div>
+            <div class="section">
+                <h2>Data Collection</h2>
+                <p>Sesamo does NOT collect:</p>
+                <ul>
+                    <li>Personal information</li>
+                    <li>Usage analytics or statistics</li>
+                    <li>Device identifiers</li>
+                    <li>Location data</li>
+                    <li>Images or verification codes you scan</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h2>Camera & Storage Access</h2>
+                <p>Sesamo requests camera permission solely for scanning verification codes in real-time. Images are processed locally on your device and are never uploaded or stored.</p>
+                <p>Storage access is used only to read images you explicitly select from your photo library.</p>
+            </div>
+            <div class="section">
+                <h2>Third-Party Services</h2>
+                <p>Sesamo uses Google ML Kit for on-device text recognition. All processing happens locally on your device. No image data is sent to Google or any other server.</p>
+            </div>
+            <div class="section">
+                <h2>Data Security</h2>
+                <p>Since we don't collect any data, there is no data to secure or breach. Your verification codes remain on your device only.</p>
+            </div>
+            <div class="section">
+                <h2>Contact</h2>
+                <p>If you have questions about this privacy policy, please contact us at: privacy@hamguy.xyz</p>
+            </div>
+        </div>
+
+        <!-- Korean -->
+        <div class="content" id="content-ko">
+            <div class="section">
+                <h2>개요</h2>
+                <p>Sesamo는 개인정보 보호를 핵심 원칙으로 설계되었습니다. 어떠한 개인 데이터도 수집, 저장 또는 전송하지 않습니다.</p>
+            </div>
+            <div class="section">
+                <h2>데이터 수집</h2>
+                <p>Sesamo는 다음을 수집하지 않습니다:</p>
+                <ul>
+                    <li>개인 정보</li>
+                    <li>사용 분석 또는 통계</li>
+                    <li>기기 식별자</li>
+                    <li>위치 데이터</li>
+                    <li>스캔한 이미지 또는 인증 코드</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h2>카메라 및 저장소 접근</h2>
+                <p>Sesamo는 실시간으로 인증 코드를 스캔하기 위해서만 카메라 권한을 요청합니다. 이미지는 기기에서 로컬로 처리되며 업로드되거나 저장되지 않습니다.</p>
+                <p>저장소 접근은 사진 라이브러리에서 명시적으로 선택한 이미지를 읽는 데만 사용됩니다.</p>
+            </div>
+            <div class="section">
+                <h2>제3자 서비스</h2>
+                <p>Sesamo는 기기 내 텍스트 인식을 위해 Google ML Kit를 사용합니다. 모든 처리는 기기에서 로컬로 이루어집니다. 이미지 데이터는 Google이나 다른 서버로 전송되지 않습니다.</p>
+            </div>
+            <div class="section">
+                <h2>데이터 보안</h2>
+                <p>데이터를 수집하지 않으므로 보안하거나 유출될 데이터가 없습니다. 인증 코드는 기기에만 남아 있습니다.</p>
+            </div>
+            <div class="section">
+                <h2>문의</h2>
+                <p>이 개인정보 처리방침에 대한 질문이 있으시면 다음으로 연락해 주세요: privacy@hamguy.xyz</p>
+            </div>
+        </div>
+
+        <!-- Japanese -->
+        <div class="content" id="content-ja">
+            <div class="section">
+                <h2>概要</h2>
+                <p>Sesamoはプライバシーを核心原則として設計されています。個人データの収集、保存、送信は一切行いません。</p>
+            </div>
+            <div class="section">
+                <h2>データ収集</h2>
+                <p>Sesamoは以下を収集しません：</p>
+                <ul>
+                    <li>個人情報</li>
+                    <li>使用分析や統計</li>
+                    <li>デバイス識別子</li>
+                    <li>位置データ</li>
+                    <li>スキャンした画像や認証コード</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h2>カメラとストレージへのアクセス</h2>
+                <p>Sesamoは認証コードをリアルタイムでスキャンするためだけにカメラ権限を要求します。画像はデバイス上でローカルに処理され、アップロードや保存されることはありません。</p>
+                <p>ストレージへのアクセスは、フォトライブラリから明示的に選択した画像を読み取るためだけに使用されます。</p>
+            </div>
+            <div class="section">
+                <h2>サードパーティサービス</h2>
+                <p>Sesamoはデバイス上のテキスト認識にGoogle ML Kitを使用しています。すべての処理はデバイス上でローカルに行われます。画像データはGoogleや他のサーバーに送信されません。</p>
+            </div>
+            <div class="section">
+                <h2>データセキュリティ</h2>
+                <p>データを収集しないため、保護や漏洩するデータがありません。認証コードはデバイス上にのみ残ります。</p>
+            </div>
+            <div class="section">
+                <h2>お問い合わせ</h2>
+                <p>このプライバシーポリシーについてご質問がある場合は、こちらまでご連絡ください：privacy@hamguy.xyz</p>
+            </div>
+        </div>
+
+        <!-- French -->
+        <div class="content" id="content-fr">
+            <div class="section">
+                <h2>Aperçu</h2>
+                <p>Sesamo est conçu avec la confidentialité comme principe fondamental. Nous ne collectons, stockons ni transmettons aucune donnée personnelle.</p>
+            </div>
+            <div class="section">
+                <h2>Collecte de données</h2>
+                <p>Sesamo ne collecte PAS :</p>
+                <ul>
+                    <li>Informations personnelles</li>
+                    <li>Analyses ou statistiques d'utilisation</li>
+                    <li>Identifiants d'appareil</li>
+                    <li>Données de localisation</li>
+                    <li>Images ou codes de vérification scannés</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h2>Accès à la caméra et au stockage</h2>
+                <p>Sesamo demande l'autorisation de la caméra uniquement pour scanner les codes de vérification en temps réel. Les images sont traitées localement sur votre appareil et ne sont jamais téléchargées ni stockées.</p>
+                <p>L'accès au stockage est utilisé uniquement pour lire les images que vous sélectionnez explicitement dans votre photothèque.</p>
+            </div>
+            <div class="section">
+                <h2>Services tiers</h2>
+                <p>Sesamo utilise Google ML Kit pour la reconnaissance de texte sur l'appareil. Tout le traitement se fait localement sur votre appareil. Aucune donnée d'image n'est envoyée à Google ou à un autre serveur.</p>
+            </div>
+            <div class="section">
+                <h2>Sécurité des données</h2>
+                <p>Puisque nous ne collectons aucune donnée, il n'y a pas de données à sécuriser ou à compromettre. Vos codes de vérification restent uniquement sur votre appareil.</p>
+            </div>
+            <div class="section">
+                <h2>Contact</h2>
+                <p>Si vous avez des questions concernant cette politique de confidentialité, veuillez nous contacter à : privacy@hamguy.xyz</p>
+            </div>
+        </div>
+
+        <!-- German -->
+        <div class="content" id="content-de">
+            <div class="section">
+                <h2>Überblick</h2>
+                <p>Sesamo wurde mit Datenschutz als Kernprinzip entwickelt. Wir sammeln, speichern oder übertragen keine persönlichen Daten.</p>
+            </div>
+            <div class="section">
+                <h2>Datenerfassung</h2>
+                <p>Sesamo erfasst NICHT:</p>
+                <ul>
+                    <li>Persönliche Informationen</li>
+                    <li>Nutzungsanalysen oder Statistiken</li>
+                    <li>Gerätekennungen</li>
+                    <li>Standortdaten</li>
+                    <li>Gescannte Bilder oder Verifizierungscodes</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h2>Kamera- und Speicherzugriff</h2>
+                <p>Sesamo fordert die Kameraberechtigung ausschließlich zum Scannen von Verifizierungscodes in Echtzeit an. Bilder werden lokal auf Ihrem Gerät verarbeitet und niemals hochgeladen oder gespeichert.</p>
+                <p>Der Speicherzugriff wird nur verwendet, um Bilder zu lesen, die Sie explizit aus Ihrer Fotobibliothek auswählen.</p>
+            </div>
+            <div class="section">
+                <h2>Drittanbieterdienste</h2>
+                <p>Sesamo verwendet Google ML Kit für die Texterkennung auf dem Gerät. Die gesamte Verarbeitung erfolgt lokal auf Ihrem Gerät. Es werden keine Bilddaten an Google oder andere Server gesendet.</p>
+            </div>
+            <div class="section">
+                <h2>Datensicherheit</h2>
+                <p>Da wir keine Daten sammeln, gibt es keine Daten zu sichern oder zu gefährden. Ihre Verifizierungscodes verbleiben nur auf Ihrem Gerät.</p>
+            </div>
+            <div class="section">
+                <h2>Kontakt</h2>
+                <p>Wenn Sie Fragen zu dieser Datenschutzrichtlinie haben, kontaktieren Sie uns bitte unter: privacy@hamguy.xyz</p>
+            </div>
+        </div>
+
+        <!-- Spanish -->
+        <div class="content" id="content-es">
+            <div class="section">
+                <h2>Resumen</h2>
+                <p>Sesamo está diseñado con la privacidad como principio fundamental. No recopilamos, almacenamos ni transmitimos ningún dato personal.</p>
+            </div>
+            <div class="section">
+                <h2>Recopilación de datos</h2>
+                <p>Sesamo NO recopila:</p>
+                <ul>
+                    <li>Información personal</li>
+                    <li>Análisis de uso o estadísticas</li>
+                    <li>Identificadores de dispositivo</li>
+                    <li>Datos de ubicación</li>
+                    <li>Imágenes o códigos de verificación escaneados</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h2>Acceso a cámara y almacenamiento</h2>
+                <p>Sesamo solicita permiso de cámara únicamente para escanear códigos de verificación en tiempo real. Las imágenes se procesan localmente en tu dispositivo y nunca se cargan ni almacenan.</p>
+                <p>El acceso al almacenamiento se usa solo para leer imágenes que seleccionas explícitamente de tu biblioteca de fotos.</p>
+            </div>
+            <div class="section">
+                <h2>Servicios de terceros</h2>
+                <p>Sesamo usa Google ML Kit para el reconocimiento de texto en el dispositivo. Todo el procesamiento ocurre localmente en tu dispositivo. No se envían datos de imagen a Google ni a ningún otro servidor.</p>
+            </div>
+            <div class="section">
+                <h2>Seguridad de datos</h2>
+                <p>Como no recopilamos ningún dato, no hay datos que asegurar o filtrar. Tus códigos de verificación permanecen solo en tu dispositivo.</p>
+            </div>
+            <div class="section">
+                <h2>Contacto</h2>
+                <p>Si tienes preguntas sobre esta política de privacidad, contáctanos en: privacy@hamguy.xyz</p>
+            </div>
+        </div>
+
+        <!-- Traditional Chinese -->
+        <div class="content" id="content-zh">
+            <div class="section">
+                <h2>概述</h2>
+                <p>Sesamo 以隱私為核心原則設計。我們不收集、儲存或傳輸任何個人資料。</p>
+            </div>
+            <div class="section">
+                <h2>資料收集</h2>
+                <p>Sesamo 不收集：</p>
+                <ul>
+                    <li>個人資訊</li>
+                    <li>使用分析或統計</li>
+                    <li>裝置識別碼</li>
+                    <li>位置資料</li>
+                    <li>掃描的圖片或驗證碼</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h2>相機與儲存空間存取</h2>
+                <p>Sesamo 僅為即時掃描驗證碼而請求相機權限。圖片在您的裝置上本地處理，絕不會上傳或儲存。</p>
+                <p>儲存空間存取僅用於讀取您從相簿中明確選擇的圖片。</p>
+            </div>
+            <div class="section">
+                <h2>第三方服務</h2>
+                <p>Sesamo 使用 Google ML Kit 進行裝置上的文字識別。所有處理都在您的裝置上本地進行。不會將任何圖片資料傳送到 Google 或其他伺服器。</p>
+            </div>
+            <div class="section">
+                <h2>資料安全</h2>
+                <p>由於我們不收集任何資料，因此沒有需要保護或可能洩露的資料。您的驗證碼僅保留在您的裝置上。</p>
+            </div>
+            <div class="section">
+                <h2>聯絡方式</h2>
+                <p>如果您對此隱私政策有任何疑問，請聯絡我們：privacy@hamguy.xyz</p>
+            </div>
+        </div>
+
+        <p class="footer">Last updated: February 2026</p>
+    </div>
+
+    <script>
+        const titles = {
+            en: 'Privacy Policy', ko: '개인정보 처리방침', ja: 'プライバシーポリシー',
+            fr: 'Politique de confidentialité', de: 'Datenschutzrichtlinie',
+            es: 'Política de privacidad', zh: '隱私政策'
+        };
+        function setLang(lang) {
+            document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById('content-' + lang).classList.add('active');
+            document.querySelector(`[onclick="setLang('${lang}')"]`).classList.add('active');
+            document.getElementById('policy-title').textContent = titles[lang];
+        }
+        const userLang = navigator.language.split('-')[0];
+        if (['en', 'ko', 'ja', 'fr', 'de', 'es', 'zh'].includes(userLang)) setLang(userLang);
+    </script>
+</body>
+</html>
