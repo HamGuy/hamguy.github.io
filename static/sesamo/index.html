@@ -407,6 +407,7 @@
             <div class="footer-links">
                 <a href="privacy.html" id="link-privacy">Privacy</a>
                 <a href="why.html" id="link-why">Why Sesamo?</a>
+                <a href="mailto:support@hamguy.xyz?subject=Sesamo%20Support" id="link-contact">Contact Us</a>
             </div>
             <p class="copyright">© 2026 Sesamo</p>
         </div>
@@ -430,6 +431,10 @@
             en: 'Why Sesamo?', ko: '왜 Sesamo?', ja: 'なぜ Sesamo?',
             fr: 'Pourquoi Sesamo ?', de: 'Warum Sesamo?', es: '¿Por que Sesamo?', zh: '為什麼?'
         };
+        const contactText = {
+            en: 'Contact Us', ko: '문의하기', ja: 'お問い合わせ',
+            fr: 'Nous contacter', de: 'Kontakt', es: 'Contacto', zh: '聯絡我們'
+        };
 
         function setLang(lang) {
             document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
@@ -439,6 +444,7 @@
             document.getElementById('slogan').textContent = slogans[lang];
             document.getElementById('link-privacy').textContent = privacyText[lang];
             document.getElementById('link-why').textContent = whyText[lang];
+            document.getElementById('link-contact').textContent = contactText[lang];
         }
 
         // Auto-detect language
