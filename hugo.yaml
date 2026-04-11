@@ -42,8 +42,6 @@ minify:
   disableXML: true
 
 params:
-  footer:
-    text: "[SendHelp Privacy](/sendhelp/privacy/) | [SendHelp Terms](/sendhelp/terms/)"
   description: "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
   author: HamGuy
   subtitle: "A New Start From Here"

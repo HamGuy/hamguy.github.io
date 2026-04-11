@@ -6,8 +6,22 @@
     <description>Recent content on HamGuy</description>
     <generator>Hugo -- 0.128.2</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://hamguy.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SendHelp Privacy Policy</title>
+      <link>https://hamguy.xyz/sendhelp/privacy/</link>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://hamguy.xyz/sendhelp/privacy/</guid>
+      <description>Privacy Policy for SendHelp</description>
+    </item>
+    <item>
+      <title>SendHelp Terms of Service</title>
+      <link>https://hamguy.xyz/sendhelp/terms/</link>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://hamguy.xyz/sendhelp/terms/</guid>
+      <description>Terms of Service for SendHelp</description>
+    </item>
     <item>
       <title>About</title>
       <link>https://hamguy.xyz/about/</link>
