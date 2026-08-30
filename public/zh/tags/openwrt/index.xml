@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>OpenWrt on HamGuy</title>
+    <link>https://hamguy.xyz/zh/tags/openwrt/</link>
+    <description>Recent content in OpenWrt on HamGuy</description>
+    <generator>Hugo -- 0.128.2</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 30 Aug 2026 10:00:00 +0800</lastBuildDate>
+    <atom:link href="https://hamguy.xyz/zh/tags/openwrt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ParentControl Guard · OpenWrt 家长控制卫士</title>
+      <link>https://hamguy.xyz/zh/works/parent-control/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/works/parent-control/</guid>
+      <description>基于 Go 与 Linux 内核级 L7 DPI 深度包检测的 OpenWrt 细粒度家长控制与上网行为安全管理系统。</description>
+    </item>
+  </channel>
+</rss>

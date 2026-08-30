@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Compose on HamGuy</title>
+    <link>https://hamguy.xyz/tags/compose/</link>
+    <description>Recent content in Compose on HamGuy</description>
+    <generator>Hugo -- 0.128.2</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 30 Aug 2026 10:00:00 +0800</lastBuildDate>
+    <atom:link href="https://hamguy.xyz/tags/compose/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KiddiVision · Smart Android TV AI Tutoring System</title>
+      <link>https://hamguy.xyz/works/kiddi-vision/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/works/kiddi-vision/</guid>
+      <description>An immersive AI-powered voice companion and educational TV system built for Android TV (Android 12&#43; / Sony TV).</description>
+    </item>
+  </channel>
+</rss>

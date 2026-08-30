@@ -15,5 +15,19 @@
       <guid>https://hamguy.xyz/posts/my-first-post/</guid>
       <description>A reflection on shipping indie products, navigating the Apple ecosystem, and integrating modern AI agent workflows.</description>
     </item>
+    <item>
+      <title>CCSwitch for Mac · Claude Code Menu Bar Environment Switcher</title>
+      <link>https://hamguy.xyz/works/ccswitch/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/works/ccswitch/</guid>
+      <description>A lightweight macOS menu bar utility for one-click switching between Claude Code API endpoints, tokens, and routing environments.</description>
+    </item>
+    <item>
+      <title>Sesamo · Instant On-Device 2FA Code OCR Scanner</title>
+      <link>https://hamguy.xyz/works/sesamo/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/works/sesamo/</guid>
+      <description>A fast, privacy-first mobile OCR scanner designed to eliminate friction in Microsoft 2FA verification workflows (iOS &amp;amp; Android).</description>
+    </item>
   </channel>
 </rss>

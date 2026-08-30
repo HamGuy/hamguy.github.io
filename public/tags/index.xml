@@ -9,10 +9,94 @@
     <lastBuildDate>Sun, 30 Aug 2026 10:00:00 +0800</lastBuildDate>
     <atom:link href="https://hamguy.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>AI</title>
+      <link>https://hamguy.xyz/tags/ai/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>AI Tools</title>
       <link>https://hamguy.xyz/tags/ai-tools/</link>
       <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
       <guid>https://hamguy.xyz/tags/ai-tools/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Android</title>
+      <link>https://hamguy.xyz/tags/android/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/android/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Android TV</title>
+      <link>https://hamguy.xyz/tags/android-tv/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/android-tv/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AppKit</title>
+      <link>https://hamguy.xyz/tags/appkit/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/appkit/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Chrome Extension</title>
+      <link>https://hamguy.xyz/tags/chrome-extension/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/chrome-extension/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Claude Code</title>
+      <link>https://hamguy.xyz/tags/claude-code/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/claude-code/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Compose</title>
+      <link>https://hamguy.xyz/tags/compose/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/compose/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DevTools</title>
+      <link>https://hamguy.xyz/tags/devtools/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/devtools/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DPI</title>
+      <link>https://hamguy.xyz/tags/dpi/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/dpi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Edge-TTS</title>
+      <link>https://hamguy.xyz/tags/edge-tts/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/edge-tts/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Go</title>
+      <link>https://hamguy.xyz/tags/go/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/go/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IndexedDB</title>
+      <link>https://hamguy.xyz/tags/indexeddb/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/indexeddb/</guid>
       <description></description>
     </item>
     <item>
@@ -23,6 +107,20 @@
       <description></description>
     </item>
     <item>
+      <title>IOS</title>
+      <link>https://hamguy.xyz/tags/ios/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/ios/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kotlin</title>
+      <link>https://hamguy.xyz/tags/kotlin/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/kotlin/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>MacOS</title>
       <link>https://hamguy.xyz/tags/macos/</link>
       <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
@@ -30,10 +128,66 @@
       <description></description>
     </item>
     <item>
+      <title>Manifest V3</title>
+      <link>https://hamguy.xyz/tags/manifest-v3/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/manifest-v3/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Networking</title>
+      <link>https://hamguy.xyz/tags/networking/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/networking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OpenWrt</title>
+      <link>https://hamguy.xyz/tags/openwrt/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/openwrt/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Product</title>
+      <link>https://hamguy.xyz/tags/product/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/product/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Side Project</title>
+      <link>https://hamguy.xyz/tags/side-project/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/side-project/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Swift</title>
       <link>https://hamguy.xyz/tags/swift/</link>
       <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
       <guid>https://hamguy.xyz/tags/swift/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SwiftUI</title>
+      <link>https://hamguy.xyz/tags/swiftui/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/swiftui/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>TypeScript</title>
+      <link>https://hamguy.xyz/tags/typescript/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/typescript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vision OCR</title>
+      <link>https://hamguy.xyz/tags/vision-ocr/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/vision-ocr/</guid>
       <description></description>
     </item>
     <item>

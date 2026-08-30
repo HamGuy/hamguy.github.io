@@ -6,8 +6,43 @@
     <description>Recent content on HamGuy</description>
     <generator>Hugo -- 0.128.2</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 31 Mar 2026 10:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 30 Aug 2026 10:00:00 +0800</lastBuildDate>
     <atom:link href="https://hamguy.xyz/zh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CCSwitch for Mac · Claude Code 菜单栏切换器</title>
+      <link>https://hamguy.xyz/zh/works/ccswitch/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/works/ccswitch/</guid>
+      <description>常驻 macOS 菜单栏的一键式 Claude Code API 端点、Token 及环境配置切换利器。</description>
+    </item>
+    <item>
+      <title>KiddiVision (童视智汇) · 智能 TV 伴学系统</title>
+      <link>https://hamguy.xyz/zh/works/kiddi-vision/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/works/kiddi-vision/</guid>
+      <description>专为儿童与 Android TV（Android 12&#43; / Sony 智能电视）打造的沉浸式 AI 语音互动与课程伴学系统。</description>
+    </item>
+    <item>
+      <title>LikeMates (Trovault) · X 收藏与点赞离线管理插件</title>
+      <link>https://hamguy.xyz/zh/works/likemates/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/works/likemates/</guid>
+      <description>专注于隐私安全的 X (Twitter) 收藏与点赞本地离线管理与即时搜索 Chrome 浏览器扩展插件。</description>
+    </item>
+    <item>
+      <title>ParentControl Guard · OpenWrt 家长控制卫士</title>
+      <link>https://hamguy.xyz/zh/works/parent-control/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/works/parent-control/</guid>
+      <description>基于 Go 与 Linux 内核级 L7 DPI 深度包检测的 OpenWrt 细粒度家长控制与上网行为安全管理系统。</description>
+    </item>
+    <item>
+      <title>Sesamo · 屏幕验证码 OCR 秒级识别工具</title>
+      <link>https://hamguy.xyz/zh/works/sesamo/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/works/sesamo/</guid>
+      <description>专为解决微软 Authenticator 验证码繁琐切换而设计的本地视觉 OCR 扫描器（iOS / Android）。</description>
+    </item>
     <item>
       <title>Intel NUC8i5BEHS 黑苹果安装 macOS Sequoia 总结与避坑指南</title>
       <link>https://hamguy.xyz/zh/posts/nuc8-hackintosh-sequoia/</link>

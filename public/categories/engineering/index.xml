@@ -16,6 +16,41 @@
       <description>A reflection on shipping indie products, navigating the Apple ecosystem, and integrating modern AI agent workflows.</description>
     </item>
     <item>
+      <title>CCSwitch for Mac · Claude Code Menu Bar Environment Switcher</title>
+      <link>https://hamguy.xyz/works/ccswitch/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/works/ccswitch/</guid>
+      <description>A lightweight macOS menu bar utility for one-click switching between Claude Code API endpoints, tokens, and routing environments.</description>
+    </item>
+    <item>
+      <title>KiddiVision · Smart Android TV AI Tutoring System</title>
+      <link>https://hamguy.xyz/works/kiddi-vision/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/works/kiddi-vision/</guid>
+      <description>An immersive AI-powered voice companion and educational TV system built for Android TV (Android 12&#43; / Sony TV).</description>
+    </item>
+    <item>
+      <title>LikeMates (Trovault) · X Likes &amp; Bookmarks Local Manager</title>
+      <link>https://hamguy.xyz/works/likemates/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/works/likemates/</guid>
+      <description>A privacy-first Chrome browser extension to sync, organize, and full-text search your X (Twitter) likes and bookmarks locally.</description>
+    </item>
+    <item>
+      <title>ParentControl Guard · OpenWrt Parental Control System</title>
+      <link>https://hamguy.xyz/works/parent-control/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/works/parent-control/</guid>
+      <description>A fine-grained parental control and network behavior management system for OpenWrt routers powered by Go and Linux kernel L7 DPI.</description>
+    </item>
+    <item>
+      <title>Sesamo · Instant On-Device 2FA Code OCR Scanner</title>
+      <link>https://hamguy.xyz/works/sesamo/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/works/sesamo/</guid>
+      <description>A fast, privacy-first mobile OCR scanner designed to eliminate friction in Microsoft 2FA verification workflows (iOS &amp;amp; Android).</description>
+    </item>
+    <item>
       <title>Intel NUC8i5BEHS Hackintosh Guide: Installing macOS Sequoia with OpenCore</title>
       <link>https://hamguy.xyz/posts/nuc8-hackintosh-sequoia/</link>
       <pubDate>Tue, 31 Mar 2026 10:00:00 +0800</pubDate>

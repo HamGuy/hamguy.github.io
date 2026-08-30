@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Android on HamGuy</title>
+    <link>https://hamguy.xyz/zh/tags/android/</link>
+    <description>Recent content in Android on HamGuy</description>
+    <generator>Hugo -- 0.128.2</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 30 Aug 2026 10:00:00 +0800</lastBuildDate>
+    <atom:link href="https://hamguy.xyz/zh/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sesamo · 屏幕验证码 OCR 秒级识别工具</title>
+      <link>https://hamguy.xyz/zh/works/sesamo/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/works/sesamo/</guid>
+      <description>专为解决微软 Authenticator 验证码繁琐切换而设计的本地视觉 OCR 扫描器（iOS / Android）。</description>
+    </item>
+  </channel>
+</rss>

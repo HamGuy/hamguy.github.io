@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>IndexedDB on HamGuy</title>
+    <link>https://hamguy.xyz/zh/tags/indexeddb/</link>
+    <description>Recent content in IndexedDB on HamGuy</description>
+    <generator>Hugo -- 0.128.2</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 30 Aug 2026 10:00:00 +0800</lastBuildDate>
+    <atom:link href="https://hamguy.xyz/zh/tags/indexeddb/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LikeMates (Trovault) · X 收藏与点赞离线管理插件</title>
+      <link>https://hamguy.xyz/zh/works/likemates/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/works/likemates/</guid>
+      <description>专注于隐私安全的 X (Twitter) 收藏与点赞本地离线管理与即时搜索 Chrome 浏览器扩展插件。</description>
+    </item>
+  </channel>
+</rss>

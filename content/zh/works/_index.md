@@ -173,8 +173,8 @@ layout: "page"
       </div>
     </div>
     <div class="project-links">
-      <a href="https://github.com/hamguy" class="btn-link" target="_blank" rel="noopener noreferrer">GitHub 项目主页</a>
-      <span class="btn-link secondary">OpenWrt 21.02 - 23.05</span>
+      <a href="/zh/works/parent-control/" class="btn-link">项目详解 &rarr;</a>
+      <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
   </div>
 
@@ -200,8 +200,8 @@ layout: "page"
       </div>
     </div>
     <div class="project-links">
-      <a href="https://github.com/hamguy" class="btn-link" target="_blank" rel="noopener noreferrer">GitHub 项目主页</a>
-      <span class="btn-link secondary">Android TV 12+</span>
+      <a href="/zh/works/kiddi-vision/" class="btn-link">项目详解 &rarr;</a>
+      <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
   </div>
 </div>
@@ -230,7 +230,8 @@ layout: "page"
       </div>
     </div>
     <div class="project-links">
-      <a href="/ccswitch/" class="btn-link">工具主页</a>
+      <a href="/zh/works/ccswitch/" class="btn-link">项目详解 &rarr;</a>
+      <a href="/ccswitch/" class="btn-link secondary">工具主页</a>
       <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
   </div>
@@ -257,7 +258,7 @@ layout: "page"
     </div>
     <div class="project-links">
       <a href="/ccsetup/" class="btn-link">使用指南</a>
-      <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">查看源码</a>
+      <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">源码查看</a>
     </div>
   </div>
 </div>
@@ -286,9 +287,9 @@ layout: "page"
       </div>
     </div>
     <div class="project-links">
-      <a href="/sesamo/" class="btn-link">产品主页</a>
+      <a href="/zh/works/sesamo/" class="btn-link">项目详解 &rarr;</a>
+      <a href="/sesamo/" class="btn-link secondary">产品主页</a>
       <a href="https://apps.apple.com/app/sesamo/id6746903273" class="btn-link secondary" target="_blank" rel="noopener noreferrer">App Store</a>
-      <a href="https://play.google.com/store/apps/details?id=xyz.hamguy.sesamo" class="btn-link secondary" target="_blank" rel="noopener noreferrer">Google Play</a>
     </div>
   </div>
 
@@ -313,8 +314,8 @@ layout: "page"
       </div>
     </div>
     <div class="project-links">
-      <a href="https://github.com/hamguy" class="btn-link" target="_blank" rel="noopener noreferrer">GitHub 项目主页</a>
-      <span class="btn-link secondary">Manifest V3</span>
+      <a href="/zh/works/likemates/" class="btn-link">项目详解 &rarr;</a>
+      <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
   </div>
 </div>

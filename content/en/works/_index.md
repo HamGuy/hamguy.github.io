@@ -173,8 +173,8 @@ layout: "page"
       </div>
     </div>
     <div class="project-links">
-      <a href="https://github.com/hamguy" class="btn-link" target="_blank" rel="noopener noreferrer">GitHub Project</a>
-      <span class="btn-link secondary">OpenWrt 21.02 - 23.05</span>
+      <a href="/works/parent-control/" class="btn-link">Case Study &rarr;</a>
+      <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
   </div>
 
@@ -200,8 +200,8 @@ layout: "page"
       </div>
     </div>
     <div class="project-links">
-      <a href="https://github.com/hamguy" class="btn-link" target="_blank" rel="noopener noreferrer">GitHub Project</a>
-      <span class="btn-link secondary">Android TV 12+</span>
+      <a href="/works/kiddi-vision/" class="btn-link">Case Study &rarr;</a>
+      <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
   </div>
 </div>
@@ -230,7 +230,8 @@ layout: "page"
       </div>
     </div>
     <div class="project-links">
-      <a href="/ccswitch/" class="btn-link">Product Page</a>
+      <a href="/works/ccswitch/" class="btn-link">Case Study &rarr;</a>
+      <a href="/ccswitch/" class="btn-link secondary">Product Page</a>
       <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
   </div>
@@ -286,9 +287,9 @@ layout: "page"
       </div>
     </div>
     <div class="project-links">
-      <a href="/sesamo/" class="btn-link">Product Page</a>
+      <a href="/works/sesamo/" class="btn-link">Case Study &rarr;</a>
+      <a href="/sesamo/" class="btn-link secondary">Product Page</a>
       <a href="https://apps.apple.com/app/sesamo/id6746903273" class="btn-link secondary" target="_blank" rel="noopener noreferrer">App Store</a>
-      <a href="https://play.google.com/store/apps/details?id=xyz.hamguy.sesamo" class="btn-link secondary" target="_blank" rel="noopener noreferrer">Google Play</a>
     </div>
   </div>
 
@@ -313,8 +314,8 @@ layout: "page"
       </div>
     </div>
     <div class="project-links">
-      <a href="https://github.com/hamguy" class="btn-link" target="_blank" rel="noopener noreferrer">GitHub Project</a>
-      <span class="btn-link secondary">Manifest V3</span>
+      <a href="/works/likemates/" class="btn-link">Case Study &rarr;</a>
+      <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">GitHub Project</a>
     </div>
   </div>
 </div>

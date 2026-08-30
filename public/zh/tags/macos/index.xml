@@ -6,8 +6,15 @@
     <description>Recent content in MacOS on HamGuy</description>
     <generator>Hugo -- 0.128.2</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 31 Mar 2026 10:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 30 Aug 2026 10:00:00 +0800</lastBuildDate>
     <atom:link href="https://hamguy.xyz/zh/tags/macos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CCSwitch for Mac · Claude Code 菜单栏切换器</title>
+      <link>https://hamguy.xyz/zh/works/ccswitch/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/works/ccswitch/</guid>
+      <description>常驻 macOS 菜单栏的一键式 Claude Code API 端点、Token 及环境配置切换利器。</description>
+    </item>
     <item>
       <title>Intel NUC8i5BEHS 黑苹果安装 macOS Sequoia 总结与避坑指南</title>
       <link>https://hamguy.xyz/zh/posts/nuc8-hackintosh-sequoia/</link>
