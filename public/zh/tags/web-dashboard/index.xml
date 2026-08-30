@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Web Dashboard on HamGuy</title>
+    <link>https://hamguy.xyz/zh/tags/web-dashboard/</link>
+    <description>Recent content in Web Dashboard on HamGuy</description>
+    <generator>Hugo -- 0.128.2</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 30 Aug 2026 10:00:00 +0800</lastBuildDate>
+    <atom:link href="https://hamguy.xyz/zh/tags/web-dashboard/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NicheHunter · 垂直利基赛道 AI 辅助研究工作台</title>
+      <link>https://hamguy.xyz/zh/works/niche-hunter/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/works/niche-hunter/</guid>
+      <description>专为独立开发者与早期创业团队打造的垂直利基市场深度剖析与商业可行性评估 AI 工作台。</description>
+    </item>
+  </channel>
+</rss>

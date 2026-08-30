@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Antigravity on HamGuy</title>
+    <link>https://hamguy.xyz/tags/antigravity/</link>
+    <description>Recent content in Antigravity on HamGuy</description>
+    <generator>Hugo -- 0.128.2</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 30 Aug 2026 10:45:00 +0800</lastBuildDate>
+    <atom:link href="https://hamguy.xyz/tags/antigravity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building an OpenWrt Parental Control System with Gemini 3.7 and Open-Sourcing It</title>
+      <link>https://hamguy.xyz/posts/parent-control-open-source/</link>
+      <pubDate>Sun, 30 Aug 2026 10:45:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/posts/parent-control-open-source/</guid>
+      <description>As a busy working parent frustrated by fragile screen-time limits and clunky router plugins, I teamed up with Gemini 3.7 Flash in Antigravity to build and open-source ParentControl Guard.</description>
+    </item>
+  </channel>
+</rss>

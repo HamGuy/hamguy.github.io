@@ -1,7 +1,7 @@
 ---
 title: "Works & Projects"
-description: "A showcase of personal side projects, developer tools, and creative utilities built by HamGuy."
-summary: "Personal side projects, macOS tools, OpenWrt systems, Android TV apps, and developer utilities."
+description: "A showcase of personal side projects, AI intelligence pipelines, developer tools, and creative utilities built by HamGuy."
+summary: "Personal side projects, AI market intelligence engines, macOS tools, OpenWrt systems, and developer utilities."
 layout: "page"
 ---
 
@@ -145,7 +145,89 @@ layout: "page"
 </style>
 
 <div class="portfolio-intro">
-  A curated collection of personal side projects, smart hardware utilities, developer tools, and creative experiments built by HamGuy.
+  A curated collection of personal side projects, AI intelligence pipelines, smart hardware utilities, developer tools, and creative experiments built by HamGuy.
+</div>
+
+<h2 class="section-title">AI Intelligence &amp; Market Pipelines</h2>
+
+<div class="projects-grid">
+  <!-- DemandRadar AI -->
+  <div class="project-card">
+    <div>
+      <div class="project-header">
+        <div class="project-icon">DR</div>
+        <div>
+          <h3 class="project-title">DemandRadar AI</h3>
+          <div class="project-category">Market Intelligence &amp; NLP Decision Engine</div>
+        </div>
+      </div>
+      <p class="project-desc">
+        An autonomous market intelligence pipeline that ingests multi-source unstructured developer demand streams, extracts verifiable pain points, and applies LLM-driven confidence scoring to surface high-potential SaaS &amp; DevTools opportunities.
+      </p>
+      <div class="project-tech">
+        <span class="tech-badge">AI Pipeline</span>
+        <span class="tech-badge">NLP Clustering</span>
+        <span class="tech-badge">LLM Scoring</span>
+        <span class="tech-badge">FastAPI</span>
+      </div>
+    </div>
+    <div class="project-links">
+      <a href="/works/demand-radar/" class="btn-link">Case Study &rarr;</a>
+      <span class="btn-link secondary">Self-Hosted</span>
+    </div>
+  </div>
+
+  <!-- NicheHunter -->
+  <div class="project-card">
+    <div>
+      <div class="project-header">
+        <div class="project-icon">NH</div>
+        <div>
+          <h3 class="project-title">NicheHunter</h3>
+          <div class="project-category">AI Vertical Market Research Workbench</div>
+        </div>
+      </div>
+      <p class="project-desc">
+        An intelligent market analysis workbench designed to dissect niche software segments, evaluate competitive density, identify white-space differentiation, and generate structured feasibility reports using LLM workflows.
+      </p>
+      <div class="project-tech">
+        <span class="tech-badge">Market Analysis</span>
+        <span class="tech-badge">LLM Workflows</span>
+        <span class="tech-badge">Python</span>
+        <span class="tech-badge">Workbench</span>
+      </div>
+    </div>
+    <div class="project-links">
+      <a href="/works/niche-hunter/" class="btn-link">Case Study &rarr;</a>
+      <span class="btn-link secondary">Private Tool</span>
+    </div>
+  </div>
+
+  <!-- OnlyBots -->
+  <div class="project-card">
+    <div>
+      <div class="project-header">
+        <div class="project-icon">OB</div>
+        <div>
+          <h3 class="project-title">OnlyBots</h3>
+          <div class="project-category">Multi-Agent Content Orchestration</div>
+        </div>
+      </div>
+      <p class="project-desc">
+        An autonomous multi-agent content generation and workflow orchestration pipeline powered by Qwen and Hermes LLM models, featuring automated topic clustering, candidate generation, and multi-channel pipeline dispatching.
+      </p>
+      <div class="project-tech">
+        <span class="tech-badge">Multi-Agent</span>
+        <span class="tech-badge">Qwen LLM</span>
+        <span class="tech-badge">Workflow</span>
+        <span class="tech-badge">Automation</span>
+      </div>
+    </div>
+    <div class="project-links">
+      <a href="/works/onlybots/" class="btn-link">Case Study &rarr;</a>
+      <span class="btn-link secondary">24/7 Agent Flow</span>
+    </div>
+  </div>
 </div>
 
 <h2 class="section-title">Gateway &amp; Smart Devices</h2>

@@ -6,8 +6,15 @@
     <description>Recent content on HamGuy</description>
     <generator>Hugo -- 0.128.2</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 30 Aug 2026 10:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 30 Aug 2026 10:45:00 +0800</lastBuildDate>
     <atom:link href="https://hamguy.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building an OpenWrt Parental Control System with Gemini 3.7 and Open-Sourcing It</title>
+      <link>https://hamguy.xyz/posts/parent-control-open-source/</link>
+      <pubDate>Sun, 30 Aug 2026 10:45:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/posts/parent-control-open-source/</guid>
+      <description>As a busy working parent frustrated by fragile screen-time limits and clunky router plugins, I teamed up with Gemini 3.7 Flash in Antigravity to build and open-source ParentControl Guard.</description>
+    </item>
     <item>
       <title>Building in Public: From iOS Apps to AI Developer Tools</title>
       <link>https://hamguy.xyz/posts/my-first-post/</link>
@@ -23,6 +30,13 @@
       <description>A lightweight macOS menu bar utility for one-click switching between Claude Code API endpoints, tokens, and routing environments.</description>
     </item>
     <item>
+      <title>DemandRadar AI · Global Software Opportunity &amp; Demand Intelligence</title>
+      <link>https://hamguy.xyz/works/demand-radar/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/works/demand-radar/</guid>
+      <description>An automated market intelligence and NLP decision engine that analyzes unstructured global software demand streams and extracts verifiable SaaS opportunities.</description>
+    </item>
+    <item>
       <title>KiddiVision · Smart Android TV AI Tutoring System</title>
       <link>https://hamguy.xyz/works/kiddi-vision/</link>
       <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
@@ -35,6 +49,20 @@
       <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
       <guid>https://hamguy.xyz/works/likemates/</guid>
       <description>A privacy-first Chrome browser extension to sync, organize, and full-text search your X (Twitter) likes and bookmarks locally.</description>
+    </item>
+    <item>
+      <title>NicheHunter · AI-Powered Vertical Market Intelligence Workbench</title>
+      <link>https://hamguy.xyz/works/niche-hunter/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/works/niche-hunter/</guid>
+      <description>An intelligent market research workbench designed to evaluate vertical niche software segments and commercial viability using LLM workflows.</description>
+    </item>
+    <item>
+      <title>OnlyBots · Autonomous Multi-Agent Content Orchestration Platform</title>
+      <link>https://hamguy.xyz/works/onlybots/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/works/onlybots/</guid>
+      <description>An autonomous multi-agent content generation and workflow orchestration pipeline powered by Qwen and Hermes LLM models.</description>
     </item>
     <item>
       <title>ParentControl Guard · OpenWrt Parental Control System</title>

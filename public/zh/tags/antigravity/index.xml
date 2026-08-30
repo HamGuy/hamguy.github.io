@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Antigravity on HamGuy</title>
+    <link>https://hamguy.xyz/zh/tags/antigravity/</link>
+    <description>Recent content in Antigravity on HamGuy</description>
+    <generator>Hugo -- 0.128.2</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 30 Aug 2026 10:45:00 +0800</lastBuildDate>
+    <atom:link href="https://hamguy.xyz/zh/tags/antigravity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>给娃防沉迷：我用 Gemini 3.7 写了个 OpenWrt 家长控制插件并开源了</title>
+      <link>https://hamguy.xyz/zh/posts/parent-control-open-source/</link>
+      <pubDate>Sun, 30 Aug 2026 10:45:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/posts/parent-control-open-source/</guid>
+      <description>平时上班没法盯娃，市面上又找不到好用的软路由管控插件。借着 Gemini 3.7 Flash 和 Antigravity，我顺手肝出了 ParentControl Guard 并正式开源。</description>
+    </item>
+  </channel>
+</rss>

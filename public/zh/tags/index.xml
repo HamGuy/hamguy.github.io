@@ -6,13 +6,69 @@
     <description>Recent content in Tags on HamGuy</description>
     <generator>Hugo -- 0.128.2</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 30 Aug 2026 10:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 30 Aug 2026 10:45:00 +0800</lastBuildDate>
     <atom:link href="https://hamguy.xyz/zh/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Antigravity</title>
+      <link>https://hamguy.xyz/zh/tags/antigravity/</link>
+      <pubDate>Sun, 30 Aug 2026 10:45:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/tags/antigravity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gemini</title>
+      <link>https://hamguy.xyz/zh/tags/gemini/</link>
+      <pubDate>Sun, 30 Aug 2026 10:45:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/tags/gemini/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Go</title>
+      <link>https://hamguy.xyz/zh/tags/go/</link>
+      <pubDate>Sun, 30 Aug 2026 10:45:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/tags/go/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OpenSource</title>
+      <link>https://hamguy.xyz/zh/tags/opensource/</link>
+      <pubDate>Sun, 30 Aug 2026 10:45:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/tags/opensource/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OpenWrt</title>
+      <link>https://hamguy.xyz/zh/tags/openwrt/</link>
+      <pubDate>Sun, 30 Aug 2026 10:45:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/tags/openwrt/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ParentControl</title>
+      <link>https://hamguy.xyz/zh/tags/parentcontrol/</link>
+      <pubDate>Sun, 30 Aug 2026 10:45:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/tags/parentcontrol/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SideProject</title>
+      <link>https://hamguy.xyz/zh/tags/sideproject/</link>
+      <pubDate>Sun, 30 Aug 2026 10:45:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/tags/sideproject/</guid>
+      <description></description>
+    </item>
     <item>
       <title>AI</title>
       <link>https://hamguy.xyz/zh/tags/ai/</link>
       <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
       <guid>https://hamguy.xyz/zh/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI Pipeline</title>
+      <link>https://hamguy.xyz/zh/tags/ai-pipeline/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/tags/ai-pipeline/</guid>
       <description></description>
     </item>
     <item>
@@ -34,6 +90,13 @@
       <link>https://hamguy.xyz/zh/tags/appkit/</link>
       <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
       <guid>https://hamguy.xyz/zh/tags/appkit/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Automation</title>
+      <link>https://hamguy.xyz/zh/tags/automation/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/tags/automation/</guid>
       <description></description>
     </item>
     <item>
@@ -79,10 +142,10 @@
       <description></description>
     </item>
     <item>
-      <title>Go</title>
-      <link>https://hamguy.xyz/zh/tags/go/</link>
+      <title>FastAPI</title>
+      <link>https://hamguy.xyz/zh/tags/fastapi/</link>
       <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
-      <guid>https://hamguy.xyz/zh/tags/go/</guid>
+      <guid>https://hamguy.xyz/zh/tags/fastapi/</guid>
       <description></description>
     </item>
     <item>
@@ -107,6 +170,13 @@
       <description></description>
     </item>
     <item>
+      <title>LLM</title>
+      <link>https://hamguy.xyz/zh/tags/llm/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/tags/llm/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>MacOS</title>
       <link>https://hamguy.xyz/zh/tags/macos/</link>
       <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
@@ -121,6 +191,27 @@
       <description></description>
     </item>
     <item>
+      <title>Market Analysis</title>
+      <link>https://hamguy.xyz/zh/tags/market-analysis/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/tags/market-analysis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Market Intelligence</title>
+      <link>https://hamguy.xyz/zh/tags/market-intelligence/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/tags/market-intelligence/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Multi-Agent</title>
+      <link>https://hamguy.xyz/zh/tags/multi-agent/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/tags/multi-agent/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Networking</title>
       <link>https://hamguy.xyz/zh/tags/networking/</link>
       <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
@@ -128,10 +219,10 @@
       <description></description>
     </item>
     <item>
-      <title>OpenWrt</title>
-      <link>https://hamguy.xyz/zh/tags/openwrt/</link>
+      <title>NLP</title>
+      <link>https://hamguy.xyz/zh/tags/nlp/</link>
       <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
-      <guid>https://hamguy.xyz/zh/tags/openwrt/</guid>
+      <guid>https://hamguy.xyz/zh/tags/nlp/</guid>
       <description></description>
     </item>
     <item>
@@ -139,6 +230,27 @@
       <link>https://hamguy.xyz/zh/tags/product/</link>
       <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
       <guid>https://hamguy.xyz/zh/tags/product/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Productivity</title>
+      <link>https://hamguy.xyz/zh/tags/productivity/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/tags/productivity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>https://hamguy.xyz/zh/tags/python/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Qwen</title>
+      <link>https://hamguy.xyz/zh/tags/qwen/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/tags/qwen/</guid>
       <description></description>
     </item>
     <item>
@@ -174,6 +286,20 @@
       <link>https://hamguy.xyz/zh/tags/vision-ocr/</link>
       <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
       <guid>https://hamguy.xyz/zh/tags/vision-ocr/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Dashboard</title>
+      <link>https://hamguy.xyz/zh/tags/web-dashboard/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/tags/web-dashboard/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Workflow</title>
+      <link>https://hamguy.xyz/zh/tags/workflow/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/tags/workflow/</guid>
       <description></description>
     </item>
     <item>

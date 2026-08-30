@@ -1,7 +1,7 @@
 ---
 title: "作品与项目"
-description: "HamGuy 在业余时间构建的个人独立项目、OpenWrt 智能硬件、macOS 工具与极客实验。"
-summary: "个人项目、OpenWrt 系统、Android TV 伴学应用与 macOS 工具展示。"
+description: "HamGuy 在业余时间构建的个人独立项目、AI 市场洞察系统、OpenWrt 智能硬件、macOS 工具与极客实验。"
+summary: "个人项目、AI 数据智能管道、OpenWrt 系统、Android TV 伴学应用与 macOS 效率工具展示。"
 layout: "page"
 ---
 
@@ -145,7 +145,89 @@ layout: "page"
 </style>
 
 <div class="portfolio-intro">
-  精选个人在业余时间设计与开发的独立产品、OpenWrt 智能网关、Android TV 伴学应用与 macOS 效率工具。
+  精选个人在业余时间设计与开发的独立产品、AI 市场洞察系统、OpenWrt 智能网关、Android TV 伴学应用与 macOS 效率工具。
+</div>
+
+<h2 class="section-title">智能数据管道与市场洞察 (AI &amp; Data Pipelines)</h2>
+
+<div class="projects-grid">
+  <!-- DemandRadar AI -->
+  <div class="project-card">
+    <div>
+      <div class="project-header">
+        <div class="project-icon">DR</div>
+        <div>
+          <h3 class="project-title">DemandRadar AI</h3>
+          <div class="project-category">全球软件需求与商业机会洞察系统</div>
+        </div>
+      </div>
+      <p class="project-desc">
+        基于大模型语义分析与证据链提取的全球软件需求挖掘、痛点聚类与商业机会决策引擎。从多源非结构化技术讨论流中提炼高置信度商机，为出海选品提供确定性打分。
+      </p>
+      <div class="project-tech">
+        <span class="tech-badge">AI Pipeline</span>
+        <span class="tech-badge">NLP 语义聚类</span>
+        <span class="tech-badge">LLM 评分模型</span>
+        <span class="tech-badge">FastAPI</span>
+      </div>
+    </div>
+    <div class="project-links">
+      <a href="/zh/works/demand-radar/" class="btn-link">项目详解 &rarr;</a>
+      <span class="btn-link secondary">私有化部署</span>
+    </div>
+  </div>
+
+  <!-- NicheHunter -->
+  <div class="project-card">
+    <div>
+      <div class="project-header">
+        <div class="project-icon">NH</div>
+        <div>
+          <h3 class="project-title">NicheHunter</h3>
+          <div class="project-category">垂直利基赛道 AI 辅助研究工作台</div>
+        </div>
+      </div>
+      <p class="project-desc">
+        专为垂直利基市场打造的深度剖析与商业可行性评估工作台。内置利基评估模型与 LLM 自动化分析工作流，快速完成竞品全景拆解、壁垒评估与立项研报生成。
+      </p>
+      <div class="project-tech">
+        <span class="tech-badge">市场量化评估</span>
+        <span class="tech-badge">LLM 工作流</span>
+        <span class="tech-badge">Python</span>
+        <span class="tech-badge">交互工作台</span>
+      </div>
+    </div>
+    <div class="project-links">
+      <a href="/zh/works/niche-hunter/" class="btn-link">项目详解 &rarr;</a>
+      <span class="btn-link secondary">内部工具</span>
+    </div>
+  </div>
+
+  <!-- OnlyBots -->
+  <div class="project-card">
+    <div>
+      <div class="project-header">
+        <div class="project-icon">OB</div>
+        <div>
+          <h3 class="project-title">OnlyBots</h3>
+          <div class="project-category">多智能体协同与内容自动化生成平台</div>
+        </div>
+      </div>
+      <p class="project-desc">
+        基于 Qwen / Hermes 大模型驱动的自主多智能体协作平台。专职角色 Agent 协同完成话题自动挖掘、专业内容深度生成、质量交叉核查与多渠道分发排期。
+      </p>
+      <div class="project-tech">
+        <span class="tech-badge">Multi-Agent</span>
+        <span class="tech-badge">Qwen 大模型</span>
+        <span class="tech-badge">工作流编排</span>
+        <span class="tech-badge">自动化流水线</span>
+      </div>
+    </div>
+    <div class="project-links">
+      <a href="/zh/works/onlybots/" class="btn-link">项目详解 &rarr;</a>
+      <span class="btn-link secondary">24h 智能体流</span>
+    </div>
+  </div>
 </div>
 
 <h2 class="section-title">智能网关与大屏设备</h2>

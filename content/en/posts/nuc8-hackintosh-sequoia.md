@@ -11,6 +11,20 @@ showToc: true
 TocOpen: true
 ---
 
+## Background & Motivation
+
+In March 2026, the meteoric rise of **OpenClaw** swept across the developer and AI communities. To allow this powerful AI Agent to run 24/7 with optimal stability and responsiveness, I started searching for a dedicated, energy-efficient mini PC.
+
+The ideal machine on paper was the **Mac mini M4**. However, fueled by the surge in demand for local AI machines, market prices for the M4 remained stubbornly high. Furthermore, with persistent rumors pointing to an upcoming M5 generation around June, it felt like an awkward moment to pull the trigger—risking immediate depreciation or paying an excessive premium.
+
+As a quick workaround, I first tried deploying OpenClaw on an **Ubuntu Desktop** machine. Unfortunately, the outcome fell short of expectations. OpenClaw was architected with extensive, deep optimizations tailored specifically to macOS; running it on Linux introduced rough edges in workflow execution and degraded compatibility.
+
+Since having a reliable **macOS environment** was essential—and overpaying for temporary hardware was not an option—I turned my attention to an idle **Intel NUC8 (Bean Canyon Refresh)** resting in my drawer. Renowned as a legendary gold-standard machine in the Hackintosh community, its Coffee Lake architecture and thermal design remain remarkably capable. Rather than leaving it to collect dust, I decided to upgrade it with the latest **macOS Sequoia 15.7.5**, turning it into a dedicated, cost-effective OpenClaw node.
+
+After navigating several OpenCore quirks and iGPU display patching hurdles, the setup was completed seamlessly. Here is the full guide and troubleshooting record for reference.
+
+---
+
 ## Hardware Specifications
 
 Before configuring OpenCore, confirming the exact hardware components and integrated GPU identifiers is essential:

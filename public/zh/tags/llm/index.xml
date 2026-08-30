@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>LLM on HamGuy</title>
+    <link>https://hamguy.xyz/zh/tags/llm/</link>
+    <description>Recent content in LLM on HamGuy</description>
+    <generator>Hugo -- 0.128.2</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 30 Aug 2026 10:00:00 +0800</lastBuildDate>
+    <atom:link href="https://hamguy.xyz/zh/tags/llm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DemandRadar AI · 全球软件需求与商机洞察系统</title>
+      <link>https://hamguy.xyz/zh/works/demand-radar/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/works/demand-radar/</guid>
+      <description>基于大模型语义分析与证据链提取的全球软件需求挖掘、痛点聚类与商业机会决策引擎。</description>
+    </item>
+    <item>
+      <title>NicheHunter · 垂直利基赛道 AI 辅助研究工作台</title>
+      <link>https://hamguy.xyz/zh/works/niche-hunter/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/works/niche-hunter/</guid>
+      <description>专为独立开发者与早期创业团队打造的垂直利基市场深度剖析与商业可行性评估 AI 工作台。</description>
+    </item>
+    <item>
+      <title>OnlyBots · 多智能体协同与内容自动化生成平台</title>
+      <link>https://hamguy.xyz/zh/works/onlybots/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/works/onlybots/</guid>
+      <description>基于 Qwen / Hermes 大模型驱动的自主多智能体协作话题发现、高质量内容生成与分发流水线系统。</description>
+    </item>
+  </channel>
+</rss>

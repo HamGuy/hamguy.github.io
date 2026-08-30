@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>NLP on HamGuy</title>
+    <link>https://hamguy.xyz/zh/tags/nlp/</link>
+    <description>Recent content in NLP on HamGuy</description>
+    <generator>Hugo -- 0.128.2</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 30 Aug 2026 10:00:00 +0800</lastBuildDate>
+    <atom:link href="https://hamguy.xyz/zh/tags/nlp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DemandRadar AI · 全球软件需求与商机洞察系统</title>
+      <link>https://hamguy.xyz/zh/works/demand-radar/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/works/demand-radar/</guid>
+      <description>基于大模型语义分析与证据链提取的全球软件需求挖掘、痛点聚类与商业机会决策引擎。</description>
+    </item>
+  </channel>
+</rss>
