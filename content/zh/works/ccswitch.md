@@ -75,4 +75,3 @@ final class StatusBarController: NSObject {
 ## 🔗 相关链接
 
 - **产品官网**: [https://hamguy.xyz/ccswitch/](/ccswitch/)
-- **GitHub 源码**: [https://github.com/hamguy](https://github.com/hamguy)

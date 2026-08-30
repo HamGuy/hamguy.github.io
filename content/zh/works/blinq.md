@@ -77,4 +77,3 @@ TocOpen: true
 ## 🔗 相关链接
 
 - **产品官网**: [https://getblinq.app](https://getblinq.app)
-- **GitHub 源码**: [https://github.com/hamguy](https://github.com/hamguy)

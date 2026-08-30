@@ -81,4 +81,5 @@ Key pain points:
 
 ## 🔗 Links
 
-- **GitHub Repository**: [https://github.com/hamguy](https://github.com/hamguy)
+- **Project Type**: Proprietary Smart TV System (Private Deployment)
+- **Platform**: Android TV 12+ / Sony TV

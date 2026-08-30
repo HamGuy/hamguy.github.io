@@ -77,4 +77,3 @@ When working remotely (WFH) or conducting cross-environment debugging, developer
 ## 🔗 Links
 
 - **Product Website**: [https://getblinq.app](https://getblinq.app)
-- **GitHub Repository**: [https://github.com/hamguy](https://github.com/hamguy)

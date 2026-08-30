@@ -70,4 +70,3 @@ While browsing X (formerly Twitter), users frequently like and bookmark high-val
 ## 🔗 Install & Links
 
 - **Chrome Web Store**: [https://chromewebstore.google.com/detail/trovault-twitter-likes-bo/jamclmmnnannpcflkjimkogjpmknlgcg](https://chromewebstore.google.com/detail/trovault-twitter-likes-bo/jamclmmnnannpcflkjimkogjpmknlgcg)
-- **GitHub Repository**: [https://github.com/hamguy](https://github.com/hamguy)

@@ -70,4 +70,3 @@ TocOpen: true
 ## 🔗 安装与体验
 
 - **Chrome 网上应用店**: [https://chromewebstore.google.com/detail/trovault-twitter-likes-bo/jamclmmnnannpcflkjimkogjpmknlgcg](https://chromewebstore.google.com/detail/trovault-twitter-likes-bo/jamclmmnnannpcflkjimkogjpmknlgcg)
-- **GitHub 仓库**: [https://github.com/hamguy](https://github.com/hamguy)

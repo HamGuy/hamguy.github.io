@@ -173,7 +173,7 @@ layout: "page"
     </div>
     <div class="project-links">
       <a href="/works/demand-radar/" class="btn-link">Case Study &rarr;</a>
-      <span class="btn-link secondary">Self-Hosted</span>
+      <span class="btn-link secondary">Private Pipeline</span>
     </div>
   </div>
 
@@ -199,7 +199,7 @@ layout: "page"
     </div>
     <div class="project-links">
       <a href="/works/niche-hunter/" class="btn-link">Case Study &rarr;</a>
-      <span class="btn-link secondary">Private Tool</span>
+      <span class="btn-link secondary">Private Workbench</span>
     </div>
   </div>
 
@@ -256,7 +256,7 @@ layout: "page"
     </div>
     <div class="project-links">
       <a href="/works/parent-control/" class="btn-link">Case Study &rarr;</a>
-      <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="btn-link secondary">OpenWrt 21.02 - 23.05</span>
     </div>
   </div>
 
@@ -283,7 +283,7 @@ layout: "page"
     </div>
     <div class="project-links">
       <a href="/works/kiddi-vision/" class="btn-link">Case Study &rarr;</a>
-      <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="btn-link secondary">Android TV 12+</span>
     </div>
   </div>
 
@@ -310,8 +310,7 @@ layout: "page"
     </div>
     <div class="project-links">
       <a href="/works/blinq/" class="btn-link">Case Study &rarr;</a>
-      <a href="https://getblinq.app" class="btn-link secondary" target="_blank" rel="noopener noreferrer">Product Page</a>
-      <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://getblinq.app" class="btn-link secondary" target="_blank" rel="noopener noreferrer">getblinq.app ↗</a>
     </div>
   </div>
 </div>
@@ -342,7 +341,6 @@ layout: "page"
     <div class="project-links">
       <a href="/works/ccswitch/" class="btn-link">Case Study &rarr;</a>
       <a href="/ccswitch/" class="btn-link secondary">Product Page</a>
-      <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
   </div>
 
@@ -426,7 +424,6 @@ layout: "page"
     <div class="project-links">
       <a href="/works/likemates/" class="btn-link">Case Study &rarr;</a>
       <a href="https://chromewebstore.google.com/detail/trovault-twitter-likes-bo/jamclmmnnannpcflkjimkogjpmknlgcg" class="btn-link secondary" target="_blank" rel="noopener noreferrer">Chrome Store (★★★★★)</a>
-      <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
   </div>
 </div>

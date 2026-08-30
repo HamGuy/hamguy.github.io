@@ -98,4 +98,5 @@ TocOpen: true
 
 ## 🔗 相关链接
 
-- **GitHub 仓库**: [https://github.com/hamguy](https://github.com/hamguy)
+- **项目属性**: 自研软路由系统（私有化部署，未开源）
+- **运行平台**: OpenWrt 21.02 - 23.05

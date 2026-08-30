@@ -98,4 +98,5 @@ In home networks, managing children's screen time and preventing addiction to mo
 
 ## 🔗 Links
 
-- **GitHub Repository**: [https://github.com/hamguy](https://github.com/hamguy)
+- **Project Type**: Proprietary Gateway System (Private Deployment)
+- **Platform**: OpenWrt 21.02 - 23.05

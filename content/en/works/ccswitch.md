@@ -75,4 +75,3 @@ final class StatusBarController: NSObject {
 ## 🔗 Links
 
 - **Landing Page**: [https://hamguy.xyz/ccswitch/](/ccswitch/)
-- **GitHub Repository**: [https://github.com/hamguy](https://github.com/hamguy)

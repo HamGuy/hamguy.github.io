@@ -199,7 +199,7 @@ layout: "page"
     </div>
     <div class="project-links">
       <a href="/zh/works/niche-hunter/" class="btn-link">项目详解 &rarr;</a>
-      <span class="btn-link secondary">内部工具</span>
+      <span class="btn-link secondary">内部工作台</span>
     </div>
   </div>
 
@@ -256,7 +256,7 @@ layout: "page"
     </div>
     <div class="project-links">
       <a href="/zh/works/parent-control/" class="btn-link">项目详解 &rarr;</a>
-      <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="btn-link secondary">OpenWrt 21.02 - 23.05</span>
     </div>
   </div>
 
@@ -283,7 +283,7 @@ layout: "page"
     </div>
     <div class="project-links">
       <a href="/zh/works/kiddi-vision/" class="btn-link">项目详解 &rarr;</a>
-      <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="btn-link secondary">Android TV 12+</span>
     </div>
   </div>
 
@@ -310,8 +310,7 @@ layout: "page"
     </div>
     <div class="project-links">
       <a href="/zh/works/blinq/" class="btn-link">项目详解 &rarr;</a>
-      <a href="https://getblinq.app" class="btn-link secondary" target="_blank" rel="noopener noreferrer">产品官网</a>
-      <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://getblinq.app" class="btn-link secondary" target="_blank" rel="noopener noreferrer">产品官网 ↗</a>
     </div>
   </div>
 </div>
@@ -342,7 +341,6 @@ layout: "page"
     <div class="project-links">
       <a href="/zh/works/ccswitch/" class="btn-link">项目详解 &rarr;</a>
       <a href="/ccswitch/" class="btn-link secondary">工具主页</a>
-      <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
   </div>
 
@@ -368,7 +366,7 @@ layout: "page"
     </div>
     <div class="project-links">
       <a href="/ccsetup/" class="btn-link">使用指南</a>
-      <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">源码查看</a>
+      <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">查看源码</a>
     </div>
   </div>
 </div>
@@ -426,7 +424,6 @@ layout: "page"
     <div class="project-links">
       <a href="/zh/works/likemates/" class="btn-link">项目详解 &rarr;</a>
       <a href="https://chromewebstore.google.com/detail/trovault-twitter-likes-bo/jamclmmnnannpcflkjimkogjpmknlgcg" class="btn-link secondary" target="_blank" rel="noopener noreferrer">Chrome 商店 (★★★★★)</a>
-      <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
   </div>
 </div>

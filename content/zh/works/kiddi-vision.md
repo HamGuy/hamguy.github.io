@@ -80,4 +80,5 @@ TocOpen: true
 
 ## 🔗 相关链接
 
-- **GitHub 仓库**: [https://github.com/hamguy](https://github.com/hamguy)
+- **项目属性**: 自研智能 TV 伴学系统（私有化部署，未开源）
+- **运行平台**: Android TV 12+ / Sony 智能电视
