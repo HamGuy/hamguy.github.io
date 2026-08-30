@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>MacOS on HamGuy</title>
+    <link>https://hamguy.xyz/zh/tags/macos/</link>
+    <description>Recent content in MacOS on HamGuy</description>
+    <generator>Hugo -- 0.128.2</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 31 Mar 2026 10:00:00 +0800</lastBuildDate>
+    <atom:link href="https://hamguy.xyz/zh/tags/macos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Intel NUC8i5BEHS 黑苹果安装 macOS Sequoia 总结与避坑指南</title>
+      <link>https://hamguy.xyz/zh/posts/nuc8-hackintosh-sequoia/</link>
+      <pubDate>Tue, 31 Mar 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/posts/nuc8-hackintosh-sequoia/</guid>
+      <description>记录 Intel NUC8i5BEHS 安装 macOS Sequoia 15.7.5 的完整实战过程，包含 OpenCore 目录结构、核显驱动、SMBIOS 选型与常见卡点解决方案。</description>
+    </item>
+  </channel>
+</rss>

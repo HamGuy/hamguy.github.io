@@ -6,6 +6,28 @@
     <description>Recent content in Categories on HamGuy</description>
     <generator>Hugo -- 0.128.2</generator>
     <language>en-US</language>
+    <lastBuildDate>Sun, 30 Aug 2026 10:00:00 +0800</lastBuildDate>
     <atom:link href="https://hamguy.xyz/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Engineering</title>
+      <link>https://hamguy.xyz/categories/engineering/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/categories/engineering/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Indie Development</title>
+      <link>https://hamguy.xyz/categories/indie-development/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/categories/indie-development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hackintosh</title>
+      <link>https://hamguy.xyz/categories/hackintosh/</link>
+      <pubDate>Tue, 31 Mar 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/categories/hackintosh/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

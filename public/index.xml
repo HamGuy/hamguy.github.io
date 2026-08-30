@@ -6,8 +6,15 @@
     <description>Recent content on HamGuy</description>
     <generator>Hugo -- 0.128.2</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 10 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 30 Aug 2026 10:00:00 +0800</lastBuildDate>
     <atom:link href="https://hamguy.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building in Public: From iOS Apps to AI Developer Tools</title>
+      <link>https://hamguy.xyz/posts/my-first-post/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/posts/my-first-post/</guid>
+      <description>A reflection on shipping indie products, navigating the Apple ecosystem, and integrating modern AI agent workflows.</description>
+    </item>
     <item>
       <title>SendHelp Privacy Policy</title>
       <link>https://hamguy.xyz/sendhelp/privacy/</link>
@@ -23,11 +30,18 @@
       <description>Terms of Service for SendHelp</description>
     </item>
     <item>
-      <title>About</title>
+      <title>Intel NUC8i5BEHS Hackintosh Guide: Installing macOS Sequoia with OpenCore</title>
+      <link>https://hamguy.xyz/posts/nuc8-hackintosh-sequoia/</link>
+      <pubDate>Tue, 31 Mar 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/posts/nuc8-hackintosh-sequoia/</guid>
+      <description>A complete troubleshooting guide for installing macOS Sequoia 15.7.5 on an Intel NUC8i5BEHS mini PC using OpenCore, covering iGPU framebuffer patching, SMBIOS selection, and EFI fixes.</description>
+    </item>
+    <item>
+      <title>About Me</title>
       <link>https://hamguy.xyz/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://hamguy.xyz/about/</guid>
-      <description>about</description>
+      <description>Who is HamGuy? Independent Developer, Apple ecosystem builder, and tech writer.</description>
     </item>
   </channel>
 </rss>

@@ -6,6 +6,63 @@
     <description>Recent content in Tags on HamGuy</description>
     <generator>Hugo -- 0.128.2</generator>
     <language>en-US</language>
+    <lastBuildDate>Sun, 30 Aug 2026 10:00:00 +0800</lastBuildDate>
     <atom:link href="https://hamguy.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI Tools</title>
+      <link>https://hamguy.xyz/tags/ai-tools/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/ai-tools/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Indie Dev</title>
+      <link>https://hamguy.xyz/tags/indie-dev/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/indie-dev/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MacOS</title>
+      <link>https://hamguy.xyz/tags/macos/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/macos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Swift</title>
+      <link>https://hamguy.xyz/tags/swift/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/swift/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hackintosh</title>
+      <link>https://hamguy.xyz/tags/hackintosh/</link>
+      <pubDate>Tue, 31 Mar 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/hackintosh/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hardware</title>
+      <link>https://hamguy.xyz/tags/hardware/</link>
+      <pubDate>Tue, 31 Mar 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/hardware/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>NUC8</title>
+      <link>https://hamguy.xyz/tags/nuc8/</link>
+      <pubDate>Tue, 31 Mar 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/nuc8/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OpenCore</title>
+      <link>https://hamguy.xyz/tags/opencore/</link>
+      <pubDate>Tue, 31 Mar 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/tags/opencore/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

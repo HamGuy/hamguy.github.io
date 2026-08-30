@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>NUC8 on HamGuy</title>
+    <link>https://hamguy.xyz/tags/nuc8/</link>
+    <description>Recent content in NUC8 on HamGuy</description>
+    <generator>Hugo -- 0.128.2</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 31 Mar 2026 10:00:00 +0800</lastBuildDate>
+    <atom:link href="https://hamguy.xyz/tags/nuc8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Intel NUC8i5BEHS Hackintosh Guide: Installing macOS Sequoia with OpenCore</title>
+      <link>https://hamguy.xyz/posts/nuc8-hackintosh-sequoia/</link>
+      <pubDate>Tue, 31 Mar 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/posts/nuc8-hackintosh-sequoia/</guid>
+      <description>A complete troubleshooting guide for installing macOS Sequoia 15.7.5 on an Intel NUC8i5BEHS mini PC using OpenCore, covering iGPU framebuffer patching, SMBIOS selection, and EFI fixes.</description>
+    </item>
+  </channel>
+</rss>

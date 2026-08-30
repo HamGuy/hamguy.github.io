@@ -1,88 +1,86 @@
-<div class="matrix-bg" id="matrix"></div>
+<canvas id="geo-canvas" class="geo-canvas"></canvas>
 
-<div class="floating-elements">
-    <div class="float-item" style="top: 15%; left: 10%;">Swift</div>
-    <div class="float-item" style="top: 25%; right: 15%;">UIKit</div>
-    <div class="float-item" style="top: 45%; left: 5%;">SwiftUI</div>
-    <div class="float-item" style="bottom: 30%; right: 10%;">Xcode</div>
-    <div class="float-item" style="bottom: 15%; left: 20%;">iOS</div>
+<div class="floating-elements" id="floating-tags">
+    <div class="float-tag tag-1">Swift</div>
+    <div class="float-tag tag-2">Flutter</div>
+    <div class="float-tag tag-3">Gemini</div>
+    <div class="float-tag tag-4">Antigravity</div>
+    <div class="float-tag tag-5">Qwen</div>
+    <div class="float-tag tag-6">DeepSeek</div>
+    <div class="float-tag tag-7">Claude 3.7</div>
+    <div class="float-tag tag-8">GPT-4o</div>
+    <div class="float-tag tag-9">MCP</div>
+    <div class="float-tag tag-10">SwiftUI</div>
+    <div class="float-tag tag-11">Docker</div>
+    <div class="float-tag tag-12">macOS</div>
+    <div class="float-tag tag-13">NAS / Linux</div>
+    <div class="float-tag tag-14">Mini Program</div>
+    <div class="float-tag tag-15">Python</div>
+    <div class="float-tag tag-16">Rust</div>
 </div>
 
-<div class="profile">
+<div class="hero-wrapper">
     {{- with site.Params.profileMode }}
-    <div style="background-color: transparent; width: 100%; border: 0.5px solid #30363d; border-radius: 20px;">
-        <!-- Terminal header moved to top -->
+    <div class="terminal-card">
+        <!-- Terminal Header -->
         <div class="terminal-header">
             <div class="terminal-dots">
-                <div class="dot red"></div>
-                <div class="dot yellow"></div>
-                <div class="dot green"></div>
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
             </div>
-            <div class="terminal-title">Life.swift</div>
-        </div>
-
-        <!-- Terminal code background -->
-        <div class="terminal-code-bg">
-            <div class="code-content">
-                <div class="code-block">
-                    <div class=" code-line comment">// Life is running...</div>
-                    <div class="code-line">
-                        <span class="keyword">class</span> <span class="function">Life</span> {
-                    </div>
-                    <div class="code-line">
-                        &nbsp;&nbsp;<span class="keyword">func</span> <span class="function">run</span>() <span class="keyword">throws</span> {
-                    </div>
-                    <div class="code-line">
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">do</span> {
-                    </div>
-                    <div class="code-line">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">try</span> <span class="function">liveYourBestLife</span>()
-                    </div>
-                    <div class="code-line">
-                        &nbsp;&nbsp;&nbsp;&nbsp;} <span class="keyword">catch</span> {
-                    </div>
-                    <div class="code-line">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Memory leak detected</span>
-                    </div>
-                    <div class="code-line">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="function">handleMemoryLeak</span>()
-                    </div>
-                    <div class="code-line">
-                        &nbsp;&nbsp;&nbsp;&nbsp;}
-                    </div>
-                    <div class="code-line">
-                        &nbsp;&nbsp;}
-                    </div>
-                    <div class="code-line">}</div>
-                </div>
+            <div class="terminal-tab">
+                <span class="tab-title">HamGuy.swift</span>
+            </div>
+            <div class="terminal-status">
+                <span class="status-pulse"></span>
+                <span class="status-text">ready</span>
             </div>
         </div>
 
-        <!-- Profile content at bottom -->
-        <div class="profile-content">
-            <span class="subtitle-text">{{ .subtitle | markdownify }}</span>
+        <!-- Terminal Code Editor Area -->
+        <div class="terminal-body">
+            <div class="code-lines">
+                <div class="code-line"><span class="c-comment">// Software Engineer · Building &amp; Sharing in Public</span></div>
+                <div class="code-line"><span class="c-keyword">struct</span> <span class="c-type">HamGuy</span>: <span class="c-protocol">Engineer</span>, <span class="c-protocol">Builder</span> {</div>
+                <div class="code-line indent-1"><span class="c-keyword">let</span> <span class="c-prop">focus</span> = [<span class="c-string">"iOS / macOS"</span>, <span class="c-string">"Flutter"</span>, <span class="c-string">"AI & LLMs"</span>, <span class="c-string">"Self-Host / NAS"</span>]</div>
+                <div class="code-line indent-1"><span class="c-keyword">var</span> <span class="c-prop">motto</span>: <span class="c-type">String</span> { <span class="c-string">"Ship elegant tools & share thoughts"</span> }</div>
+                <div class="code-line indent-1">&nbsp;</div>
+                <div class="code-line indent-1"><span class="c-keyword">func</span> <span class="c-func">build</span>() <span class="c-keyword">async</span> <span class="c-keyword">throws</span> -&gt; <span class="c-type">Product</span> {</div>
+                <div class="code-line indent-2"><span class="c-keyword">try await</span> <span class="c-func">createMeaningfulSoftware</span>()</div>
+                <div class="code-line indent-1">}</div>
+                <div class="code-line">}</div>
+            </div>
+        </div>
 
-            {{- partial "social_icons.html" -}}
+        <!-- Terminal Bottom Profile Area -->
+        <div class="terminal-footer">
+            <div class="profile-brand">
+                <h1 class="brand-title">{{ .title | default site.Title }}</h1>
+                <p class="brand-subtitle">{{ .subtitle | markdownify }}</p>
+            </div>
+
+            <div class="terminal-socials">
+                {{- partial "social_icons.html" -}}
+            </div>
 
             {{- with .buttons }}
-            <div class="buttons">
+            <div class="terminal-actions">
                 {{- range . }}
-                <a class="button enhanced-button" href="{{ trim .url " " }}" rel="noopener" title="{{ .name }}">
-                    <span class="button-inner">
-                        {{ .name }}
-                        {{- if (findRE "://" .url) }}&nbsp;
-                        <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="14" width="14">
-                            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
-                            <path d="M15 3h6v6"></path>
-                            <path d="M10 14L21 3"></path>
-                        </svg>
-                        {{- end }}
-                    </span>
+                <a class="terminal-btn" href="{{ trim .url " " }}" rel="noopener" title="{{ .name }}">
+                    <span class="btn-text">{{ .name }}</span>
+                    {{- if (findRE "://" .url) }}
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" height="13" width="13">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                    {{- end }}
                 </a>
                 {{- end }}
             </div>
             {{- end }}
         </div>
     </div>
-    {{- end}}
+    {{- end }}
 </div>

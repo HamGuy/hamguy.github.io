@@ -17,69 +17,106 @@ languages:
     languageDirection: ltr
     languageName: English
     mainSections:
-      - posts # 将 Posts 设置为主要部分
+      - posts
     weight: 1
     menu:
-      # main:
-      #   - identifier: post
-      #     name: Posts
-      #     url: /posts/ # 确保 Posts 的 URL 正确
-      #     weight: 10
-      #   # - identifier: works
-      #   #   name: Works
-      #   #   url: /works/
-      #   #   weight: 20
-      #   - identifier: tags
-      #     name: Tags
-      #     url: /tags/
-      #     weight: 30
-      #   - identifier: about
-      #     name: About
-      #     url: /about/
-      #     weight: 40
+      main:
+        - identifier: posts
+          name: Posts
+          url: /posts/
+          weight: 10
+        - identifier: works
+          name: Works
+          url: /works/
+          weight: 20
+        - identifier: tags
+          name: Tags
+          url: /tags/
+          weight: 30
+        - identifier: search
+          name: Search
+          url: /search/
+          weight: 40
+        - identifier: about
+          name: About
+          url: /about/
+          weight: 50
+  zh:
+    contentDir: content/zh
+    disabled: false
+    languageCode: zh-CN
+    languageDirection: ltr
+    languageName: 中文
+    mainSections:
+      - posts
+    weight: 2
+    menu:
+      main:
+        - identifier: posts
+          name: 文章
+          url: /zh/posts/
+          weight: 10
+        - identifier: works
+          name: 作品
+          url: /zh/works/
+          weight: 20
+        - identifier: tags
+          name: 标签
+          url: /zh/tags/
+          weight: 30
+        - identifier: search
+          name: 搜索
+          url: /zh/search/
+          weight: 40
+        - identifier: about
+          name: 关于
+          url: /zh/about/
+          weight: 50
 
 minify:
   disableXML: true
 
 params:
-  description: "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
+  description: "HamGuy's personal space - Software engineer sharing side projects, Apple ecosystem engineering, AI workflows, and thoughts."
   author: HamGuy
-  subtitle: "A New Start From Here"
+  subtitle: "Software Engineer · Apple Ecosystem & AI Tooling"
   defaultTheme: auto
   
   # Profile Mode Configuration
   profileMode:
     enabled: true
     title: "HamGuy"
-    subtitle: "A New Start From Here"
+    subtitle: "Software Engineer · Apple Ecosystem & AI Tooling"
     imageUrl: "https://gravatar.com/avatar/50133ab9ca3c09cef67baad82e56e371?s=200&d=mp"
     imageTitle: "HamGuy"
     imageWidth: 200
     imageHeight: 200
-    # buttons:
-    #   - name: "Posts"
-    #     url: "/posts/"
-    #   - name: "About"
-    #     url: "/about/"
-    #   - name: "Works"
-    #     url: "/works/"
+    buttons:
+      - name: "Posts"
+        url: "/posts/"
+      - name: "Works"
+        url: "/works/"
+      - name: "About"
+        url: "/about/"
 
   env: production
 
   comments: true
 
   ShowReadingTime: true
+  ShowToc: true
+  TocOpen: false
   # disableSpecial1stPost: true
   displayFullLangName: true
   ShowPostNavLinks: true
-  # ShowBreadCrumbs: true
+  ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
   ShowRssButtonInSectionTermList: false
   ShowAllPagesInArchive: true
   ShowPageNums: true
   
   ShowShareButtons: true
-  ShareButtons: ["linkedin", "twitter","facebook","telegram","whatsapp","reddit"]
+  ShareButtons: ["x", "linkedin", "telegram", "reddit"]
   assets:
     disableHLJS: true
   fuseOpts:
@@ -89,23 +126,28 @@ params:
     distance: 1000
     threshold: 0.4
     minMatchCharLength: 0
-    # limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
     keys: ["title", "permalink", "summary", "content"]
-contact:
-    email: wangrui15@gmail.com
 
-# Social Icons Configuration
-# socialIcons:
-#   - name: github
-#     url: "https://github.com/hamguy"
-#   - name: twitter
-#     url: "https://twitter.com/hamguy"
-#   - name: linkedin
-#     url: "https://www.linkedin.com/in/hamguy/"
-#   - name: email
-#     url: "mailto:wangrui15@gmail.com"
+  # Social Icons Configuration
+  socialIcons:
+    - name: github
+      url: "https://github.com/hamguy"
+    - name: x
+      url: "https://x.com/hamguy315"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/hamguy/"
+    - name: email
+      url: "mailto:wangrui15@gmail.com"
+    - name: rss
+      url: "/index.xml"
+
+contact:
+  email: wangrui15@gmail.com
 
 markup:
+  goldmark:
+    renderer:
+      unsafe: true
   highlight:
     # anchorLineNos: true
     codeFences: true
