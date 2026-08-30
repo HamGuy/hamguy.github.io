@@ -16,6 +16,13 @@
       <description>平时上班没法盯娃，市面上又找不到好用的软路由管控插件。借着 Gemini 3.7 Flash 和 Antigravity，我顺手肝出了 ParentControl Guard 并正式开源。</description>
     </item>
     <item>
+      <title>Blinq (QuickOpen) · 极速企业 VPN 自动化连接套件</title>
+      <link>https://hamguy.xyz/zh/works/blinq/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/works/blinq/</guid>
+      <description>轻量级极速企业 VPN 自动化拨号工具，支持 TOTP 动态验证码自动填充、AES-256-GCM 本地安全加密与软路由分流。</description>
+    </item>
+    <item>
       <title>KiddiVision (童视智汇) · 智能 TV 伴学系统</title>
       <link>https://hamguy.xyz/zh/works/kiddi-vision/</link>
       <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>

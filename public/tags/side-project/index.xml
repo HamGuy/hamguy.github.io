@@ -9,6 +9,13 @@
     <lastBuildDate>Sun, 30 Aug 2026 10:00:00 +0800</lastBuildDate>
     <atom:link href="https://hamguy.xyz/tags/side-project/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Blinq (QuickOpen) · Automated Enterprise VPN Connectivity Suite</title>
+      <link>https://hamguy.xyz/works/blinq/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/works/blinq/</guid>
+      <description>A lightweight, automated enterprise VPN connection tool with TOTP auto-generation, AES-256-GCM local encryption, and router split-tunneling.</description>
+    </item>
+    <item>
       <title>CCSwitch for Mac · Claude Code Menu Bar Environment Switcher</title>
       <link>https://hamguy.xyz/works/ccswitch/</link>
       <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>

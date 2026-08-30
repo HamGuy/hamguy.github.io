@@ -16,6 +16,13 @@
       <description>As a busy working parent frustrated by fragile screen-time limits and clunky router plugins, I teamed up with Gemini 3.7 Flash in Antigravity to build and open-source ParentControl Guard.</description>
     </item>
     <item>
+      <title>Blinq (QuickOpen) · Automated Enterprise VPN Connectivity Suite</title>
+      <link>https://hamguy.xyz/works/blinq/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/works/blinq/</guid>
+      <description>A lightweight, automated enterprise VPN connection tool with TOTP auto-generation, AES-256-GCM local encryption, and router split-tunneling.</description>
+    </item>
+    <item>
       <title>CCSwitch for Mac · Claude Code Menu Bar Environment Switcher</title>
       <link>https://hamguy.xyz/works/ccswitch/</link>
       <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>

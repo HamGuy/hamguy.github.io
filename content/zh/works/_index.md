@@ -286,6 +286,34 @@ layout: "page"
       <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
   </div>
+
+  <!-- Blinq (QuickOpen) -->
+  <div class="project-card">
+    <div>
+      <div class="project-header">
+        <img src="/images/projects/blinq/logo.png" alt="Blinq Logo" class="project-icon" onerror="this.outerHTML='<div class=\'project-icon\'>BLQ</div>'">
+        <div>
+          <h3 class="project-title">Blinq (QuickOpen)</h3>
+          <div class="project-category">企业 VPN 极速自动化连接套件</div>
+        </div>
+      </div>
+      <p class="project-desc">
+        轻量级极速企业 VPN 自动化拨号工具，支持 TOTP 动态验证码自动填充、AES-256-GCM 本地凭证安全加密与 OpenWrt 软路由透明分流 (Split-Tunneling)。
+      </p>
+      <div class="project-tech">
+        <span class="tech-badge">Go</span>
+        <span class="tech-badge">OpenConnect</span>
+        <span class="tech-badge">安全加密</span>
+        <span class="tech-badge">软路由分流</span>
+        <span class="tech-badge">OpenWrt</span>
+      </div>
+    </div>
+    <div class="project-links">
+      <a href="/zh/works/blinq/" class="btn-link">项目详解 &rarr;</a>
+      <a href="https://getblinq.app" class="btn-link secondary" target="_blank" rel="noopener noreferrer">产品官网</a>
+      <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+  </div>
 </div>
 
 <h2 class="section-title">开发者工具与 macOS 效率套件</h2>

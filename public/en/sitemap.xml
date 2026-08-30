@@ -265,6 +265,19 @@
                 href="https://hamguy.xyz/tags/automation/"
                 />
   </url><url>
+    <loc>https://hamguy.xyz/works/blinq/</loc>
+    <lastmod>2026-08-30T10:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://hamguy.xyz/zh/works/blinq/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://hamguy.xyz/works/blinq/"
+                />
+  </url><url>
     <loc>https://hamguy.xyz/posts/my-first-post/</loc>
     <lastmod>2026-08-30T10:00:00+08:00</lastmod>
   </url><url>
@@ -305,6 +318,19 @@
                 rel="alternate"
                 hreflang="en-US"
                 href="https://hamguy.xyz/tags/claude-code/"
+                />
+  </url><url>
+    <loc>https://hamguy.xyz/tags/cli/</loc>
+    <lastmod>2026-08-30T10:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://hamguy.xyz/zh/tags/cli/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://hamguy.xyz/tags/cli/"
                 />
   </url><url>
     <loc>https://hamguy.xyz/tags/compose/</loc>
@@ -599,6 +625,19 @@
                 href="https://hamguy.xyz/works/onlybots/"
                 />
   </url><url>
+    <loc>https://hamguy.xyz/tags/openconnect/</loc>
+    <lastmod>2026-08-30T10:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://hamguy.xyz/zh/tags/openconnect/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://hamguy.xyz/tags/openconnect/"
+                />
+  </url><url>
     <loc>https://hamguy.xyz/works/parent-control/</loc>
     <lastmod>2026-08-30T10:00:00+08:00</lastmod>
     <xhtml:link
@@ -662,6 +701,19 @@
                 rel="alternate"
                 hreflang="en-US"
                 href="https://hamguy.xyz/tags/qwen/"
+                />
+  </url><url>
+    <loc>https://hamguy.xyz/tags/security/</loc>
+    <lastmod>2026-08-30T10:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://hamguy.xyz/zh/tags/security/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://hamguy.xyz/tags/security/"
                 />
   </url><url>
     <loc>https://hamguy.xyz/works/sesamo/</loc>
@@ -740,6 +792,19 @@
                 rel="alternate"
                 hreflang="en-US"
                 href="https://hamguy.xyz/tags/vision-ocr/"
+                />
+  </url><url>
+    <loc>https://hamguy.xyz/tags/vpn/</loc>
+    <lastmod>2026-08-30T10:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://hamguy.xyz/zh/tags/vpn/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://hamguy.xyz/tags/vpn/"
                 />
   </url><url>
     <loc>https://hamguy.xyz/tags/web-dashboard/</loc>

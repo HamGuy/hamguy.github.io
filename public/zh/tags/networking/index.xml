@@ -9,6 +9,13 @@
     <lastBuildDate>Sun, 30 Aug 2026 10:00:00 +0800</lastBuildDate>
     <atom:link href="https://hamguy.xyz/zh/tags/networking/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Blinq (QuickOpen) · 极速企业 VPN 自动化连接套件</title>
+      <link>https://hamguy.xyz/zh/works/blinq/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/works/blinq/</guid>
+      <description>轻量级极速企业 VPN 自动化拨号工具，支持 TOTP 动态验证码自动填充、AES-256-GCM 本地安全加密与软路由分流。</description>
+    </item>
+    <item>
       <title>ParentControl Guard · OpenWrt 家长控制卫士</title>
       <link>https://hamguy.xyz/zh/works/parent-control/</link>
       <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>

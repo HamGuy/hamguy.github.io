@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Security on HamGuy</title>
+    <link>https://hamguy.xyz/zh/tags/security/</link>
+    <description>Recent content in Security on HamGuy</description>
+    <generator>Hugo -- 0.128.2</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 30 Aug 2026 10:00:00 +0800</lastBuildDate>
+    <atom:link href="https://hamguy.xyz/zh/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blinq (QuickOpen) · 极速企业 VPN 自动化连接套件</title>
+      <link>https://hamguy.xyz/zh/works/blinq/</link>
+      <pubDate>Sun, 30 Aug 2026 10:00:00 +0800</pubDate>
+      <guid>https://hamguy.xyz/zh/works/blinq/</guid>
+      <description>轻量级极速企业 VPN 自动化拨号工具，支持 TOTP 动态验证码自动填充、AES-256-GCM 本地安全加密与软路由分流。</description>
+    </item>
+  </channel>
+</rss>

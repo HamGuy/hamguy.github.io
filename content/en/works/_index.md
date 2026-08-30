@@ -286,6 +286,34 @@ layout: "page"
       <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
   </div>
+
+  <!-- Blinq (QuickOpen) -->
+  <div class="project-card">
+    <div>
+      <div class="project-header">
+        <img src="/images/projects/blinq/logo.png" alt="Blinq Logo" class="project-icon" onerror="this.outerHTML='<div class=\'project-icon\'>BLQ</div>'">
+        <div>
+          <h3 class="project-title">Blinq (QuickOpen)</h3>
+          <div class="project-category">Enterprise VPN Automation Suite</div>
+        </div>
+      </div>
+      <p class="project-desc">
+        A lightweight automated enterprise VPN connectivity tool with instant TOTP calculation, local AES-256-GCM credential encryption, and OpenWrt router split-tunneling (Split-Tunneling).
+      </p>
+      <div class="project-tech">
+        <span class="tech-badge">Go</span>
+        <span class="tech-badge">OpenConnect</span>
+        <span class="tech-badge">Security</span>
+        <span class="tech-badge">Split-Tunneling</span>
+        <span class="tech-badge">OpenWrt</span>
+      </div>
+    </div>
+    <div class="project-links">
+      <a href="/works/blinq/" class="btn-link">Case Study &rarr;</a>
+      <a href="https://getblinq.app" class="btn-link secondary" target="_blank" rel="noopener noreferrer">Product Page</a>
+      <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+  </div>
 </div>
 
 <h2 class="section-title">Developer Tools &amp; macOS Utilities</h2>
