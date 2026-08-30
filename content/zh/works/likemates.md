@@ -4,7 +4,7 @@ date: 2026-08-30T10:00:00+08:00
 draft: false
 author: "HamGuy"
 description: "专注于隐私安全的 X (Twitter) 收藏与点赞本地离线管理与即时搜索 Chrome 浏览器扩展插件。"
-summary: "解析 LikeMates (Trovault) 的产品设计理念：Manifest V3 架构、纯本地 IndexedDB 存储、多媒体筛选与全文即时检索。"
+summary: "解析 LikeMates (Trovault) 的产品设计理念：Manifest V3 架构、纯本地 IndexedDB 存储、多媒体筛选与 Chrome 应用商店 5 星好评交付。"
 tags: ["Chrome Extension", "Manifest V3", "TypeScript", "IndexedDB", "Side Project"]
 categories: ["Projects", "Engineering"]
 showToc: true
@@ -58,14 +58,16 @@ TocOpen: true
 
 ---
 
-## 📈 交付成果
+## 📈 交付成果与用户口碑
 
-- [x] 基于 Chrome Manifest V3 最新规范研发
+- [x] **Chrome 网上应用店正式上架**，已获 **5.0 满分好评 (★★★★★)**
+- [x] 严格遵循 Chrome Manifest V3 最新规范研发与上架审核
 - [x] 多语言应用商店物料与本地化适配 (支持中/英/日/德/法/西/韩 7 种语言)
 - [x] 完整 PRD 与离线数据备份方案落地
 
 ---
 
-## 🔗 相关链接
+## 🔗 安装与体验
 
+- **Chrome 网上应用店**: [https://chromewebstore.google.com/detail/trovault-twitter-likes-bo/jamclmmnnannpcflkjimkogjpmknlgcg](https://chromewebstore.google.com/detail/trovault-twitter-likes-bo/jamclmmnnannpcflkjimkogjpmknlgcg)
 - **GitHub 仓库**: [https://github.com/hamguy](https://github.com/hamguy)

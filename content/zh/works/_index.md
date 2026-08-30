@@ -397,6 +397,7 @@ layout: "page"
     </div>
     <div class="project-links">
       <a href="/zh/works/likemates/" class="btn-link">项目详解 &rarr;</a>
+      <a href="https://chromewebstore.google.com/detail/trovault-twitter-likes-bo/jamclmmnnannpcflkjimkogjpmknlgcg" class="btn-link secondary" target="_blank" rel="noopener noreferrer">Chrome 商店 (★★★★★)</a>
       <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
   </div>

@@ -397,7 +397,8 @@ layout: "page"
     </div>
     <div class="project-links">
       <a href="/works/likemates/" class="btn-link">Case Study &rarr;</a>
-      <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">GitHub Project</a>
+      <a href="https://chromewebstore.google.com/detail/trovault-twitter-likes-bo/jamclmmnnannpcflkjimkogjpmknlgcg" class="btn-link secondary" target="_blank" rel="noopener noreferrer">Chrome Store (★★★★★)</a>
+      <a href="https://github.com/hamguy" class="btn-link secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
   </div>
 </div>

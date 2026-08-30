@@ -4,7 +4,7 @@ date: 2026-08-30T10:00:00+08:00
 draft: false
 author: "HamGuy"
 description: "A privacy-first Chrome browser extension to sync, organize, and full-text search your X (Twitter) likes and bookmarks locally."
-summary: "An in-depth case study of LikeMates (Trovault): Chrome Manifest V3 architecture, 100% on-device IndexedDB storage, media filtering, and sub-second full-text search."
+summary: "An in-depth case study of LikeMates (Trovault): Chrome Manifest V3 architecture, 100% on-device IndexedDB storage, media filtering, and 5-star rating on the Chrome Web Store."
 tags: ["Chrome Extension", "Manifest V3", "TypeScript", "IndexedDB", "Side Project"]
 categories: ["Projects", "Engineering"]
 showToc: true
@@ -58,14 +58,16 @@ While browsing X (formerly Twitter), users frequently like and bookmark high-val
 
 ---
 
-## 📈 Shipping & Localization
+## 📈 Shipping, Validation & Ratings
 
+- [x] **Live on Chrome Web Store** with **5.0 Star Rating (★★★★★)**
 - [x] Engineered to Chrome Extension Manifest V3 specifications
 - [x] Multi-language store listings and UI localization (7 languages: EN / ZH / JA / DE / FR / ES / KO)
 - [x] Offline export & data portability features
 
 ---
 
-## 🔗 Links
+## 🔗 Install & Links
 
+- **Chrome Web Store**: [https://chromewebstore.google.com/detail/trovault-twitter-likes-bo/jamclmmnnannpcflkjimkogjpmknlgcg](https://chromewebstore.google.com/detail/trovault-twitter-likes-bo/jamclmmnnannpcflkjimkogjpmknlgcg)
 - **GitHub Repository**: [https://github.com/hamguy](https://github.com/hamguy)
